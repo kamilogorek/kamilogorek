@@ -35,14 +35,20 @@ ul {
   list-style-type: square; }
 
 a {
-  padding: 0 0.25em;
-  color: white;
-  background: black;
   text-decoration: none;
-  white-space: nowrap; }
+  white-space: nowrap;
+  color: white;
+  background: black; }
   a:hover {
     color: black;
     background: white; }
+  .content a {
+    white-space: normal;
+    color: black;
+    background: white; }
+    .content a:hover {
+      color: white;
+      background: black; }
 
 .main-title {
   font-size: 2em;
@@ -58,6 +64,8 @@ a {
   margin-bottom: 2em; }
   .info-section:last-of-type {
     margin-bottom: 0; }
+    .content .info-section:last-of-type {
+      margin-bottom: 2em; }
   .info-section.articles ul {
     list-style: none; }
   .info-section.labs {
@@ -70,8 +78,19 @@ a {
   margin-left: 1em; }
   .info-section-list dt {
     margin-top: 0.5em; }
+    .content .info-section-list dt {
+      font-weight: bold; }
+      .content .info-section-list dt > a {
+        font-weight: normal; }
     .info-section-list dt:first-of-type {
       margin-top: 0; }
+
+[data-lang]:after {
+  content: "[" attr(data-lang) "]";
+  font-weight: normal;
+  margin-left: 0.25em;
+  font-size: 75%;
+  font-style: italic; }
 
 .fou-ou-fou h1 {
   font-size: 5em; }
