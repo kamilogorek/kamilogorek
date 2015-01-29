@@ -74,8 +74,16 @@ a {
 
 .main-description {
     font-size: 1.5em;
-    white-space: pre-line;
     margin-bottom: 2em;
+
+    span {
+        display: block;
+    }
+
+    a {
+        font-size: 0.6em;
+        font-weight: normal;
+    }
 }
 
 .info-section {

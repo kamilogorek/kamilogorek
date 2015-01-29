@@ -56,8 +56,12 @@ a {
 
 .main-description {
   font-size: 1.5em;
-  white-space: pre-line;
   margin-bottom: 2em; }
+  .main-description span {
+    display: block; }
+  .main-description a {
+    font-size: 0.6em;
+    font-weight: normal; }
 
 .info-section {
   font-size: 1em;
