@@ -59,7 +59,7 @@ a {
   margin-bottom: 2em; }
   .main-description span {
     display: block; }
-  .main-description a {
+  .main-description .github-edit {
     font-size: 0.6em;
     font-weight: normal; }
 
