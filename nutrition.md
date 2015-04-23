@@ -183,6 +183,7 @@ permalink: /nutrition/
     <section class="info-section">
         <h4 class="info-section-title">Other resources</h4>
         <dl class="info-section-list">
+            <dt data-lang="en"><a href="http://exrx.net">ExRx.net (Exercise Prescription on the Internet)</a></dt>
             <dt data-lang="en"><a href="http://examine.com/">Independent Analysis on Supplements &amp; Nutrition | Examine.com</a></dt>
             <dt data-lang="en"><a href="http://simplesciencefitness.com/">Simple Science Fitness. Burn Fat. Build Muscle. Be Healthy.</a></dt>
             <dt data-lang="en"><a href="http://bayesianbodybuilding.com/">Bayesian Bodybuilding</a></dt>
