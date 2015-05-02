@@ -219,6 +219,14 @@ permalink: /training/
             </dd>
         </dl>
     </section>
+    
+    <section class="info-section">
+        <h4 class="info-section-title">Interviews</h4>
+        <dl class="info-section-list">
+            <dt data-lang="en"><a href="https://www.t-nation.com/training/too-much-muscle">Too Much Muscle – The Glenn Pendlay Secret</a></dt>
+            <dt data-lang="en"><a href="https://www.t-nation.com/training/max-out-on-squats-every-day">Max Out on Squats Every Day – John Broz</a></dt>
+        </dl>
+    </section>
 
     <section class="info-section">
         <h4 class="info-section-title">Other resources</h4>
