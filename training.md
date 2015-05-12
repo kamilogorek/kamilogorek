@@ -157,6 +157,13 @@ permalink: /training/
             </dd>
         </dl>
     </section>
+    
+    <section class="info-section">
+        <h4 class="info-section-title">CrossFit</h4>
+        <dl class="info-section-list">
+            <dt data-lang="en"><a href="https://www.t-nation.com/training/doctors-view-of-crossfit">A Doctor's View of CrossFit</a></dt>
+        </dl>
+    </section>
 
     <section class="info-section">
         <h4 class="info-section-title">Calisthenic</h4>
