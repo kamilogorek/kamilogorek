@@ -158,6 +158,10 @@ permalink: /nutrition/
                     <li data-lang="en"><a href="http://www.ncbi.nlm.nih.gov/m/pubmed/10204826/">Effects of resistance vs. aerobic training combined with an 800 calorie liquid diet on lean body mass and resting metabolic rate.</a></li>
                 </ol>
             </dd>
+            
+            <dl class="info-section-list">
+                <dt data-lang="en"><a href="http://bretcontreras.com/eat-lift-and-condition-to-lose-fat-and-maintain-muscle/">Eat, Lift, and Condition to Lose Fat and Maintain Muscle</a></dt>
+            </dl>
         </dl>
     </section>
 
