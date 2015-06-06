@@ -109,6 +109,15 @@ permalink: /training/
                     <li data-lang="en"><a href="http://www.strengtheory.com/should-you-wear-a-belt-or-not-study-write-up/">Should you wear a belt or not? Study write-up</a></li>
                 </ol>
             </dd>
+            
+            <dt>Rep Ranges</dt>
+            <dd>
+                <ol>
+                    <li data-lang="en"><a href="http://www.aworkoutroutine.com/weight-training-intensity/">Weight Training Intensity – How Many Reps Per Set Of An Exercise?</a></li>
+                    <li data-lang="en"><a href="http://breakingmuscle.com/strength-conditioning/simple-rep-range-rules-for-more-productive-strength-training">Simple rep range forules for more productive strength training</a></li>
+                    <li data-lang="en"><a href="http://www.musculardevelopment.com/training/13948-high-or-low-reps-for-muscle-gains.html">High or Low reps for muscle gains</a></li>
+                </ol>
+            </dd>
 
             <dt data-lang="en"><a href="http://www.strengtheory.com/increasing-work-capacity/">Increasing work capacity</a></dt>
             <dt data-lang="en"><a href="http://www.weightrainer.net/training/rules.html">The Rules of Productive Weight Training for The Drug-Free Trainee</a></dt>
@@ -123,9 +132,6 @@ permalink: /training/
 
     <section class="info-section">
         <h4 class="info-section-title">Bodybuilding</h4>
-        <dl class="info-section-list">
-            <dt data-lang="en"><a href="http://www.musculardevelopment.com/training/13948-high-or-low-reps-for-muscle-gains.html">High or Low reps for muscle gains</a></dt>
-        </dl>
     </section>
 
     <section class="info-section">
