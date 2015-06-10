@@ -168,6 +168,7 @@ permalink: /training/
         <h4 class="info-section-title">CrossFit</h4>
         <dl class="info-section-list">
             <dt data-lang="en"><a href="https://www.t-nation.com/training/doctors-view-of-crossfit">A Doctor's View of CrossFit</a></dt>
+            <dt data-lang="en"><a href="http://www.theptdc.com/2014/09/crossfit/">On CrossFit</a></dt>
         </dl>
     </section>
 
