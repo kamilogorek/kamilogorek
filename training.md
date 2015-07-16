@@ -88,6 +88,7 @@ permalink: /training/
                     <li data-lang="en"><a href="http://www.t-nation.com/training/daily-squat-cure">The Daily Squat Cure</a></li>
                     <li data-lang="en"><a href="http://breakingmuscle.com/strength-conditioning/everyday-squatting-for-the-everyday-athlete">Everyday Squatting for the Everyday Athlete</a></li>
                     <li data-lang="en"><a href="http://bretcontreras.com/observations-from-squatting-daily/">Observations from Squatting Daily</a></li>
+                    <li data-lang="en"><a href="https://www.t-nation.com/training/100-day-squat-challenge">8 Lessons Learned From 100 Straight Days of Squatting</a></li>
                 </ol>
             </dd>
 
