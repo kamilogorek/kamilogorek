@@ -52,6 +52,20 @@ permalink: /training/
                     <li data-lang="en"><a href="http://journals.lww.com/nsca-jscr/Abstract/2003/08000/The_Effects_of_a_Calisthenics_and_a_Light_Strength.28.aspx">The Effects of a Calisthenics and a Light Strength Training Program on Lower Limb Muscle Strength and Body Composition in Mature Women</a></li>
                 </ol>
             </dd>
+            
+            <dt>Concurrent Training</dt>
+            <dd>
+                <ol>
+                    <li data-lang="en"><a href="http://www.store.jtsstrength.com/resources/hybrid-athlete">Alex Viada – The Hybrid Athlete [book]</a></li>
+                    <li data-lang="en"><a href="http://www.strengtheory.com/cardio-hypertrophy/">Cardio isn’t going to kill your gains</a></li>
+                    <li data-lang="en"><a href="http://www.strengtheory.com/avoiding-cardio-could-be-holding-you-back/">Avoiding Cardio Could Be Holding You Back</a></li>
+                    <li data-lang="en"><a href="http://www.strengtheory.com/practical-considerations-for-combining-cardiovascular-training-and-lifting/">Practical Considerations for Combining Cardio and Lifting</a></li>
+                    <li data-lang="en"><a href="http://bretcontreras.com/how-to-maximize-concurrent-training/">How to Maximize Concurrent Training - Bret Contreras</a></li>
+                    <li data-lang="en"><a href="https://youtu.be/U5fwt9yVl9s">Greg Nucolas on How Cardio Affects Strength Training [video]</a></li>
+                    <li data-lang="en"><a href="https://itunes.apple.com/pl/podcast/well-traveled-wellness-podcast/id924030061?mt=2&i=337339168">Cardio or Weights, Training vs Performance, and Endurance Adaptation Secrets with Dr. Keith Baar [podcast]</a></li>
+                    <li data-lang="en"><a href="http://breakingmuscle.com/hypertrophy/cardio-doesnt-kill-gains-and-you-should-be-doing-it">Cardio Doesn't Kill Gains (and You Should Be Doing It)</a></li>
+                </ol>
+            </dd>
 
             <dt data-lang="en"><a href="http://www.weightrainer.net/potential.html">The WeighTrainer - Your Maximum Muscular Bodyweight and Measurements</a></dt>
             <dt data-lang="en"><a href="http://www.weightrainer.net/bodypred.html">The WeighTrainer - Maximum Muscular Bodyweight and Measurements Calculator</a></dt>
