@@ -53,10 +53,11 @@ permalink: /training/
                 </ol>
             </dd>
             
-            <dt>Concurrent Training</dt>
+            <dt>Concurrent Training for Strength Athletes</dt>
             <dd>
                 <ol>
                     <li data-lang="en"><a href="http://www.store.jtsstrength.com/resources/hybrid-athlete">Alex Viada – The Hybrid Athlete [book]</a></li>
+                    q0
                     <li data-lang="en"><a href="http://www.strengtheory.com/cardio-hypertrophy/">Cardio isn’t going to kill your gains</a></li>
                     <li data-lang="en"><a href="http://www.strengtheory.com/avoiding-cardio-could-be-holding-you-back/">Avoiding Cardio Could Be Holding You Back</a></li>
                     <li data-lang="en"><a href="http://www.strengtheory.com/practical-considerations-for-combining-cardiovascular-training-and-lifting/">Practical Considerations for Combining Cardio and Lifting</a></li>
@@ -64,6 +65,15 @@ permalink: /training/
                     <li data-lang="en"><a href="https://youtu.be/U5fwt9yVl9s">Greg Nucolas on How Cardio Affects Strength Training [video]</a></li>
                     <li data-lang="en"><a href="https://itunes.apple.com/pl/podcast/well-traveled-wellness-podcast/id924030061?mt=2&i=337339168">Cardio or Weights, Training vs Performance, and Endurance Adaptation Secrets with Dr. Keith Baar [podcast]</a></li>
                     <li data-lang="en"><a href="http://breakingmuscle.com/hypertrophy/cardio-doesnt-kill-gains-and-you-should-be-doing-it">Cardio Doesn't Kill Gains (and You Should Be Doing It)</a></li>
+                </ol>
+            </dd>A
+
+            <dt>Concurrent Training for Endurance Athletes</dt>
+            <dd>
+                <ol>
+                    <li data-lang="en"><a href="http://t063.camel.ntupes.edu.tw/ezcatfiles/t063/download/attdown/0/strength%20endurance%20training%20EJAP%202011%20Ronnestad.pdf">High volume of endurance training impairs adaptations to 12 weeks of strength training in well-trained endurance athletes</a></li>
+                    <li data-lang="en"><a href="http://brage.bibsys.no/xmlui/bitstream/handle/11250/170817/Raastad%20ScandJMedSciSport%202011.pdf?sequence=1">Strength training improves 5-min all-out performance following 185 min of cycling</a></li>
+                    <li data-lang="en"><a href="http://www.researchgate.net/publication/255692648_Optimizing_strength_training_for_running_and_cycling_endurance_performance_A_review">Optimizing strength training for running and cycling endurance performance: A review.</a></li>
                 </ol>
             </dd>
 
