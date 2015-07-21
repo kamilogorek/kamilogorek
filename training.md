@@ -57,7 +57,6 @@ permalink: /training/
             <dd>
                 <ol>
                     <li data-lang="en"><a href="http://www.store.jtsstrength.com/resources/hybrid-athlete">Alex Viada – The Hybrid Athlete [book]</a></li>
-                    q0
                     <li data-lang="en"><a href="http://www.strengtheory.com/cardio-hypertrophy/">Cardio isn’t going to kill your gains</a></li>
                     <li data-lang="en"><a href="http://www.strengtheory.com/avoiding-cardio-could-be-holding-you-back/">Avoiding Cardio Could Be Holding You Back</a></li>
                     <li data-lang="en"><a href="http://www.strengtheory.com/practical-considerations-for-combining-cardiovascular-training-and-lifting/">Practical Considerations for Combining Cardio and Lifting</a></li>
@@ -66,7 +65,7 @@ permalink: /training/
                     <li data-lang="en"><a href="https://itunes.apple.com/pl/podcast/well-traveled-wellness-podcast/id924030061?mt=2&i=337339168">Cardio or Weights, Training vs Performance, and Endurance Adaptation Secrets with Dr. Keith Baar [podcast]</a></li>
                     <li data-lang="en"><a href="http://breakingmuscle.com/hypertrophy/cardio-doesnt-kill-gains-and-you-should-be-doing-it">Cardio Doesn't Kill Gains (and You Should Be Doing It)</a></li>
                 </ol>
-            </dd>A
+            </dd>
 
             <dt>Concurrent Training for Endurance Athletes</dt>
             <dd>
