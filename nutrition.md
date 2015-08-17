@@ -17,6 +17,13 @@ permalink: /nutrition/
     -->
 
     <section class="info-section">
+        <h4 class="info-section-title">Ketogenic Diet</h4>
+        <dl class="info-section-list">
+            <dt data-lang="en"><a href="http://www.ultrarunning.com/features/health-and-nutrition/the-emerging-science-on-fat-adaptation/">The Emerging Science on Fat Adaptation</a></dt>
+        </dl>
+    </section>
+
+    <section class="info-section">
         <h4 class="info-section-title">Diet</h4>
         <dl class="info-section-list">
             <dt data-lang="en"><a href="http://ultimatepaleoguide.com/guide/">The Ultimate Paleo Diet Guide</a></dt>
