@@ -90,7 +90,7 @@ permalink: /nutrition/
             <dd>
                 <ol>
                     <li data-lang="en"><a href="http://www.simplyshredded.com/the-science-of-nutrition-is-a-carb-a-carb.html">The Science Of Nutrition: Is a Carb a Carb?</a></li>
-                    href="http://bayesianbodybuilding.com/optimized-workout-nutrition-carbs-protein-revisited/">Post-workout carbs: Are you drinking tons of sugar for no reason?</a></li>
+                    <li data-lang="en"><a href="http://bayesianbodybuilding.com/optimized-workout-nutrition-carbs-protein-revisited/">Post-workout carbs: Are you drinking tons of sugar for no reason?</a></li>
                 </ol>
             </dd>
 
