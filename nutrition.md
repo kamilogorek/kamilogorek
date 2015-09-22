@@ -85,6 +85,14 @@ permalink: /nutrition/
                     <li data-lang="en"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20578205">Enhanced weight loss with protein-enriched meal replacements in subjects with the metabolic syndrome.</a></li>
                 </ol>
             </dd>
+            
+            <dt>Carbohydrates</dt>
+            <dd>
+                <ol>
+                    <li data-lang="en"><a href="http://www.simplyshredded.com/the-science-of-nutrition-is-a-carb-a-carb.html">The Science Of Nutrition: Is a Carb a Carb?</a></li>
+                    href="http://bayesianbodybuilding.com/optimized-workout-nutrition-carbs-protein-revisited/">Post-workout carbs: Are you drinking tons of sugar for no reason?</a></li>
+                </ol>
+            </dd>
 
             <dt>Alcohol</dt>
             <dd>
