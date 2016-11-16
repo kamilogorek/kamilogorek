@@ -4,9 +4,12 @@ var html = fs.readFileSync('index.html', 'utf8')
 var options = {
     filename: './cv.pdf',
     format: 'A4',
+    zoomFactor: 0.5,
     border: {
-        top: '60px',
-        bottom: '60px'
+        top: '20px',
+        right: '20px',
+        bottom: '20px',
+        left: '20px'
     }
 };
 
