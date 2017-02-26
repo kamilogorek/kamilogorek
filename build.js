@@ -108,7 +108,7 @@ function copy (file) {
 function _copy (file) {
   fs.writeFileSync(
     path.join(DIST, file),
-    fs.readFileSync(file, 'utf8')
+    fs.readFileSync(file)
   )
   console.log('[ SUCCESS ] Copied file', file)
 }

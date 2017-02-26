@@ -5,7 +5,7 @@
   "main": "build.js",
   "scripts": {
     "build": "rimraf build && node build.js",
-    "deploy": "npm run build && git add -A && git commit -am \"Deploy all the code!\" && git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages"
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   "author": "Kamil Ogórek <kamil.ogorek@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "gh-pages": "^0.12.0",
     "glob": "^7.1.1",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.1",
