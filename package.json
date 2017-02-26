@@ -1,0 +1,22 @@
+{
+  "name": "kamilogorek",
+  "version": "1.0.0",
+  "description": "kamilogorek.com",
+  "main": "build.js",
+  "scripts": {
+    "build": "rimraf build && node build.js",
+    "deploy": "npm run build && git add -A && git commit -am \"Deploy all the code!\" && git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamilogorek/kamilogorek.git"
+  },
+  "author": "Kamil Ogórek <kamil.ogorek@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "glob": "^7.1.1",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.1",
+    "showdown": "^1.6.4"
+  }
+}
