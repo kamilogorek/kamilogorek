@@ -20,8 +20,9 @@ const PAGES_DIR = 'pages'
 function parse (file, isMarkdown = false) {
   const fileContent = fs.readFileSync(file, 'utf8').trim()
   const metadataDivider = '---'
+  const hasMetadata = fileContent.startsWith(metadataDivider)
 
-  if (!fileContent.startsWith(metadataDivider)) console.log('[ WARNING ] No metadata for file', file)
+  if (!hasMetadata) console.log('[ WARNING ] No metadata for file', file)
 
   const metadataDividerIndex = fileContent.indexOf(metadataDivider, metadataDivider.length)
 
@@ -31,9 +32,9 @@ function parse (file, isMarkdown = false) {
     .map(x => x.trim())
     .filter(x => x)[0]
 
-  const content = fileContent
-    .slice(metadataDividerIndex + metadataDivider.length)
-    .trim()
+  const content = !hasMetadata ? fileContent.trim() : fileContent
+      .slice(metadataDividerIndex + metadataDivider.length)
+      .trim()
 
   const defaultMetadata = {
     title: ''
@@ -128,7 +129,8 @@ function build () {
   copy([
     'CNAME',
     'favicon.ico',
-    'cv.pdf'
+    'cv.pdf',
+    'main.css'
   ])
 
   console.log('[ INFO ] Done!')

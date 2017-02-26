@@ -4,18 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Kamil Ogórek{{ title }}</title>
-
-    <!-- <meta name="description" content="Kamil Ogórek – Senior Client-side Engineer"> -->
     <meta name="description" content="{{ title }}">
-
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    <link rel="stylesheet" href="/main.css">
   </head>
   <body>
-
     {{ content }}
 
     <section class="info-section socials">
@@ -51,7 +44,7 @@
 
     <script>
 gfunction(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-                                                        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
 e=o.createElement(i);r=o.getElementsByTagName(i)[0];
 e.src='//www.google-analytics.com/analytics.js';
 r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
