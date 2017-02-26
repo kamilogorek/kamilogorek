@@ -68,7 +68,7 @@ function transform ({ metadata, filestats, content }) {
   const template = fs.readFileSync(TEMPLATE_FILE, 'utf8')
 
   const transformedContent = template
-    .replace(getReplaceTagFor('title'), ` — ${metadata.title}`)
+    .replace(getReplaceTagFor('title'), metadata.title ? ` — ${metadata.title}` : '')
     .replace(getReplaceTagFor('content'), content)
     .replace(getReplaceTagFor('date'), metadata.date)
 
