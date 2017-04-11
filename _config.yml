@@ -1,0 +1,39 @@
+title: Blog
+name: Kamil Ogórek
+email: kamil.ogorek@gmail.com
+description: Kamil Ogórek's Blog
+url: https://kamilogorek.pl
+twitter_username: kamilogorek
+github_username:  kamilogorek
+repository: kamilogorek/kamilogorek
+permalink: /blog/:title
+
+markdown: kramdown
+theme: minimal-mistakes-jekyll
+gems:
+  - jekyll-feed
+  - jekyll-redirect-from
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - generate-cv.js
+  - README.md
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      author_profile: true
+
+author:
+  name: Kamil Ogórek
+  avatar: /assets/images/bio-photo.jpg
+  bio: Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.
+  email: kamil.ogorek@gmail.com
+  uri: https://kamilogorek.pl
+
+analytics:
+  provider: google-universal
+  google:
+    tracking_id: UA-29832978-1
