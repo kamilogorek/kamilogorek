@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Our Git Workflow - Forks With Feature Branches | Kamil Ogórek</title>
+  <meta name="description" content="Git has become a popular version control system and one we’ve embraced. For a lot of dev teams though, starting to work with a brand new system raises a lot of questions, the most important being how to setup a good workflow.">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/blog/our-git-workflow-forks-with-feature-branches">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Kamil Ogórek" href="/feed.xml">
+
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="kamilogorek">
+  <meta name="twitter:title" content="Our Git Workflow - Forks With Feature Branches | Kamil Ogórek">
+  <meta name="twitter:description" content="Git has become a popular version control system and one we’ve embraced. For a lot of dev teams though, starting to work with a brand new system raises a lot of questions, the most important being h...">
+  
+    <meta name="twitter:creator" content="kamilogorek">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-29832978-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Kamil Ogórek</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/blog/">Blog</a>
+      
+        
+        <a class="page-link" href="/talks/">Talks</a>
+      
+        
+        <a class="page-link" href="/workshops/">Workshops</a>
+      
+        
+        <a class="page-link" href="/training/">Training</a>
+      
+        
+        <a class="page-link" href="/nutrition/">Nutrition</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Our Git Workflow - Forks With Feature Branches</h1>
+  </header>
+
+  <div class="post-content">
+    <p>Git has become a popular version control system and one we’ve embraced. For a lot of dev teams though, starting to work with a brand new system raises a lot of questions, the most important being how to setup a good workflow.</p>
+
+<p>There are many opinions on this subject, and it takes time to wade through all of them. The “Forking with feature branches workflow” is one workflow that has been adopted by a very large crowd of open-source developers, including us.</p>
+
+<p>This workflow is characterised by the fact that each of the developers working on the project is based on two repositories: 1. The main, common repository, which is the central place for every developer and 2. His own repository, which is the clone of the main one, called fork.</p>
+
+<p>There are a lot of advantages to this workflow, such as very thoughtful code merging, which can be watched by a chosen person (and could be the only person having the permissions to modify the main repository). Another is pull requests, which let developers perform code reviews with ease.</p>
+
+<p>All of the following examples are based on <a href="https://github.com/" title="GitHub">GitHub</a>‘s service, but the workflow itself can also be easily applied to many other services like <a href="https://bitbucket.org/" title="BitBucket">BitBucket</a> or <a href="http://beanstalkapp.com/" title="BeansTalk">Beanstalk</a>.</p>
+
+<h2 id="setting-up-your-project">Setting up your project</h2>
+
+<p>Starting your new project is relatively simple. You just have to create a new, empty repository:</p>
+
+<p><img src="http://i1347.photobucket.com/albums/p709/kamilogorek/git-workflow/git-1_zps09bbca2c.png" alt="Initialize Repository" /></p>
+
+<p>or if you want to use your own server:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=init-1.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>And then you have to push locally created codebase to finish initialisation:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=init-2.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>Where <code class="highlighter-rouge">[repo-url]</code> is either the url to your server with specified repository url or url from GitHub, which can be found in the sidebar of the repository view.</p>
+
+<p>Before starting our work, it’d be good to create a ‘develop’ branch, on which we’ll base our work. We can do this right from the GitHub interface:</p>
+
+<p><img src="http://i1347.photobucket.com/albums/p709/kamilogorek/git-workflow/git-2_zps7768ae9d.png" alt="Add Develop Branch" /></p>
+
+<p>or using terminal:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=init-3.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>At this point, all of the developers working on the project are able to create a fork of the project and clone it, so they’ll have a separate GitHub changelog available.</p>
+
+<p><img src="http://i1347.photobucket.com/albums/p709/kamilogorek/git-workflow/git-3_zps17d6028a.png" alt="Fork Repository" /></p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=init-4.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>and set in a remote, which points to the main repository.<br />
+ It’s common to use ‘origin’ as the name of the forked repository and ‘upstream’ as the name of the main one, so we’ll stick to it.</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=init-5.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>If you’re wondering whether you should use ssh or https, you can read the following book’s chapter, which will tell you the differences between those two.</p>
+
+<p><a href="http://git-scm.com/book/en/Git-on-the-Server-The-Protocols" title="Git on the Server - The Protocols">Git on the Server – The Protocols</a></p>
+
+<p>At this point you should already have 2 branches, master and develop in the main repository, as well as you should be able to fork it. Now we’re all set up and we can start our work.</p>
+
+<h2 id="branching-model">Branching model</h2>
+
+<p>In our workflow we distinguish four types of branches:</p>
+
+<ul>
+  <li><strong>master</strong> – main branch on which you should have only fully stable, working releases of each iteration of your project</li>
+  <li><strong>release</strong> – branch serving as a testing space before releasing new version of a project</li>
+  <li><strong>develop</strong> – this is the place where all development happens</li>
+  <li><strong>feature/issue/fix-branches</strong> – a single branch which can be created by any developer, which is responsible for new features, fixes or reported bugs. The name convention is straight forward, every branch name should be prependend with proper prefix: feature-, fix- or if it’s a branch created based on any issue tracking system, then it can be named after specific ticket number for example artf89349, feature-photos-model or fix-videos-controller.</li>
+</ul>
+
+<h2 id="creating-new-functionalities">Creating new functionalities</h2>
+
+<p>To start working on a new feature, first you need to create a new branch, at the same time making sure that your local repository is up to date with respect to the main repository.</p>
+
+<p>It’ll allow you to work on the most recent code, which will reduce the likelihood of merge conflicts in the future, if your work will take longer then you thought it will:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=func-1.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>or:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=func-2.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>and create a branch itself:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=func-3.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>The command above will create the new branch with <code class="highlighter-rouge">[branch-name]</code> name and you’ll be instantly moved to it.<br />
+ The next parameter <code class="highlighter-rouge">[branch-head]</code> is optional and it’s used to indicate git from which place it should create the branch. It consists of branch name or commit hash (which can be found using <code class="highlighter-rouge">git log</code> command). If you won’t pass it, the branch will be created based on the branch you’re currently on.</p>
+
+<p>Current branch on which we’re on can be found using <code class="highlighter-rouge">git branch -l</code> command, where current branch is marked with an asterix sign:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=func-4.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<h2 id="contributing-to-other-developers-forks">Contributing to other developers’ forks</h2>
+
+<p>Sharing code with other developers is as simple as working with any other repositories. The only thing that you need is to add the remote developer repository from which you want to take from or send the change to:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=contrib-1.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>The rest of the commands are unchanged.</p>
+
+<p>To start working on another branch, first we need to pull it from the repository:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=contrib-2.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>Where <code class="highlighter-rouge">[branch-name]</code> is optional and when not specified, all branches will be fetched (those branches won’t be visible on your local branches list, but you will be able to checkout to them anyway).</p>
+
+<p>The entire flow of cooperating with other developers is completely isolated, so you’re able to work together on one functionality without sending it to the main repository.</p>
+
+<h2 id="cleaning-up-your-branches">Cleaning up your branches</h2>
+
+<p>At the end of some phase of work, when you’re ready to send your changes to the repository, you should clean up your branch before doing so. This should be the process you always take care of and not omit when possible. Otherwise your git history will look like one big mess and it’ll be really hard to find changes or look back on what has been done, and you won’t be able to roll back your changes as easy as you’d like to.</p>
+
+<p>However, this process may sometimes be difficult and confusing, as you need to learn about using a lot of new git functionalities like resetting, cherry-picking, rebasing, squashing and amendings, which won’t be described here.</p>
+
+<p>But have no fear, there are a lot of great resources you can go to and read about these functionalities. Such as: <a href="http://git-scm.com/book" title="Pro Git">Pro Git</a> chapters:</p>
+
+<p><a href="http://git-scm.com/book/en/Git-Basics-Undoing-Things" title="Undoing Things">Undoing Things</a><br />
+<a href="http://git-scm.com/book/en/Git-Branching-Rebasing" title="Branching Rebasing">Branching Rebasing</a><br />
+<a href="http://git-scm.com/book/en/Git-Tools-Rewriting-History" title="Rewriting History">Rewriting History</a></p>
+
+<h2 id="pushing-the-changes-to-the-repository">Pushing the changes to the repository</h2>
+
+<p>Sending the changes to the server, whether it’s the main repository, our fork or a copy of any other developer’s is always performed in the same way (as long as we have write permissions).</p>
+
+<p>If we want to push our committed code, we just need to specify the target repository and branch name:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=push-1.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>Where <code class="highlighter-rouge">[repo-name]</code> is the name of the previously added remote repository.</p>
+
+<p>It’s worth noting that when we’re pushing our code, we can specify <code class="highlighter-rouge">-u</code> flag (or <code class="highlighter-rouge">--set-upstream</code>), which will point our local branch to the remote one. This will let us use a shortened version of the push command (simple <code class="highlighter-rouge">git push</code>), without specifying any parameters and git will still know where to send our code.</p>
+
+<h2 id="working-on-purpose-specific-branches">Working on purpose-specific branches</h2>
+
+<p>Master, release and develop are branches which have an advanced, imposed way of working.</p>
+
+<p><strong>Master</strong><br />
+ The main branch that contains only fully stable, already released iterations of project. It should get the code from the release branch only.</p>
+
+<p>Every merge you perform on this branch should mean that you finished the next big milestone in your project and it should be properly tagged, which will help you keep your repository clean.</p>
+
+<p>Tags are a kind of checkpoint, which you can freely use in any place and on any branch. They allow you to easily view and eventually roll back your changes to those marked places.</p>
+
+<p>To tag the branch, just enter the name you’d like to use as a parameter to the <code class="highlighter-rouge">git tag</code> command:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=tags.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>If there’s a situation when you find a major bug that needs to be fixed immediately, you’re allowed to create a hot fix branch which would be diverged from the master.</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=hotfix-1.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>However, keep in mind that after merging it back to master, you have to do the same for the develop branch to keep it in sync.</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=hotfix-2.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p><strong>Release</strong><br />
+ Branches used for testing and all the finishing touches before releasing the project to the world. They’re diverged from the develop branch.</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=release-1.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>If it turns out that you find any bugs, you are free to fix them using fix branches created from the newest release branch. But always keep in mind to sync those changes back to develop, the same way as with hotfix branches mentioned in the master branch section above.</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=release-2.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>It’s up to you whether you use pull requests here, but I highly encourage you to do so. Release branches are usually long-living things, so there’s no rush and you should perform the code review as often as possible.</p>
+
+<p><strong>Develop</strong><br />
+ Branch on which the main development happens. This is the place from which you should always create your new feature/fix branches and this is the place where you should send all your pull requests for a code review.</p>
+
+<h2 id="pull-requests-and-code-review">Pull requests and code review</h2>
+
+<p>When we will finally complete our work on a new feature/fix, it’s time to present our code to the rest of the team and incorporate it into the main repository.</p>
+
+<p>As I mentioned, one of the biggest advantages of this workflow is the ability to use pull requests, and thus perform code reviews in an easy and accessible way.</p>
+
+<p>To send our changes, we need to visit the page where we’ll find our fork: <code class="highlighter-rouge">http://github.com/[user]/[repo-name]</code></p>
+
+<p>Go to the “Pull requests” tab, select “New pull request” and set up the request we want to perform:</p>
+
+<p><img src="http://i1347.photobucket.com/albums/p709/kamilogorek/git-workflow/git-4_zpsa42b5d41.png" alt="Create Pull Request" /></p>
+
+<p>After all of this, you’ll see a nicely built description of the changes you made in your branch, list of commits, accurate code diffs, as well as a number of files/lines changed.</p>
+
+<p>All the commits, as well as all of the pull requests should now be reviewed and commented on by the developer responsible for code reviews. It’s up to you who it’ll be. It can be the one person specifically chosen for this job or just any other developer working with you on a project.</p>
+
+<p>Once the code has been verified and is valid, it can be merged into the repository. The whole operation is fully automatic, we just need to press the “Merge pull request” button.</p>
+
+<p>If, however, your changes will not go through the watchful eye of your co-workers, you need to fix all the pointed issues.<br />
+ To do this, all you need to do is make changes on the branch you created the pull request from and commit the changes to your own repository:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=pr.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>The newly created commit will be automatically added to the current pull request without any interference.</p>
+
+<h2 id="merge-conflicts">Merge conflicts</h2>
+
+<p>Sometimes another developer makes changes to the main repository which will include editing files we’re also working on.</p>
+
+<p>In this case, it often happens that there will be so-called conflicts, which means that git is not able to automatically merge our changes. We then have to help git and do it manually.</p>
+
+<p>To do this, you have two options to choose from: 1. Either combine your changes to the develop branch and push it directly to the main repository, which will result in an automatic closing pull request:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=conflicts-1.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>or 2. We can merge develop updates to our own branch and append them to pull request:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=conflicts-2.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>Basically, conflicts are lines of code that were changed by more then one developer in the same time, therefore they cannot be merged together. They look like this:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=conflicts-3.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>This is a simple conflict between branches we want to merge changes to (marked as HEAD) and branch named “fix-foo”.</p>
+
+<p>To resolve this conflict we need to settle how to merge together this code and remove redundant «&lt; and === markers.</p>
+
+<p>After resolving, this file could look like this:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=conflicts-4.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>You’ll know that there are conflicts when trying to merge or pull branches because git will tell you that. Plus, you’ll be able to just check this using <code class="highlighter-rouge">git status</code> command and you’ll find that some of the files are not merged:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=conflicts-5.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>When you resolve your conflicts you just need to add those conflicted files back using <code class="highlighter-rouge">git add [file-name]</code> or <code class="highlighter-rouge">git add -A </code> (if you want to add all files at once) and you’re good to go.</p>
+
+<h2 id="deleting-redundant-branches">Deleting redundant branches</h2>
+
+<p>After your work has been successfully incorporated into the main repository and you don’t need your branch anymore, you can safely remove it.</p>
+
+<p>To do this locally, you just have to specify which branch to remove:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=del-1.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>or if there are some uncommitted changes that you won’t need anyway, you have to force deletion by passing uppercase <code class="highlighter-rouge">-D</code> flag:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=del-2.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>If you want to remove your remote branch, you do this by prepending a colon sign before branch name like this:</p>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=del-3.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<h2 id="whole-workflow-example-in-a-nutshell">Whole workflow example in a nutshell</h2>
+
+<script src="https://gist.github.com/01a40905aa7158e265bd.js?file=all.sh"></script>
+<noscript>View the code on [Gist](https://gist.github.com/01a40905aa7158e265bd).
+
+</noscript>
+<p>I hope that this will bring you closer to the idea of working with a git environment, help you decide to use it in your future projects and make your life much easier.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; Kamil Ogórek - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

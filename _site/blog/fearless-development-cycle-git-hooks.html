@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Build a Fearless Development Cycle With Git Hooks | Kamil Ogórek</title>
+  <meta name="description" content="One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Having the ability to change is tempting and dangerous at the same time.">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/blog/fearless-development-cycle-git-hooks">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Kamil Ogórek" href="/feed.xml">
+
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="kamilogorek">
+  <meta name="twitter:title" content="Build a Fearless Development Cycle With Git Hooks | Kamil Ogórek">
+  <meta name="twitter:description" content="One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Hav...">
+  
+    <meta name="twitter:creator" content="kamilogorek">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-29832978-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Kamil Ogórek</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/blog/">Blog</a>
+      
+        
+        <a class="page-link" href="/talks/">Talks</a>
+      
+        
+        <a class="page-link" href="/workshops/">Workshops</a>
+      
+        
+        <a class="page-link" href="/training/">Training</a>
+      
+        
+        <a class="page-link" href="/nutrition/">Nutrition</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Build a Fearless Development Cycle With Git Hooks</h1>
+  </header>
+
+  <div class="post-content">
+    <p>One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Having the ability to change is tempting and dangerous at the same time.</p>
+
+<p>If you work in a development team, especially one made of mostly remote developers, you might find that without necessary preparations, you will spend plenty of time on obvious bugs fixes, coding guidelines changes (if you have one!) or linting errors patches.</p>
+
+<p>That is one of the reasons why you have to be adequately prepared and automate tasks, which should be performed before someone sends any code change for a review. Even worse, when those changes go straight to the codebase without even realizing they are not written in a correct manner. You have to remember that adding an additional manual step to a development process is not the greatest idea, as people are just not perfect and they may sometimes simply forget one of the steps.</p>
+
+<p>Fortunately, if you use Git, you have a great solution right before you. Git Hooks are just small scripts that are run in a specific time, based on what command you are trying to use at the given moment.</p>
+
+<p>Right now there are 16 available hooks and some of them are <code class="highlighter-rouge">pre-commit</code>, <code class="highlighter-rouge">post-commit</code>, <code class="highlighter-rouge">pre-receive</code> or <code class="highlighter-rouge">pre-rebase</code>. For a full list you can visit <a href="https://www.kernel.org/pub/software/scm/git/docs/githooks.html" title="git hooks documentation">git hooks documentation</a>.</p>
+
+<p>Every git repository has its own hooks in a form of separate files named after hook’s type, which can be found in <code class="highlighter-rouge">.git/hooks</code> folder. You can place any script there – bash, node, ruby, as long as it will return valid exit codes, <code class="highlighter-rouge">0</code> for success or <code class="highlighter-rouge">&gt;= 1</code> for an error.</p>
+
+<p>The hook that we will use here is called <code class="highlighter-rouge">pre-commit</code> and is triggered right before our commit gets created. This will help us to warn and prevent the developer from committing broken or wrongly formatted code.</p>
+
+<p>There are two common ways of doing that. You can use either configure hooks on your own, or if you are using npm, you can make use of <a href="https://github.com/nlf/precommit-hook" title="precommit-hook">precommit-hook</a> module that will set up hook scripts for you, based on your <code class="highlighter-rouge">package.json</code> configuration.</p>
+
+<p>Just to keep it simple, we will use only 3 tools as our pre-commit validation, <code class="highlighter-rouge">jshint</code> for linting process, <code class="highlighter-rouge">jscs</code> for coding style checks and <code class="highlighter-rouge">tape-run</code> as our unit tests runner, with addition of <code class="highlighter-rouge">jshint-stylish</code> and <code class="highlighter-rouge">tap-spec</code> as our reporters, so everything looks nice and readable. And we will also assume that we are using <code class="highlighter-rouge">npm</code> here, but if you don’t want to use it, feel free to write your git hook by hand, it will work just fine as well.</p>
+
+<p>Let’s start by installing <code class="highlighter-rouge">precommit-hook</code> package and storing it in our package.json file as devDependency.</p>
+
+<script src="https://gist.github.com/3f619c53e10e46cddb56.js?file="></script>
+<noscript>View the code on [Gist](https://gist.github.com/3f619c53e10e46cddb56).
+
+</noscript>
+<p>What we only need to do is specify our checks in the exact same file and let the package do the rest (for the sake of simplicity I used only one file and not an entire project structure, so you’d rather want to use wildcards instead, eg. <code class="highlighter-rouge">./src/app/**/*.js</code> or <code class="highlighter-rouge">./tests/*.js</code>):</p>
+
+<script src="https://gist.github.com/23a317d185b7f26b7d95.js?file="></script>
+<noscript>View the code on [Gist](https://gist.github.com/23a317d185b7f26b7d95).
+
+</noscript>
+<p>Now every time we run <code class="highlighter-rouge">git commit</code>, those three checks will be run in a given order and if any of them fails, a commit won’t be created and we will have to fix our errors first.</p>
+
+<p>Ok, but what if you use <code class="highlighter-rouge">gulp</code> or <code class="highlighter-rouge">grunt</code>? There is no problem at all, as they are capable of exiting with valid codes as well! In addition to that, <code class="highlighter-rouge">precommit-hook</code> or your own created hook can use exactly the same commands you’d normally do, as you can set specific environment in which scripts will be run.</p>
+
+<p>As an example here, I will use <code class="highlighter-rouge">gulp</code> as this is the tool I use on a daily basis.<br />
+ Basic <code class="highlighter-rouge">gulpfile</code> for our tasks could look like this:</p>
+
+<script src="https://gist.github.com/c79d54278df7b4bb4fdd.js?file="></script>
+<noscript>View the code on [Gist](https://gist.github.com/c79d54278df7b4bb4fdd).
+
+</noscript>
+<p>To make it work with <code class="highlighter-rouge">precommit-hook</code>, we have to modify what scripts should get run before our commit command will proceed, and since I already mentioned that it is able to work with any command we’d normally use in CLI, it is as easy as it sounds.</p>
+
+<script src="https://gist.github.com/3e2f02aeddffef92b0cd.js?file="></script>
+<noscript>View the code on [Gist](https://gist.github.com/3e2f02aeddffef92b0cd).
+
+</noscript>
+<p>That is all. Now it will behave in the same way as we set it up without any build tool and will output exactly the same result in case anything goes wrong.</p>
+
+<p>This was just a few minutes of work that can save you plenty of time in the long run, and for me it should be treated as <strong>must-have</strong> for any projects you are working on.</p>
+
+<p>If you’d like to see whole repository used here, you can visit this <a href="https://github.com/kamilogorek/githooks-article" title="article's github repository">article’s github repository</a>.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; Kamil Ogórek - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
