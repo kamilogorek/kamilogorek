@@ -1,5 +1,5 @@
 ---
-title: "Build a Fearless Development Cycle With Git Hooks"
+title: Build a Fearless Development Cycle With Git Hooks
 ---
 
 One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Having the ability to change is tempting and dangerous at the same time.

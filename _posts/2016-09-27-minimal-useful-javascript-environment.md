@@ -1,5 +1,5 @@
 ---
-title: "Setting up a Minimal, Yet Useful Javascript Dev Environment"
+title: Setting up a Minimal, Yet Useful Javascript Dev Environment
 ---
 
 In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when.

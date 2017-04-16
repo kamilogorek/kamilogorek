@@ -1,5 +1,5 @@
 ---
-title: "JavaScript ES5 Array Iteration Methods Explained"
+title: JavaScript ES5 Array Iteration Methods Explained
 ---
 
 Although JavaScript ECMAScript 6 is just around the corner, there're still plenty of developers that are not aware of possibilities given to them in ES5 edition, in terms of arrays-based operations. Let's go through all seven of them and explain how they work one-by-one.

@@ -1,5 +1,5 @@
 ---
-title: "The Interviewed: Kamil Ogórek, Senior Client-side Engineer"
+title: The Interviewed – Kamil Ogórek, Senior Client-side Engineer
 ---
 
 When there is a problem, there is a solution. In XHTMLized we often say: if there is a solution - Kamil has it.

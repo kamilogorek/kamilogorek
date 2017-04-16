@@ -1,5 +1,5 @@
 ---
-title: "Speed up your GitHub workflow with Hub"
+title: Speed up your GitHub workflow with Hub
 ---
 
 <span style="line-height: 1.5em;">As awesome as Github's web interface is, trying to use it alongside your terminal can be rather time consuming and may slow down your workflow.</span>

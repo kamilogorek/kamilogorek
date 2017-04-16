@@ -1,5 +1,5 @@
 ---
-title: "Teaching is hard, but worth it"
+title: Teaching is hard, but worth it
 ---
 
 Last week I had a pleasure to teach JavaScript to a group of 11 people who were completely new to web development. It is not like they've had some experience with any programming language before. They were literally new to it, new and clueless.

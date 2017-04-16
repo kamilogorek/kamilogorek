@@ -1,5 +1,5 @@
 ---
-title: "Highlights of This Year's EuroClojure and ReactiveConf"
+title: Highlights of This Year's EuroClojure and ReactiveConf
 ---
 
 If you love old architecture and castles, you'll fall for Bratislava. Easily one of the most beautiful places you can visit in Europe, this Slovakian capital is small enough that you can drive/walk quickly to most places, but big enough to fill your schedule for a few days. It's also very close to Vienna (Austria), making it a real two-for-one bargain! Both places are very cheap, offer plenty of attractions and great -- oooh great -- food! It may surprise some to find out that, when it comes to software development, the area is very quickly becoming one of the European tech hubs. Last month, Bratislava hosted two big conferences in one week:

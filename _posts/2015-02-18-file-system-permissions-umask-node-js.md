@@ -1,5 +1,5 @@
 ---
-title: "File System Permissions and Umask in Node.js"
+title: File System Permissions and Umask in Node.js
 ---
 
 Working as a developer sometimes requires more knowledge than just of programming itself. It's always a good idea to grasp some concepts from other IT fields as well.  

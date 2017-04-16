@@ -1,7 +1,13 @@
 main:
+  - title: "About"
+    url: /about/
   - title: "Blog"
     url: /blog/
   - title: "Talks"
     url: /talks/
   - title: "Workshops"
     url: /workshops/
+  - title: "Training"
+    url: /training/
+  - title: "Nutrition"
+    url: /nutrition/

@@ -1,5 +1,5 @@
 ---
-title: "Starting a Journey with Clojure and ClojureScript"
+title: Starting a Journey with Clojure and ClojureScript
 ---
 
 [Clojure](https://clojure.org), as described on their official page:

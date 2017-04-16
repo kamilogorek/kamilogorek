@@ -1,5 +1,5 @@
 ---
-title: "Integration Tests Can Be Fun!"
+title: Integration Tests Can Be Fun!
 ---
 
 One of the most mundane and frightening tasks for many developers is writing integration tests. It's a time-consuming, fragile, and often difficult and frustrating task to accomplish. What makes it even worse is that it quickly gets out of hand and breaks often, which leads to frustration and dropping the idea completely.
@@ -14,7 +14,7 @@ Aaaaagr@#$%^&...! Damn you, Selenium. I'm done with you! I'll just trust that I 
 
 ...One month later, on your company's Slack channel...  
 
-```sh
+```txt
 Failed: awesomeJoe's build (#404; push in ImTooAwesomeForTests/ThisForSureWontBreakAnything (this_for_sure_wont_break_anything)  
 
 Refactored like 95% of the App, but I'm sure it's working and we'll be fine (b4d455 by awesomeJoe)  
