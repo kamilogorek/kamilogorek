@@ -25,6 +25,10 @@
 @media only screen and (min-width : 768px) {
   .bio {
     float: left;
-    width: calc(100% - 200px);
+    width: calc(100% - 184px);
+  }
+
+  .bio-photo {
+    margin-left: 0;
   }
 }
