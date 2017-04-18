@@ -10,7 +10,7 @@
   
   
   <title>Build a Fearless Development Cycle With Git Hooks | Kamil Ogórek</title>
-  <meta name="description" content="Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.">
+  <meta name="description" content="One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Having the ability to change is tempting and dangerous at the same time.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="kamilogorek">
   <meta name="twitter:title" content="Build a Fearless Development Cycle With Git Hooks | Kamil Ogórek">
-  <meta name="twitter:description" content="Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.">
+  <meta name="twitter:description" content="One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Hav...">
   
     <meta name="twitter:creator" content="kamilogorek">
   
@@ -107,14 +107,17 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">Build a Fearless Development Cycle With Git Hooks</h1>
+    
+      <h1 class="post-title" itemprop="name headline">Build a Fearless Development Cycle With Git Hooks</h1>
+    
+    <p class="post-meta"><time datetime="2014-11-22T00:00:00+01:00" itemprop="datePublished">Nov 22, 2014</time></p>
   </header>
 
-  <div class="post-content">
-    <p><em>Originally posted on <a href=""></a></em></p>
+  <div class="post-content" itemprop="articleBody">
+    <p><em>Originally posted on <a href="https://x-team.com/blog/fearless-development-cycle-git-hooks/">x-team.com</a></em></p>
 
 <hr />
 
@@ -138,16 +141,25 @@
 
 <p>Let’s start by installing <code class="highlighter-rouge">precommit-hook</code> package and storing it in our package.json file as devDependency.</p>
 
-<script src="https://gist.github.com/3f619c53e10e46cddb56.js?file="></script>
-<noscript>View the code on [Gist](https://gist.github.com/3f619c53e10e46cddb56).
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install --save-dev precommit-hook
+</code></pre>
+</div>
 
-</noscript>
 <p>What we only need to do is specify our checks in the exact same file and let the package do the rest (for the sake of simplicity I used only one file and not an entire project structure, so you’d rather want to use wildcards instead, eg. <code class="highlighter-rouge">./src/app/**/*.js</code> or <code class="highlighter-rouge">./tests/*.js</code>):</p>
 
-<script src="https://gist.github.com/23a317d185b7f26b7d95.js?file="></script>
-<noscript>View the code on [Gist](https://gist.github.com/23a317d185b7f26b7d95).
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"jshint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jshint app.js --reporter node_modules/jshint-stylish/stylish.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"jscs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jscs app.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"browserify test.js | tape-run | tap-spec"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="s2">"precommit"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"jshint"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"jscs"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"test"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</div>
 
-</noscript>
 <p>Now every time we run <code class="highlighter-rouge">git commit</code>, those three checks will be run in a given order and if any of them fails, a commit won’t be created and we will have to fix our errors first.</p>
 
 <p>Ok, but what if you use <code class="highlighter-rouge">gulp</code> or <code class="highlighter-rouge">grunt</code>? There is no problem at all, as they are capable of exiting with valid codes as well! In addition to that, <code class="highlighter-rouge">precommit-hook</code> or your own created hook can use exactly the same commands you’d normally do, as you can set specific environment in which scripts will be run.</p>
@@ -155,16 +167,43 @@
 <p>As an example here, I will use <code class="highlighter-rouge">gulp</code> as this is the tool I use on a daily basis.<br />
  Basic <code class="highlighter-rouge">gulpfile</code> for our tasks could look like this:</p>
 
-<script src="https://gist.github.com/c79d54278df7b4bb4fdd.js?file="></script>
-<noscript>View the code on [Gist](https://gist.github.com/c79d54278df7b4bb4fdd).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">jshint</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-jshint'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">jscs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-jscs'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">browserify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'browserify'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">tapeRun</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tape-run'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">tapSpec</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tap-spec'</span><span class="p">);</span>
 
-</noscript>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'lint'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'app.js'</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">jshint</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">jshint</span><span class="p">.</span><span class="nx">reporter</span><span class="p">(</span><span class="s1">'jshint-stylish'</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">jscs</span><span class="p">());</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'test'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">browserify</span><span class="p">(</span><span class="s1">'./test.js'</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">bundle</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">tapeRun</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">tapSpec</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'lint'</span><span class="p">,</span> <span class="s1">'test'</span><span class="p">]);</span>
+</code></pre>
+</div>
+
 <p>To make it work with <code class="highlighter-rouge">precommit-hook</code>, we have to modify what scripts should get run before our commit command will proceed, and since I already mentioned that it is able to work with any command we’d normally use in CLI, it is as easy as it sounds.</p>
 
-<script src="https://gist.github.com/3e2f02aeddffef92b0cd.js?file="></script>
-<noscript>View the code on [Gist](https://gist.github.com/3e2f02aeddffef92b0cd).
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"validate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gulp validate"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="s2">"precommit"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"validate"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</div>
 
-</noscript>
 <p>That is all. Now it will behave in the same way as we set it up without any build tool and will output exactly the same result in case anything goes wrong.</p>
 
 <p>This was just a few minutes of work that can save you plenty of time in the long run, and for me it should be treated as <strong>must-have</strong> for any projects you are working on.</p>

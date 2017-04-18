@@ -10,7 +10,7 @@
   
   
   <title>File System Permissions and Umask in Node.js | Kamil Ogórek</title>
-  <meta name="description" content="Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.">
+  <meta name="description" content="Working as a developer sometimes requires more knowledge than just of programming itself. It&#39;s always a good idea to grasp some concepts from other IT fields as well. One of these concepts are file system permissions, proper management of which is a must when it comes to working with files, eg. using node.js fs module.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="kamilogorek">
   <meta name="twitter:title" content="File System Permissions and Umask in Node.js | Kamil Ogórek">
-  <meta name="twitter:description" content="Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.">
+  <meta name="twitter:description" content="Working as a developer sometimes requires more knowledge than just of programming itself. It&#39;s always a good idea to grasp some concepts from other IT fields as well. One of these concepts are ...">
   
     <meta name="twitter:creator" content="kamilogorek">
   
@@ -107,38 +107,43 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">File System Permissions and Umask in Node.js</h1>
+    
+      <h1 class="post-title" itemprop="name headline">File System Permissions and Umask in Node.js</h1>
+    
+    <p class="post-meta"><time datetime="2015-02-18T00:00:00+01:00" itemprop="datePublished">Feb 18, 2015</time></p>
   </header>
 
-  <div class="post-content">
-    <p><em>Originally posted on <a href=""></a></em></p>
+  <div class="post-content" itemprop="articleBody">
+    <p><em>Originally posted on <a href="https://x-team.com/blog/file-system-permissions-umask-node-js/">x-team.com</a></em></p>
 
 <hr />
 
-<p>Working as a developer sometimes requires more knowledge than just of programming itself. It’s always a good idea to grasp some concepts from other IT fields as well.<br />
- One of these concepts are <a href="http://en.wikipedia.org/wiki/File_system_permissions">file system permissions</a>, proper management of which is a must when it comes to working with files, eg. using node.js <code class="highlighter-rouge">fs</code> module.</p>
+<p>Working as a developer sometimes requires more knowledge than just of programming itself. It’s always a good idea to grasp some concepts from other IT fields as well.</p>
+
+<p>One of these concepts are <a href="http://en.wikipedia.org/wiki/File_system_permissions">file system permissions</a>, proper management of which is a must when it comes to working with files, eg. using node.js <code class="highlighter-rouge">fs</code> module.</p>
 
 <p>I won’t write what exactly <code class="highlighter-rouge">777</code> or <code class="highlighter-rouge">r/w/x</code> exactly mean, as it’s very broad topic, but I’ll try to show how we can use those concepts in node.js world.</p>
 
 <p>Where may it come handy? Definitely when we want to create new folders or files and be sure that only certain people have access to them. Let’s take a look at signatures of some <code class="highlighter-rouge">fs</code> module functions.</p>
 
-<script src="https://gist.github.com/94fc37d23eef344ccc00.js?file=mkdir.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/94fc37d23eef344ccc00).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">fs</span><span class="p">.</span><span class="nx">mkdir</span><span class="p">(</span><span class="nx">path</span><span class="p">[,</span> <span class="nx">mode</span><span class="p">],</span> <span class="nx">callback</span><span class="p">);</span>
+</code></pre>
+</div>
 
-</noscript>
-<script src="https://gist.github.com/94fc37d23eef344ccc00.js?file=writefile.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/94fc37d23eef344ccc00).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">options</span><span class="p">],</span> <span class="nx">callback</span><span class="p">);</span>
+</code></pre>
+</div>
 
-</noscript>
 <p>In both cases we’re able to set something called <code class="highlighter-rouge">mode</code>, where for <code class="highlighter-rouge">mkdir</code> it’s passed as an argument and for <code class="highlighter-rouge">writeFile</code> it’s one of the <code class="highlighter-rouge">options</code> object attributes.</p>
 
 <p>Getting <code class="highlighter-rouge">mode</code> may be slightly overwhelming at first if you’ve never worked with it, but I’ll explain every part separately.</p>
 
-<script src="https://gist.github.com/94fc37d23eef344ccc00.js?file=mode.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/94fc37d23eef344ccc00).</noscript>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">mode</span> <span class="o">=</span> <span class="mi">0777</span> <span class="o">&amp;</span> <span class="o">~</span><span class="nx">process</span><span class="p">.</span><span class="nx">umask</span><span class="p">();</span>
+</code></pre>
+</div>
 
 <ul>
   <li>when you prefix a number with <code class="highlighter-rouge">0</code>, it becomes an octal (8 based) representation, eg. <code class="highlighter-rouge">12</code> decimal becomes <code class="highlighter-rouge">14</code> octal because <code class="highlighter-rouge">1*(8^1) + 4*(8^0) = 12</code></li>
@@ -149,14 +154,19 @@
 
 <p>And to make everything even more clear, let’s write one quick example using real numbers, keeping in mind that first 0 is only telling JS to treat number as an octal representation.</p>
 
-<script src="https://gist.github.com/94fc37d23eef344ccc00.js?file=777.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/94fc37d23eef344ccc00).
+<pre><code class="language-txt">Initial mode:                   0777(8) = 111111111(2) // user r/w/x, group r/w/x, other r/w/x
+Process mask:                    022(8) = 000010010(2)
+Reversed process mask:          0755(8) = 111101101(2) // user r/w/x, group r/x,   other r/x
+Initial mode AND reversed mask: 0755(8) = 111101101(2) // user r/w/x, group r/x,   other r/x
+</code></pre>
 
-</noscript>
 <p>If AND operation returns exactly the same result as reversed process mask itself, why don’t we just return the mask, you may ask? Because this way we can restrict default permissions. Let me show you this on the second example.</p>
 
-<script src="https://gist.github.com/94fc37d23eef344ccc00.js?file=666.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/94fc37d23eef344ccc00).</noscript>
+<pre><code class="language-txt">Initial mode:                   0666(8) = 110110110(2) // user r/w,   group r/w, other r/w
+Process mask:                    022(8) = 000010010(2)
+Reversed process mask:          0755(8) = 111101101(2) // user r/w/x, group r/x, other r/x
+Initial mode AND reversed mask: 0644(8) = 110100100(2) // user r/w,   group r,   other r
+</code></pre>
 
 <p>Here we’ve got <code class="highlighter-rouge">0664</code> instead of <code class="highlighter-rouge">0755</code> as our mode. Why is that?<br />
 – We’ve asked for <code class="highlighter-rouge">r/w</code> permissions for everyone<br />

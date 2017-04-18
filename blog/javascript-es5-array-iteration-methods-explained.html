@@ -10,7 +10,7 @@
   
   
   <title>JavaScript ES5 Array Iteration Methods Explained | Kamil Ogórek</title>
-  <meta name="description" content="Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.">
+  <meta name="description" content="Although JavaScript ECMAScript 6 is just around the corner, there&#39;re still plenty of developers that are not aware of possibilities given to them in ES5 edition, in terms of arrays-based operations. Let&#39;s go through all seven of them and explain how they work one-by-one.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="kamilogorek">
   <meta name="twitter:title" content="JavaScript ES5 Array Iteration Methods Explained | Kamil Ogórek">
-  <meta name="twitter:description" content="Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.">
+  <meta name="twitter:description" content="Although JavaScript ECMAScript 6 is just around the corner, there&#39;re still plenty of developers that are not aware of possibilities given to them in ES5 edition, in terms of arrays-based operat...">
   
     <meta name="twitter:creator" content="kamilogorek">
   
@@ -107,18 +107,23 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">JavaScript ES5 Array Iteration Methods Explained</h1>
+    
+      <h1 class="post-title" itemprop="name headline">JavaScript ES5 Array Iteration Methods Explained</h1>
+    
+    <p class="post-meta"><time datetime="2015-01-13T00:00:00+01:00" itemprop="datePublished">Jan 13, 2015</time></p>
   </header>
 
-  <div class="post-content">
-    <p><em>Originally posted on <a href=""></a></em></p>
+  <div class="post-content" itemprop="articleBody">
+    <p><em>Originally posted on <a href="https://x-team.com/blog/javascript-es5-array-iteration-methods-explained/">x-team.com</a></em></p>
 
 <hr />
 
 <p>Although JavaScript ECMAScript 6 is just around the corner, there’re still plenty of developers that are not aware of possibilities given to them in ES5 edition, in terms of arrays-based operations. Let’s go through all seven of them and explain how they work one-by-one.</p>
+
+<hr />
 
 <h2 id="new-es5-methods">New ES5 methods</h2>
 
@@ -126,17 +131,23 @@
 
 <p>Let’s start with the basics: the <code class="highlighter-rouge">forEach</code> method. A few years ago when we wanted to iterate through an array and perform some kind of action, we would probably just use a regular <code class="highlighter-rouge">for</code> loop. Something as simple as this:</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=for.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).</noscript>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// perform some operation on arr[i];</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p><strong>#protip: V8 and other JS engines nowadays are performing some optimizations on their own, therefore you’d not have to cache array length anymore.</strong></p>
 
 <p>But now, we’re able to simplify it even more and use our <code class="highlighter-rouge">forEach</code> method instead:</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=foreach.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// perform some operation on a value;</span>
+<span class="p">});</span>
+</code></pre>
+</div>
 
-</noscript>
 <p>We can think of <code class="highlighter-rouge">forEach</code> as a base for every other method, as internally the concept of iterating over an array and performing some kind of action is exactly the same.</p>
 
 <p><em>There’s no way to break <code class="highlighter-rouge">forEach</code> iteration, therefore if you need that feature, you’ve to choose different approach.</em></p>
@@ -145,27 +156,54 @@
 
 <p>But what if I want to immediately return a collection of those function calls? <code class="highlighter-rouge">map</code> method is here to help. It applies the given function to every single element of an array and return new one with modified values.</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=map.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">value</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bar</span><span class="p">);</span> <span class="c1">// [5, 6, 7, 8]</span>
+</code></pre>
+</div>
 
-</noscript>
 <p><em>Please keep in mind that all methods we’re going to talk about here are not mutating their input, therefore here, <code class="highlighter-rouge">foo</code> is still equal to <code class="highlighter-rouge">[0, 1, 2, 3]</code>.</em></p>
 
 <h3 id="reduce">reduce</h3>
 
 <p>To transform an array into a single value, you can use <code class="highlighter-rouge">reduce</code> method. Its signature has an additional argument after the function call, which is a starting accumulator value. If this value is not provided, then the first value of an array will be used and it will be skipped in an iteration process. Also arguments for a function itself are not in <code class="highlighter-rouge">value, index</code> form, but <code class="highlighter-rouge">accumulator, value, index</code> instead.</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=reduce.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).
-</noscript>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// returns 15, as 1 became starting value</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+<span class="c1">// returns 25, as 10 was starting value</span>
+
+<span class="p">[[</span><span class="s1">'car'</span><span class="p">,</span> <span class="s1">'Chevrolet'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'model'</span><span class="p">,</span> <span class="s1">'Camaro'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'color'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">]].</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">acc</span><span class="p">[</span><span class="nx">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="k">return</span> <span class="nx">acc</span><span class="p">;</span>
+<span class="p">},</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Bumblebee'</span> <span class="p">});</span>
+<span class="c1">// other data types can be used as an accumulator as well</span>
+<span class="c1">// {name: 'Bumblebee', car: 'Chevrolet', model: 'Camaro', color: 'yellow'}</span>
+</code></pre>
+</div>
+
 <p><code class="highlighter-rouge">reduce</code> in pair with <code class="highlighter-rouge">map</code> is widely used in programming and referred to as a <code class="highlighter-rouge">mapReduce</code> model, where given data set is first processed and only then generalized. You can find an example of similar usage in the next section.</p>
 
 <p>A different common use case of the <code class="highlighter-rouge">reduce</code> function is creating a recursive <code class="highlighter-rouge">flatten</code> function, which can (as the name says), flatten a multidimensional array into a single-dimensional representation.</p>
 
 <p>Here’s an implementation of the <code class="highlighter-rouge">flatten</code> function:</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=flatten.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).</noscript>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">flatten</span> <span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">input</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">?</span> <span class="nx">flatten</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">:</span> <span class="nx">value</span><span class="p">);</span>
+    <span class="p">},</span> <span class="p">[]);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]));</span> <span class="c1">// [1, 2, 3, 4, 5, 6, 7, 8, 9];</span>
+</code></pre>
+</div>
 
 <h3 id="reduceright">reduceRight</h3>
 
@@ -175,30 +213,63 @@
 
 <p>Returns a copy of an array, including only values that pass the given condition.</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=filter.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).</noscript>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">isEven</span> <span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isEven</span><span class="p">);</span> <span class="c1">// [0, 2, 4]</span>
+
+<span class="kd">function</span> <span class="nx">getEveryThirdValue</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">getEveryThirdValue</span><span class="p">);</span> <span class="c1">// [2, 5]</span>
+</code></pre>
+</div>
+
 <p><em>In all array methods, passed functions can be defined before as well, just like we did here.</em></p>
 
 <h3 id="some">some</h3>
 
 <p>Returns <code class="highlighter-rouge">true</code> if <em>any</em> value passes the given condition, returns <code class="highlighter-rouge">false</code> otherwise.</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=some.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).</noscript>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">doesAnyValueEqualsOne</span> <span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">input</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">value</span> <span class="o">===</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <h3 id="every">every</h3>
 
 <p>Returns <code class="highlighter-rouge">true</code> only if <em>all</em> values pass the given condition, returns <code class="highlighter-rouge">false</code> otherwise.</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=every.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).</noscript>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">areAllValuesEqualOne</span> <span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">input</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">value</span> <span class="o">===</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
 <p><code class="highlighter-rouge">some</code> and <code class="highlighter-rouge">every</code> function will help you get rid of redundant iteration flags, like the one in the example below:</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=every-flag.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">areAllValuesEqualOne</span> <span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
-</noscript>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">flag</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
 <p>An additional benefit of using those methods is that they will break the iteration immediately when they find the first matching/non-matching value. If we’d iterate over thousands of values, this might give us small performance gain.</p>
+
+<hr />
 
 <h2 id="usage-examples">Usage examples</h2>
 
@@ -209,33 +280,73 @@
 <p>It all can be boiled down to two function calls, <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">reduce</code>.<br />
 <code class="highlighter-rouge">map</code> will get necessary data and modify it to our needs and <code class="highlighter-rouge">reduce</code> will squeeze it down to a single value.</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=votes.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getTotalVotesNumber</span> <span class="p">(</span><span class="nx">movies</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">movies</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">movie</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">movie</span><span class="p">.</span><span class="nx">votes</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}).</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">vote</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">vote</span><span class="p">;</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-</noscript>
 <p>It’s very readable and descriptive approach. You can track data flow from the top to bottom, one call after another.</p>
 
 <h3 id="get-movies-with-rating-over-n">Get movies with rating over N</h3>
 
 <p>Similar scenario, but this time we want to create a function for our imaginary select box, which can filter down a displayed list of movies.</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=movies-rating.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
+<span class="nx">n</span> <span class="nx">getMoviesWithRatingOverN</span> <span class="p">(</span><span class="nx">movies</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">movies</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">movie</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">movie</span><span class="p">.</span><span class="nx">rating</span> <span class="o">&gt;</span> <span class="nx">n</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
 
-</noscript>
+<span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">getMoviesWithRatingOverN</span><span class="p">([</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'a'</span><span class="p">,</span> <span class="na">rating</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'b'</span><span class="p">,</span> <span class="na">rating</span><span class="p">:</span> <span class="mf">3.5</span> <span class="p">},</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'c'</span><span class="p">,</span> <span class="na">rating</span><span class="p">:</span> <span class="mf">4.1</span> <span class="p">},</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'d'</span><span class="p">,</span> <span class="na">rating</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'e'</span><span class="p">,</span> <span class="na">rating</span><span class="p">:</span> <span class="mf">3.4</span> <span class="p">}</span>
+<span class="p">],</span> <span class="mi">4</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span> <span class="c1">// [{name: 'c', rating: 4.1 }, {name: 'd', rating: 5 }]</span>
+</code></pre>
+</div>
+
 <p>You could get even fancier by using partial function application (currying) and create predefined rating-based functions:</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=movies-rating-curried.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).</noscript>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">getMoviesWithRatingOver2</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">movies</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">getMoviesWithRatingOverN</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">movies</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">getMoviesWithRatingOver3</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">movies</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">getMoviesWithRatingOverN</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">movies</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">getMoviesWithRatingOver4</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">movies</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">getMoviesWithRatingOverN</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">movies</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+</div>
 
 <h3 id="making-sure-that-user-made-choices-for-all-select-boxes-from-a-form">Making sure that user made choices for all select boxes from a form</h3>
 
 <p>Simple scenario. We have a form that the user has to fill in. There are 3 text inputs and 8 select boxes, and all of them are required. How can you quickly make sure that they’re all filled in?</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=validation.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">isFormFilled</span> <span class="p">(</span><span class="nx">form</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// get all inputs and selects and merge them into single array. Because querySelectorAll is returning nodeList, which has to be transformed into array to perform any array-based methods on it, we've to use slice method on our query results.</span>
+    <span class="kd">var</span> <span class="nx">slice</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">;</span> <span class="c1">// just a quick shorthand</span>
+    <span class="kd">var</span> <span class="nx">inputs</span> <span class="o">=</span> <span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'input'</span><span class="p">)).</span><span class="nx">concat</span><span class="p">(</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'select'</span><span class="p">)));</span>
+    
+    <span class="k">return</span> <span class="nx">inputs</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nx">every</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">value</span> <span class="o">!==</span> <span class="s1">''</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">!==</span> <span class="s1">'0'</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-</noscript>
 <p>Now if any of your <code class="highlighter-rouge">input</code> or <code class="highlighter-rouge">select</code> boxes will have an no or <code class="highlighter-rouge">0</code> value, the function will return <code class="highlighter-rouge">false</code> which will explicitly answer the given question <code class="highlighter-rouge">isFormFilled</code>?</p>
 
 <p>Of course <code class="highlighter-rouge">every</code> method’s check is completely up to you and you can perform any validation methods in there.</p>
@@ -244,20 +355,30 @@
 
 <p>Iterate through all values, get their lengths and compare to each other. Then return characters count of the longest one.</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=longest-word.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getMaximumStringLength</span> <span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">list</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="nx">acc</span> <span class="p">?</span> <span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="p">:</span> <span class="nx">acc</span><span class="p">;</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-</noscript>
+<hr />
+
 <h2 id="cross-browser-compatibility-issues">Cross-browser compatibility issues</h2>
 
 <p>If you’re still concerned about backward compatibility with browsers like IE8, there are plenty of options you can choose from. <a href="http://amp.ampersandjs.com/">Amp</a>, <a href="http://lodash.com/">Lo-Dash</a>, <a href="http://underscorejs.org/">Underscore</a> to just name a few. Utilities libraries are very popular lately, therefore you won’t have any problems with finding one that will suit your needs.</p>
 
 <p>The only difference you’ll probably encounter is that those functions won’t be bound to array prototype, therefore you’ll have to call them as a regular functions, passing an array as the first argument eg.</p>
 
-<script src="https://gist.github.com/ab14da9f84de14452a62.js?file=utils.js"></script>
-<noscript>View the code on [Gist](https://gist.github.com/ab14da9f84de14452a62).
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">_</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">myArray</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
+<span class="nx">_</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">myArray</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
+<span class="nx">_</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">myArray</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
+</code></pre>
+</div>
 
-</noscript>
+<hr />
+
 <h2 id="more-informations">More informations</h2>
 
 <p>If you want to read in depth about all available methods, their quirks, browser incompatibilities etc., go to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Mozilla Developer Network</a>, where you can find every piece of information you’ll need.</p>

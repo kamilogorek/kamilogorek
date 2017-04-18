@@ -10,7 +10,7 @@
   
   
   <title>Speed up your GitHub workflow with Hub | Kamil Ogórek</title>
-  <meta name="description" content="Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.">
+  <meta name="description" content="As awesome as Github&#39;s web interface is, trying to use it alongside your terminal can be rather time consuming and may slow down your workflow. Why couldn&#39;t you just perform all your common actions straight from the CLI? Well, you can. And it&#39;s not just another homemade application. It comes straight from GitHub itself.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="kamilogorek">
   <meta name="twitter:title" content="Speed up your GitHub workflow with Hub | Kamil Ogórek">
-  <meta name="twitter:description" content="Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.">
+  <meta name="twitter:description" content="As awesome as Github&#39;s web interface is, trying to use it alongside your terminal can be rather time consuming and may slow down your workflow. Why couldn&#39;t you just perform all your common...">
   
     <meta name="twitter:creator" content="kamilogorek">
   
@@ -107,18 +107,21 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">Speed up your GitHub workflow with Hub</h1>
+    
+      <h1 class="post-title" itemprop="name headline">Speed up your GitHub workflow with Hub</h1>
+    
+    <p class="post-meta"><time datetime="2014-02-12T00:00:00+01:00" itemprop="datePublished">Feb 12, 2014</time></p>
   </header>
 
-  <div class="post-content">
-    <p><em>Originally posted on <a href=""></a></em></p>
+  <div class="post-content" itemprop="articleBody">
+    <p><em>Originally posted on <a href="https://x-team.com/blog/speed-up-your-github-workflow-with-hub/">x-team.com</a></em></p>
 
 <hr />
 
-<p><span style="line-height: 1.5em;">As awesome as Github’s web interface is, trying to use it alongside your terminal can be rather time consuming and may slow down your workflow.</span></p>
+<p>As awesome as Github’s web interface is, trying to use it alongside your terminal can be rather time consuming and may slow down your workflow.</p>
 
 <p>Why couldn’t you just perform all your common actions straight from the CLI? Well, you can. And it’s not just another homemade application. It comes straight from GitHub itself.</p>
 
@@ -128,41 +131,62 @@
 
 <p>Installation is pretty straight-forward. Nothing fancy.</p>
 
-<script src="https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-install-brew.sh"></script>
-<noscript>View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).</noscript>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install hub
+<span class="gp">$ </span><span class="nb">alias </span><span class="nv">git</span><span class="o">=</span>hub
+</code></pre>
+</div>
 
 <p>Or if you’re not an OSX user, you can install it straight from a source.</p>
 
-<script src="https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-install-source.sh"></script>
-<noscript>View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).</noscript>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/github/hub.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$_</span>
+<span class="gp">$ </span>rake install <span class="nv">prefix</span><span class="o">=</span>/usr/local
+<span class="gp">$ </span><span class="nb">alias </span><span class="nv">git</span><span class="o">=</span>hub
+</code></pre>
+</div>
 
-<p>##Basic repositories actions</p>
+<hr />
+
+<h2 id="basic-repositories-actions">Basic repositories actions</h2>
 
 <p>Let’s start from the most common scenario, creating and forking a repository for a new project.</p>
 
 <p>The regular process using a CLI looks like this:</p>
 
-<script src="https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-repo-raw.sh"></script>
-<noscript>View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>Go to github.com, create a new repository.
+Either clone newly created repository or <span class="sb">`</span><span class="nv">$ </span>git init<span class="sb">`</span> locally and <span class="k">then</span> <span class="sb">`</span><span class="nv">$ </span>git remote add upstream &lt;repo-url&gt;<span class="sb">`</span>.
+<span class="gp">$ </span>git add -A
+<span class="gp">$ </span>git commit -m <span class="s2">"Init commit"</span>
+<span class="gp">$ </span>git push upstream master
+Go to github.com/&lt;username&gt;/&lt;repo&gt; and fork repository manually.
+<span class="gp">$ </span>git remote add &lt;username&gt; &lt;fork-url&gt; or <span class="nv">$ </span>git remote add origin &lt;fork-url&gt; <span class="o">(</span><span class="k">if </span>you use origin/upstream naming convention<span class="o">)</span>
+</code></pre>
+</div>
 
-</noscript>
 <p>It doesn’t look like something that can be done within seconds. Let’s now look how you can do the same thing using Hub:</p>
 
-<script src="https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-repo.sh"></script>
-<noscript>View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git init
+<span class="gp">$ </span>git add -A
+<span class="gp">$ </span>git commit -m <span class="s2">"Init commit"</span>
+<span class="gp">$ </span>git create -d <span class="s2">"Brand new project"</span> <span class="o">(</span>this will create repository with the same name as current directory<span class="o">)</span>
+<span class="gp">$ </span>git push origin master
+<span class="gp">$ </span>git fork
+</code></pre>
+</div>
 
-</noscript>
 <p>If you want to repeat the first scenario using the origin/upstream naming convention, all you need to do are two additional steps:</p>
 
-<script src="https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-repo-naming.sh"></script>
-<noscript>View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git branch -m origin upstream
+<span class="gp">$ </span>git branch -m &lt;username&gt; origin
+</code></pre>
+</div>
 
-</noscript>
 <p><strong>That’s all.</strong> Everything straight from your terminal with a few simple steps.</p>
 
 <p>You could even write a small script, which could execute all those commands for you.</p>
 
 <p>Everything that you need to remember is to <em>correctly set your global Git config</em>.</p>
+
+<hr />
 
 <h2 id="remotes-management-and-fetching-data">Remotes management and fetching data</h2>
 
@@ -170,10 +194,17 @@
 
 <p>Instead of manually adding all remotes and fetching them, you can do the same thing in one step.</p>
 
-<p>Instead of using:<br />
-<script src="https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-forks-raw.sh"></script><noscript>View the code on <a href="https://gist.github.com/b7d3682af00a5ada17bc">Gist</a>.</noscript></p>
+<p>Instead of using:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git remote add &lt;username&gt; &lt;fork-url&gt;
+<span class="gp">$ </span>git fetch &lt;username&gt;
+<span class="nb">times </span>number of forks you want to add
+</code></pre>
+</div>
 
 <p>you can now just type <code class="highlighter-rouge">$ git fetch &lt;username&gt;, &lt;username&gt;, &lt;username&gt;</code> which will repeat above operations for every comma-separated user for you.</p>
+
+<hr />
 
 <h2 id="maintaining-commits">Maintaining commits</h2>
 
@@ -181,19 +212,26 @@
 
 <p>I assure you that <code class="highlighter-rouge">$ git checkout https://github.com/&lt;username&gt;/&lt;repo&gt;/pull/&lt;PR.number&gt;</code> is much smoother and easier to type than:</p>
 
-<script src="https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-commits.sh"></script>
-<noscript>View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).</noscript>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git remote add &lt;username&gt; &lt;fork-url&gt;
+<span class="gp">$ </span>git fetch &lt;username&gt;
+<span class="gp">$ </span>git checkout &lt;PR-branch-name&gt;
+</code></pre>
+</div>
 
 <p>Or maybe you just want to grab one commit from your friend’s fork without all remote/fetch/cherry-pick hassle.</p>
 
 <p>Easy: Just use <code class="highlighter-rouge">$ git cherry-pick https://github.com/&lt;username&gt;/&lt;repo&gt;/commit/&lt;commit-hash&gt;</code> and all changes will be applied to your current branch.</p>
 
+<hr />
+
 <h2 id="pull-requests">Pull requests</h2>
 
 <p>And the thing that saved me the most of my precious time. <strong>Pull requests straight from a CLI</strong>.</p>
 
-<script src="https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-pr.sh"></script>
-<noscript>View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).</noscript>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git push &lt;username&gt; &lt;branch-name&gt;
+<span class="gp">$ </span>git pull-request -m <span class="s2">"Fix for slow workflow process"</span>
+</code></pre>
+</div>
 
 <p>As simple as that. You don’t have to go to github.com, select repos, branches, etc.</p>
 
@@ -201,8 +239,9 @@
 
 <p>If you want to use any remotes names, you can specify BASE and HEAD for a pull request using -b and -h flag.</p>
 
-<script src="https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-pr-pointers.sh"></script>
-<noscript>View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).</noscript>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git pull-request -m <span class="s2">"Fix for slow workflow process"</span> -b &lt;username&gt;/&lt;repo&gt; -h &lt;your-fork&gt;/&lt;repo&gt;
+</code></pre>
+</div>
 
 <p><strong>One helpful tip from the official Hub page:</strong> If you’re making a new PR, append <code class="highlighter-rouge">| pbcopy</code> to the whole command. This way you’ll instantly get the PR URL copied into your clipboard, ready to post into a ticket or send to co-workers.</p>
 
