@@ -1,5 +1,10 @@
 ---
-title: Integration Tests Can Be Fun!
+title: "Integration Tests Can Be Fun!"
+excerpt: "One of the most mundane and frightening tasks for many developers is writing integration tests. It's a time-consuming, fragile, and often difficult and frustrating task to accomplish. What makes it even worse is that it quickly gets out of hand and breaks often, which leads to frustration and dropping the idea completely."
+---
+
+_Originally posted on [corgibytes.com](http://corgibytes.com/blog/2017/02/21/integration-tests-fun/)_
+
 ---
 
 One of the most mundane and frightening tasks for many developers is writing integration tests. It's a time-consuming, fragile, and often difficult and frustrating task to accomplish. What makes it even worse is that it quickly gets out of hand and breaks often, which leads to frustration and dropping the idea completely.
@@ -22,13 +27,15 @@ Refactored like 95% of the App, but I'm sure it's working and we'll be fine (b4d
 Failing tests: If you see this, you know that you messed up
 ```  
 
-![Shrug](/images/blog/integration-tests-fun/shrug.gif)  
+![Shrug](/assets/images/blog/shrug.gif)  
+
+---
 
 ## The World Where Browser Is Not a Black Box
 
 Protractor, Pioneer, Nightwatch.js, Intern and probably plenty of other testing frameworks out there in the wild use something which is called Selenium. Selenium is this magic black box that can understand your code and make browsers do what you ask them to do. Navigate to pages, click elements, get values, fill forms, control back/forward buttons, etc. But it being a black box can be problematic. Especially when testing asynchronous code.
 
-![Selenium Graph](/images/blog/integration-tests-fun/selenium-graph.png)
+![Selenium Graph](/assets/images/blog/selenium-graph.png)
 
 What happens is the following: when your test runner issues a test, it asks Selenium *to ask a browser* and returns an answer to you. For example, if you want to know whether a given element is already rendered, you ask Selenium to ask a browser, which in the end checks the existence of an element, gives that answer to Selenium, which hands it back to you. In other words, it's a middleware between your test runner and a browser. A black box.
 
@@ -36,7 +43,7 @@ It's problematic, because we have no knowledge of the browser's lifecycle, or "e
 
 This is where [Cypress](https://www.cypress.io/) shines. It's a complete test runner, which lives **inside** a browser, alongside your own application code. It knows everything about browser state, event loop, as well as your application's code.
 
-![Cypress Graph](/images/blog/integration-tests-fun/cypress-graph.png)
+![Cypress Graph](/assets/images/blog/cypress-graph.png)
 
 This simplifies things **a lot!** It will politely wait for all the things to happen first, before issuing your test assertions. And even more, it will wait for the previous command to finish, before moving to another one, as everything is promise-based. You don't have to use timeouts or any code like this anymore (thankfully, as timeouts are one of the biggest, if not _the_ biggest source of race conditions and nondeterministic results).
 
@@ -48,6 +55,8 @@ And yes, I know it's closed Beta right now, but their team is really awesome, an
 
 <iframe src="https://player.vimeo.com/video/119067384?title=0&byline=0&portrait=0" width="700" height="394" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/119067384">Cypress.io - Overview Demo</a> from <a href="https://vimeo.com/backbonerails">Brian Mann</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+---
 
 ## Code for Tests
 
@@ -214,12 +223,16 @@ it('should filter search results based on query parameters', function () {
 
 *Results of tests for one of the components in an app I'm working on right now:*
 
-![Cypress Tests Results](/images/blog/integration-tests-fun/cypress-tests-results.png)
+![Cypress Tests Results](/assets/images/blog/cypress-tests-results.png)
 
 I've shown you less than 10% of what Cypress can actually do. Give it a spin, it can be set up within minutes and doesn't require any code changes in your application. It cannot get easier than this.
+
+---
 
 ## Yes, You Should Write Integration Tests
 
 Because, why not? They are the best way to tell if your application is working correctly. They allow you to iterate quickly, refactor large chunks of your application without fear of breaking it, and they are really easy (and fun!) to write. It's a great feeling to see your application being tested in real-time, seeing all the things being clicked, manipulated, forms filled and tests passing and changing color to green.
 
 Don't be frightened, they won't bite you. They can only help you to be a productive and happy person. Your stress level will go down, your cortisol will drop, and you'll be able to get better sleep, build more muscles and lose fat more quickly, which will result in you being healthier. Because health comes first. It's basic logic. Write your integration tests. You'll be healthier and live longer. Don't thank me, just trust me. Been there, done that.
+
+---

@@ -1,5 +1,10 @@
 ---
-title: Speed up your GitHub workflow with Hub
+title: "Speed up your GitHub workflow with Hub"
+excerpt: ""
+---
+
+_Originally posted on []()_
+
 ---
 
 <span style="line-height: 1.5em;">As awesome as Github's web interface is, trying to use it alongside your terminal can be rather time consuming and may slow down your workflow.</span>
@@ -86,3 +91,5 @@ Additional shortcuts like opening your GitHub project on a specific page like `g
 There are many more commands which Hub provides. If you want to wrap your head around it, you can find the documentation in the official project manual [http://hub.github.com/hub.1.html](http://hub.github.com/hub.1.html "http://hub.github.com/hub.1.html").
 
 /Fives!
+
+---

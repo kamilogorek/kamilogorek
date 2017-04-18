@@ -3,6 +3,8 @@ title: Training
 permalink: /training/
 ---
 
+---
+
 ### General
 
 * [The WeighTrainer - Your Maximum Muscular Bodyweight and Measurements](http://www.weightrainer.net/potential.html)
@@ -50,6 +52,8 @@ permalink: /training/
 * [High volume of endurance training impairs adaptations to 12 weeks of strength training in well-trained endurance athletes](http://t063.camel.ntupes.edu.tw/ezcatfiles/t063/download/attdown/0/strength%20endurance%20training%20EJAP%202011%20Ronnestad.pdf)
 * [Strength training improves 5-min all-out performance following 185 min of cycling](http://brage.bibsys.no/xmlui/bitstream/handle/11250/170817/Raastad%20ScandJMedSciSport%202011.pdf?sequence=1)
 * [Optimizing strength training for running and cycling endurance performance: A review.](http://www.researchgate.net/publication/255692648_Optimizing_strength_training_for_running_and_cycling_endurance_performance_A_review)
+
+---
 
 ### Weightlifting
 
@@ -101,9 +105,13 @@ permalink: /training/
 * [Simple rep range forules for more productive strength training](http://breakingmuscle.com/strength-conditioning/simple-rep-range-rules-for-more-productive-strength-training)
 * [High or Low reps for muscle gains](http://www.musculardevelopment.com/training/13948-high-or-low-reps-for-muscle-gains.html)
 
+---
+
 ### Bodybuilding
 
 * TBD
+
+---
 
 ### Olympic Weightlifting
 
@@ -111,6 +119,8 @@ permalink: /training/
 * [Pendlay's Weightlifting Programming Tips](http://70sbig.com/blog/2012/11/pendlays-weightlifting-programming-tips/)
 * [A Training System for Beginning Olympic Weightlifters](http://www.pendlay.com/A-Training-System-for-Beginning-Olympic-Weightlifters_df_90.html)
 * [Olympic-style Weightlifting](http://www.exrx.net/WeightTraining/Weightlifting.html)
+
+---
 
 ### Powerlifting
 
@@ -125,21 +135,29 @@ permalink: /training/
 * [High Bar vs Low Bar Squatting](http://70sbig.com/blog/2012/01/low-bar-vs-high-bar-squatting/)
 * [High Bar and Low Bar Squatting 2.0](http://www.strengtheory.com/high-bar-and-low-bar-squatting-2-0/)
 
+---
+
 ### CrossFit
 
 * [A Doctor's View of CrossFit](https://www.t-nation.com/training/doctors-view-of-crossfit)
 * [On CrossFit](http://www.theptdc.com/2014/09/crossfit/)
+
+---
 
 ### Calisthenic
 
 * [Tutorials - Bodyweight Strength Training - Beast Skills](http://www.beastskills.com/tutorials/)
 * [The Scientific 7-Minute Workout](http://well.blogs.nytimes.com/projects/workouts/)
 
+---
+
 ### Mobility and Stretching
 
 * [Mobility 101 Guide](http://www.allthingsgym.com/mobility101/)
 * [The Definitive Guide to Why Stretching and Mobility Exercises are Completely Overrated](http://evidencemag.com/stretching)
 * [Shut Up, Flexibility](http://www.catalystathletics.com/article/137/Shut-Up-Flexibility/)
+
+---
 
 ### Conditioning
 
@@ -157,6 +175,8 @@ permalink: /training/
 * [The effects of high-intensity intermittent exercise training on fat loss and fasting insulin levels of young women.](http://www.ncbi.nlm.nih.gov/pubmed/18197184)
 * [Run sprint interval training improves aerobic performance but not maximal cardiac output.](http://www.ncbi.nlm.nih.gov/pubmed/20473222)
 
+---
+
 ### Science
 
 #### Biochemistry of exercise, fatigue and lactid acid
@@ -171,10 +191,14 @@ permalink: /training/
 * [Metaboliczne zabezpieczenie pracy fizycznej](http://maratony24.pl/zdrowie_biegaczy/wiedza_dla_maratonczyka_biochemia_wysilku_fizycznego,1008.html)
 * [Metaboliczne uwarunkowania wysiłku fizycznego](http://www.musculardevelopment.pl/trening/art,23,metaboliczne-uwarunkowania-wysilku-fizycznego.html)
 
+---
+
 ### Interviews
 
 * [Too Much Muscle – The Glenn Pendlay Secret](https://www.t-nation.com/training/too-much-muscle)
 * [Max Out on Squats Every Day – John Broz](https://www.t-nation.com/training/max-out-on-squats-every-day)
+
+---
 
 ### Other resources
 
@@ -191,3 +215,5 @@ permalink: /training/
 * [T Nation - Strength Training, Bodybuilding](http://www.t-nation.com/)
 * [Fiteligent](http://www.fiteligent.pl/)
 * [Rekompozycja](http://rekompozycja.pl/)
+
+---

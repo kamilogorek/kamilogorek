@@ -1,12 +1,21 @@
 ---
-title: Starting a Journey with Clojure and ClojureScript
+title: "Starting a Journey with Clojure and ClojureScript"
+excerpt: "If you've never tried functional programming development, I assure you that this is one of the best time investments you can make. You will not only learn a new programming language, but also a completely new way of thinking. A completely different paradigm."
 ---
+
+_Originally posted on [corgibytes.com](http://corgibytes.com/blog/2017/01/03/clojure-journey/)_
+
+---
+
+![Stack of Books](/assets/images/blog/stack-of-books.jpg)
 
 [Clojure](https://clojure.org), as described on their official page:
 
   "_Clojure is a dynamic, general-purpose programming language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming. Clojure is a compiled language, yet remains completely dynamic – every feature supported by Clojure is supported at runtime. Clojure provides easy access to the Java frameworks, with optional type hints and type inference, to ensure that calls to Java can avoid reflection._  
 
   _Clojure is a dialect of Lisp, and shares with Lisp the code-as-data philosophy and a powerful macro system. Clojure is predominantly a functional programming language, and features a rich set of immutable, persistent data structures. When mutable state is needed, Clojure offers a software transactional memory system and reactive Agent system that ensure clean, correct, multithreaded designs._"
+
+---
 
 ## Why Functional Programming
 
@@ -15,6 +24,8 @@ If you've never tried functional programming development, I assure you that this
 Functional programming is on the rise. Clojure, Scala, F#, Erlang, Elixir, Elm, Haskell, only to name a few. Those are all functional languages, used by the biggest companies in the world to drive their major systems.
 
 It's good to understand how they work, but it's even better to be able to write something using them. Always remember one thing: "A programming language is just another tool." You should always pick a language based on your needs, not on how hyped it is or how much you love it. FP is the biggest paradigm next to OO and learning its basics will be worth it long term.
+
+---
 
 ## Why Clojure
 
@@ -61,6 +72,8 @@ ClojureScript is exactly the same thing as Clojure, but it's compiled and emits 
 
 The best introduction to this concept is this talk: [Clojure All the Way Down: Finally a Useful LISP — Ricardo J. Méndez](https://www.youtube.com/watch?v=do-_nQL6tJg)
 
+---
+
 ## How
 
 "Alright, but how should I approach my learning process?"
@@ -99,3 +112,5 @@ Although I'll openly admit that I haven't read them yet, these are books that we
 - [Structure and Interpretation of Computer Programs](http://www.goodreads.com/book/show/43713.Structure_and_Interpretation_of_Computer_Programs) by Harold Abelson, Gerald Jay Sussman and Julie Sussman
 - [Purely Functional Data Structures](http://www.goodreads.com/book/show/594288.Purely_Functional_Data_Structures) by Chris Okasaki
 - [An Introduction to Functional Programming Through Lambda Calculus](http://www.goodreads.com/book/show/12169041-an-introduction-to-functional-programming-through-lambda-calculus) by Greg Michaelson
+
+---

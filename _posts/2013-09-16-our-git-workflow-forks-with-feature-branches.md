@@ -1,5 +1,10 @@
 ---
-title: Our Git Workflow - Forks With Feature Branches
+title: "Our Git Workflow: Forks With Feature Branches"
+excerpt: ""
+---
+
+_Originally posted on []()_
+
 ---
 
 Git has become a popular version control system and one we've embraced. For a lot of dev teams though, starting to work with a brand new system raises a lot of questions, the most important being how to setup a good workflow.
@@ -252,3 +257,4 @@ To do this locally, you just have to specify which branch to remove:
 
 </noscript>I hope that this will bring you closer to the idea of working with a git environment, help you decide to use it in your future projects and make your life much easier.
 
+---

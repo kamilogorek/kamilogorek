@@ -1,11 +1,18 @@
 ---
-title: Highlights of This Year's EuroClojure and ReactiveConf
+title: "Highlights of This Year's EuroClojure and ReactiveConf"
+excerpt: "If you love old architecture and castles, you'll fall for Bratislava. Easily one of the most beautiful places you can visit in Europe, this Slovakian capital is small enough that you can drive/walk quickly to most places, but big enough to fill your schedule for a few days. It may surprise some to find out that, when it comes to software development, the area is very quickly becoming one of the European tech hubs. Last month, Bratislava hosted two big conferences in one week."
+---
+
+_Originally posted on [corgibytes.com](http://corgibytes.com/blog/2016/11/08/bratislava-conferences/)_
+
 ---
 
 If you love old architecture and castles, you'll fall for Bratislava. Easily one of the most beautiful places you can visit in Europe, this Slovakian capital is small enough that you can drive/walk quickly to most places, but big enough to fill your schedule for a few days. It's also very close to Vienna (Austria), making it a real two-for-one bargain! Both places are very cheap, offer plenty of attractions and great -- oooh great -- food! It may surprise some to find out that, when it comes to software development, the area is very quickly becoming one of the European tech hubs. Last month, Bratislava hosted two big conferences in one week:
 
 * [EuroClojure](http://euroclojure.org/), the biggest Clojure-related conference, created by Cognicast (a company where Rich Hickey, creator of Clojure, and David Nolen, creator of ClojureScript, both work), and
 * [ReactiveConf](https://reactiveconf.com), which gathers all the ideas around reactive programming, asynchrony, real-time, React.js or React Native.
+
+---
 
 ## The Extras
 
@@ -16,6 +23,8 @@ The food (even though on the first day of EuroClojure I missed lunch :( because 
 Swag and promotional materials were very detailed and minimalistic. No unnecessary things, just a t-shirt, local honey wine and a snack. All useful things! I loved the schedule, which was printed as a page from an old paper, and the personalized stickers from ReactiveConf, where they used the speakers' talks to create wordplays: eg. "Clojure your eyes for David Nolen," "Rethink your DB with Michael Glukhovsky," "Look at the code from the different Angular with Igor Minar," "Spend 3 days in magic rEaLM with Richard Feldman." Unfortunately, the schedule wasn't useful during Day 1, as it changed quite a lot. I would have liked to have it printed on the small badge, or as an additional badge with only the schedule on it.
 
 Oh, let's not forget about the after-parties! Although I'm a huge introvert and rarely talk to strangers (Ha! I forced myself just once during the last after-party, to talk to and thank David Nolen for all his talks, knowledge and work), I went to each one of them. And boy, oh boy, that Ice Bar after the first ReactiveConf's day was a blast! About -10 C (14 F), the room covered with ice, shot glasses made of ice that you could break after drinking your shot, and blue and red lights everywhere. Wow!
+
+---
 
 ## The Talks
 
@@ -67,3 +76,5 @@ He talked about [Exponent](https://getexponent.com/), which is a "framework" on 
 That's it for now.
 
 See you next year, folks!
+
+---

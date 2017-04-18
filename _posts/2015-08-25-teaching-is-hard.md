@@ -1,5 +1,10 @@
 ---
-title: Teaching is hard, but worth it
+title: "Teaching is Hard, But Worth It"
+excerpt: ""
+---
+
+_Originally posted on []()_
+
 ---
 
 Last week I had a pleasure to teach JavaScript to a group of 11 people who were completely new to web development. It is not like they've had some experience with any programming language before. They were literally new to it, new and clueless.
@@ -51,3 +56,5 @@ And that's why I'm now focusing on becoming a consultant, a mentor, a teacher in
 ### Find people that will inspire you
 
 No matter how knowledgable you are, there are always things to learn. To make this experience reacher, you have to find people that will inspire you. Those are the people that will make you wiser, more determined and focused on your goals. Because of that I would like to say thank you to [Kyle Simpson @getify](https://twitter.com/getify) for all the work he put into his great [YDKJS](https://github.com/getify/You-Dont-Know-JS) series. This is the exact book that helped me to prepare and learn how programming language should be explained. Subject after subject, part after part. As well as to [Henrik Joreteg @HenrikJoreteg](https://twitter.com/HenrikJoreteg) for his [Human JavaScript](http://humanjavascript.com/) series. It really is written for "Humans", and it helped me to learn how to explain things in the simplest words possible.
+
+---

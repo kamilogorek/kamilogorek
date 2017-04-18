@@ -15,6 +15,22 @@
   text-align: right;
 }
 
+.icon-link {
+  &:hover {
+    text-decoration: none;
+
+    svg {
+      opacity: 0.5;
+    }
+  }
+
+  svg {
+    width: 19px;
+    vertical-align: -4px;
+    color: #111;
+  }
+}
+
 @media only screen and (min-width : 480px) {
   .bio-photo {
     float: left;

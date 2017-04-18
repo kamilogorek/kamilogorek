@@ -3,14 +3,20 @@ title: Nutrition
 permalink: /nutrition/
 ---
 
+---
+
 ### Ketogenic Diet
 
 * [The Emerging Science on Fat Adaptation](http://www.ultrarunning.com/features/health-and-nutrition/the-emerging-science-on-fat-adaptation/)
+
+---
 
 ### Diet
 
 * [The Ultimate Paleo Diet Guide](http://ultimatepaleoguide.com/guide/)
 * [Leangains](http://rekompozycja.pl/leangains/)
+
+---
 
 ### Calories
 
@@ -22,6 +28,8 @@ permalink: /nutrition/
 * [Meal frequency and energy balance](http://www.ncbi.nlm.nih.gov/pubmed/9155494)
 * [Increased meal frequency does not promote greater weight loss in subjects who were prescribed an 8-week equi-energetic energy-restricted diet.](http://www.ncbi.nlm.nih.gov/pubmed/19943985)
 * [Effect of the pattern of food intake on human energy metabolism.](http://www.ncbi.nlm.nih.gov/pubmed/8399092)
+
+---
 
 ### Macronutrients
 
@@ -67,12 +75,16 @@ permalink: /nutrition/
 
 * [The science of binge drinking: 7 Tips to get wasted without wasting your gains](http://bayesianbodybuilding.com/science-binge-drinking/)
 
+---
+
 ### Supplements
 
 #### Creatine
 
 * [The Ultimate Guide To Taking Creatine](http://www.aworkoutroutine.com/taking-creatine/)
 * [Effect of creatine and beta-alanine supplementation on performance and endocrine responses in strength/power athletes.](http://www.ncbi.nlm.nih.gov/pubmed/17136944)
+
+---
 
 ### Food
 
@@ -88,11 +100,15 @@ permalink: /nutrition/
 * [Comparison of the nutritional value between brown rice and white rice](http://www.ncbi.nlm.nih.gov/pubmed/9302338)
 * [Effects of brown rice on apparent digestibility and balance of nutrients in young men on low protein diets](http://www.ncbi.nlm.nih.gov/pubmed/2822877)
 
+---
+
 ### Health
 
 #### Cholesterol
 
 * [Lipid Hypothesis 2.0: Eat Butter](http://caloriesproper.com/lipid-hypothesis-2-0-eat-butter/)
+
+---
 
 ### Weight loss
 
@@ -107,15 +123,21 @@ permalink: /nutrition/
 
 * [Effects of resistance vs. aerobic training combined with an 800 calorie liquid diet on lean body mass and resting metabolic rate.](http://www.ncbi.nlm.nih.gov/m/pubmed/10204826/)
 
+---
+
 ### Muscle gain
 
 #### To bulk? or not to bulk?
 
 * [The Bulking Diet Delusion](http://www.t-nation.com/diet-fat-loss/bulking-diet-delusion)
 
+---
+
 ### Cooking recipes
 
 * [Protein Pow - The World's Best Protein Powder Recipes](http://proteinpow.com/)
+
+---
 
 ### Other resources
 
@@ -128,3 +150,5 @@ permalink: /nutrition/
 * [Intermittent fasting diet for fat loss, muscle gain and health](http://www.leangains.com/)
 * [Fiteligent](http://www.fiteligent.pl/)
 * [Rekompozycja](http://rekompozycja.pl/)
+
+---

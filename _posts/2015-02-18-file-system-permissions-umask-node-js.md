@@ -1,5 +1,10 @@
 ---
-title: File System Permissions and Umask in Node.js
+title: "File System Permissions and Umask in Node.js"
+excerpt: ""
+---
+
+_Originally posted on []()_
+
 ---
 
 Working as a developer sometimes requires more knowledge than just of programming itself. It's always a good idea to grasp some concepts from other IT fields as well.  
@@ -44,3 +49,5 @@ Now that we've our `mode`, we can go ahead and be sure that we know what we're d
 It's worth mentioning that `0777 & ~process.umask()` for folders and `0666 & ~process.umask()` for files are exactly what your system would do on it's own if you would leave those parameters.
 
 If you got interested (remember, JavaScript is not the only thing worth knowing!), you should definitely dive more into studying the basics of IT science.
+
+---

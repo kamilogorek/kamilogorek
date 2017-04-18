@@ -1,5 +1,10 @@
 ---
-title: Build a Fearless Development Cycle With Git Hooks
+title: "Build a Fearless Development Cycle With Git Hooks"
+excerpt: ""
+---
+
+_Originally posted on []()_
+
 ---
 
 One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Having the ability to change is tempting and dangerous at the same time.
@@ -47,3 +52,4 @@ This was just a few minutes of work that can save you plenty of time in the long
 
 If you'd like to see whole repository used here, you can visit this [article's github repository](https://github.com/kamilogorek/githooks-article "article's github repository").
 
+---

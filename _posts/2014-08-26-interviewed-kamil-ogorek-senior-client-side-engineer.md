@@ -1,5 +1,10 @@
 ---
-title: The Interviewed – Kamil Ogórek, Senior Client-side Engineer
+title: "The Interviewed: Kamil Ogórek, Senior Client-side Engineer"
+excerpt: ""
+---
+
+_Originally posted on []()_
+
 ---
 
 When there is a problem, there is a solution. In XHTMLized we often say: if there is a solution - Kamil has it.
@@ -59,3 +64,5 @@ The biggest advantage is of course that you can work anytime and wherever you wa
 **JD: _Thanks! /five!_**
 
 **KO:** /five!
+
+---
