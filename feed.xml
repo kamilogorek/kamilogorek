@@ -1,4 +1,259 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-04-17T17:03:33+02:00</updated><id>/</id><title type="html">Kamil Ogórek</title><subtitle>Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.</subtitle><author><name>Kamil Ogórek</name></author><entry><title type="html">Integration Tests Can Be Fun!</title><link href="/blog/integration-tests-fun" rel="alternate" type="text/html" title="Integration Tests Can Be Fun!" /><published>2017-02-21T00:00:00+01:00</published><updated>2017-02-21T00:00:00+01:00</updated><id>/blog/integration-tests-fun</id><content type="html" xml:base="/blog/integration-tests-fun">&lt;p&gt;One of the most mundane and frightening tasks for many developers is writing integration tests. It’s a time-consuming, fragile, and often difficult and frustrating task to accomplish. What makes it even worse is that it quickly gets out of hand and breaks often, which leads to frustration and dropping the idea completely.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="https://kamilogorek.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kamilogorek.com/" rel="alternate" type="text/html" /><updated>2017-04-18T16:52:57+02:00</updated><id>https://kamilogorek.com/</id><title type="html">Kamil Ogórek</title><subtitle>Software development passionate mainly focused on client-side technologies. Currently working as Lead Code Whisperer at Corgibytes. Weightlifter, powerlifter, training and nutrition geek.</subtitle><author><name>Kamil Ogórek</name></author><entry><title type="html">npm Scripts: Tips Everyone Should Know</title><link href="https://kamilogorek.com/blog/npm-tips" rel="alternate" type="text/html" title="npm Scripts: Tips Everyone Should Know" /><published>2017-04-18T00:00:00+02:00</published><updated>2017-04-18T00:00:00+02:00</updated><id>https://kamilogorek.com/blog/npm-tips</id><content type="html" xml:base="https://kamilogorek.com/blog/npm-tips">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;http://corgibytes.com/blog/2017/04/18/npm-tips/&quot;&gt;corgibytes.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;npm is not only the package manager for JavaScript, it’s also &lt;a href=&quot;https://docs.npmjs.com/misc/scripts&quot;&gt;used to set up tooling around your codebase&lt;/a&gt;. Linters, transpilers, testing, and servers. Everything can be configured and run using the very same thing. Basic usage is really simple, too.&lt;/p&gt;
+
+&lt;p&gt;You specify your scripts within the &lt;code class=&quot;highlighter-rouge&quot;&gt;scripts&lt;/code&gt; attribute of the main object in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; and then run it using &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run &amp;lt;name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;webpack --progress&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;karma start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;server&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;webpack-dev-server&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are, however, some details that may be useful while performing your setup.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;running-scripts-with-additional-arguments&quot;&gt;Running Scripts with Additional Arguments&lt;/h2&gt;
+
+&lt;p&gt;Let’s say that you want to run Karma, which by default is watching all of your files for changes, without this feature.&lt;/p&gt;
+
+&lt;p&gt;To do this, they provide a &lt;code class=&quot;highlighter-rouge&quot;&gt;--single-run&lt;/code&gt; flag that can be used with their script.&lt;/p&gt;
+
+&lt;p&gt;The simplest way to achieve this would be to add a new entry in our scripts.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;test:single-run&quot;: &quot;karma start --single-run&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If we’d like to modify our default test parameters, however, we’d have to do this in both places, &lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;test:single-run&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Or we can go around this issue by using our flag directly from the command line.&lt;/p&gt;
+
+&lt;p&gt;To achieve this, we use &lt;code class=&quot;highlighter-rouge&quot;&gt;--&lt;/code&gt; at the end of our command, which tells npm that anything after this should be appended directly to the command itself.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm run &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; -- --single-run
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;running-multiple-commands-in-series-or-in-parallel&quot;&gt;Running Multiple Commands in Series or in Parallel&lt;/h2&gt;
+
+&lt;p&gt;If you have one script that runs multiple commands, let’s say CSS linter, JS linter and HTML linter, it’d be nice to run them all at once to speed things up.&lt;/p&gt;
+
+&lt;p&gt;If you have commands that are dependent on each other, however, like if you run transpiler before running the tests, you’ll want to change the execution flow to be one after another, not all at once.&lt;/p&gt;
+
+&lt;p&gt;Because &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; scripts are spawning a shell process under the hood, we can use its syntax to achieve what we need. Specifically &lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt; (and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt;, more on this next) for running in series and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&lt;/code&gt; for running in parallel.&lt;/p&gt;
+
+&lt;p&gt;An example using this syntax could look something like this:&lt;/p&gt;
+
+&lt;p&gt;Parallel:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;lint&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;eslint &amp;amp; csslint &amp;amp; htmllint&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Series:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;babel; jest&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;(I know, Jest test runner has a built-in functionality to precompile your code. It’s only an example ;))&lt;/p&gt;
+
+&lt;p&gt;It will work just fine, but there’s one rather huge issue with this approach. &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&lt;/code&gt; syntax creates a subprocess, which results in the original &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; process not being able to tell whether it already finishes or not. This can be problematic, especially with long running scripts.&lt;/p&gt;
+
+&lt;p&gt;To make things more coherent, we can use a package called &lt;a href=&quot;https://www.npmjs.com/package/npm-run-all&quot;&gt;npm-run-all&lt;/a&gt;. It provides additional commands, more specifically &lt;code class=&quot;highlighter-rouge&quot;&gt;run-s&lt;/code&gt; for series and &lt;code class=&quot;highlighter-rouge&quot;&gt;run-p&lt;/code&gt; for parallel, and it will handle all of the subprocesses correctly.&lt;/p&gt;
+
+&lt;p&gt;Parallel:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;lint&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;run-p eslint csslint htmllint&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Series:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;run-s babel jest&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;bailing-out-when-a-command-fails&quot;&gt;Bailing out When a Command Fails&lt;/h2&gt;
+
+&lt;p&gt;In our previous example, we run transpiler before we run our tests.&lt;/p&gt;
+
+&lt;p&gt;But what’s the point of running the tests if transpilation failed in the first place?&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt; syntax waits until the former command finishes and then runs the next one, no matter what the exit code.&lt;/p&gt;
+
+&lt;p&gt;What we’d like to do instead is to stop the execution if any command in series failed.&lt;/p&gt;
+
+&lt;p&gt;To change this, we simply use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;babel &amp;amp;&amp;amp; jest&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, if &lt;code class=&quot;highlighter-rouge&quot;&gt;babel&lt;/code&gt; exits with a code other than &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, which means a successful command run, &lt;code class=&quot;highlighter-rouge&quot;&gt;jest&lt;/code&gt; will never run.&lt;/p&gt;
+
+&lt;p&gt;We can, of course, chain this syntax as many times as we want:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;eslint &amp;amp;&amp;amp; babel &amp;amp;&amp;amp; jest &amp;amp;&amp;amp; deploy&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;using-life-cycle-hooks&quot;&gt;Using Life-Cycle Hooks&lt;/h2&gt;
+
+&lt;p&gt;Every script in npm runs three separate scripts under the hood. A &lt;code class=&quot;highlighter-rouge&quot;&gt;pre&lt;/code&gt; script, a script itself and a &lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt; script. Those two additional scripts are run, as their names imply, before and after the main script.&lt;/p&gt;
+
+&lt;p&gt;They are useful for setting up and cleaning up, for example, during deployment.&lt;/p&gt;
+
+&lt;p&gt;Both of those scripts can be written using &lt;code class=&quot;highlighter-rouge&quot;&gt;pre&amp;lt;script-name&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;post&amp;lt;script-name&amp;gt;&lt;/code&gt; in the same &lt;code class=&quot;highlighter-rouge&quot;&gt;scripts&lt;/code&gt; object as before.&lt;/p&gt;
+
+&lt;p&gt;Let’s say that we want to build our project, it’ll be a very simple example just to show the concept.&lt;/p&gt;
+
+&lt;p&gt;What we’ll do is this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;create a new one &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt; directory and remove everything from it if there was already one&lt;/li&gt;
+  &lt;li&gt;create &lt;code class=&quot;highlighter-rouge&quot;&gt;tmp&lt;/code&gt; directory&lt;/li&gt;
+  &lt;li&gt;build the project to &lt;code class=&quot;highlighter-rouge&quot;&gt;tmp&lt;/code&gt; directory&lt;/li&gt;
+  &lt;li&gt;minify our bundle to &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt; directory&lt;/li&gt;
+  &lt;li&gt;remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;tmp&lt;/code&gt; directory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;prebuild&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mkdir dist tmp; rm -rf dist/*&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;browserify main.js -o tmp/bundle.js &amp;amp;&amp;amp; uglifyjs -o dist/bundle.min.js -- tmp/bundle.js&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;postbuild&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rm -rf tmp&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Note that you should use the &lt;code class=&quot;highlighter-rouge&quot;&gt;rimraf&lt;/code&gt; package for cross-platform compatibility, as it won’t work on Windows.&lt;/p&gt;
+
+&lt;p&gt;Now, whenever you run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run build&lt;/code&gt;, it will trigger all the commands, making sure they were called in a correct order.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;running-group-of-commands&quot;&gt;Running Group of Commands&lt;/h2&gt;
+
+&lt;p&gt;The naming convention in npm uses a colon to group a whole set of specific tasks. In one of the code examples above, we run all lint tasks in parallel using &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&lt;/code&gt; syntax.&lt;/p&gt;
+
+&lt;p&gt;What I often like to do is split those tasks into smaller chunks and run them as groups using the &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run&lt;/code&gt; command within the script itself.&lt;/p&gt;
+
+&lt;p&gt;Our previous example looked like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;lint&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;eslint &amp;amp; csslint &amp;amp; htmllint&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What we can do is separate every single one of them (in case we need to add some flags to configure them, for example) and group them together.&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;lint: &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;npm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lint:js&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;npm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lint:css&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;npm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lint:html&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lint:js&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;eslint&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;--some-flag&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lint:css&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;csslint&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;--that-will-change&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lint:html&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;htmllint&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;--how-things-work&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;After this change, it will work exactly the same way, but now we can run either all of them at once, or each one separately whenever we need.&lt;/p&gt;
+
+&lt;p&gt;To make it even cleaner, we could use an &lt;code class=&quot;highlighter-rouge&quot;&gt;npm-run-all&lt;/code&gt; here again and change our main &lt;code class=&quot;highlighter-rouge&quot;&gt;lint&lt;/code&gt; command to &lt;code class=&quot;highlighter-rouge&quot;&gt;npm-run-all lint:*&lt;/code&gt;, which would then match all scripts starting with the &lt;code class=&quot;highlighter-rouge&quot;&gt;lint:&lt;/code&gt; group.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;npm-completion&quot;&gt;npm Completion&lt;/h2&gt;
+
+&lt;p&gt;One of the things I learned recently is that npm itself provides us with a baked-in way to &lt;a href=&quot;https://docs.npmjs.com/cli/completion&quot;&gt;add commands completion in the terminal&lt;/a&gt;. And what’s even better is that it will also include all of your custom scripts!&lt;/p&gt;
+
+&lt;p&gt;Depending on your environment (bash or zsh), you just pipe the result of your &lt;code class=&quot;highlighter-rouge&quot;&gt;npm completion&lt;/code&gt; command directly to &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt;. Remember to reload this file afterwards using &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bashrc&lt;/code&gt;!&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm completion &amp;gt;&amp;gt; ~/.bashrc
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm completion &amp;gt;&amp;gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;writing-custom-checks-for-your-npm-scripts&quot;&gt;Writing Custom Checks for Your npm Scripts&lt;/h2&gt;
+
+&lt;p&gt;Thanks to the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; syntax and npm understanding regular exit codes as described above, we can write very simple node scripts that will do some initial checks for us.&lt;/p&gt;
+
+&lt;p&gt;For example, making sure that the user specified all of the required ENV variables or that the command name doesn’t contain any typos when trying to run it.&lt;/p&gt;
+
+&lt;p&gt;What I used recently, is this nodel.js script verifying that I have &lt;code class=&quot;highlighter-rouge&quot;&gt;NODE_ENV&lt;/code&gt; set up and that developers are using one of the predefined env-specific scripts.&lt;/p&gt;
+
+&lt;p&gt;My scripts look something like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node ./scripts/env-check.js &amp;amp;&amp;amp; rimraf dist &amp;amp;&amp;amp; webpack --bail --progress --profile --display-error-details&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build:development&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;NODE_ENV=development npm run build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build:staging&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;NODE_ENV=staging npm run build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build:production&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;NODE_ENV=production npm run build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And &lt;code class=&quot;highlighter-rouge&quot;&gt;env-check.js&lt;/code&gt; content:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;npm_lifecycle_event&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;packageJSON&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'../package.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;availableEnvironments&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;packageJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scripts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;':'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NODE_ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Error&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NODE_ENV&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;availableEnvironments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scripts&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;availableEnvironments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Error&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;valid&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NODE_ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;availableEnvironments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scripts&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, whenever a developer types &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run build&lt;/code&gt; directly, this prompt will show up:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; Error &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; NODE_ENV is required. Use build:development/staging/production scripts instead.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;One drawback of the code above is that it won’t understand &lt;code class=&quot;highlighter-rouge&quot;&gt;pre&lt;/code&gt; script, which seems like a perfect place for this check:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;prebuild&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node ./scripts/env-check.js &amp;amp;&amp;amp; rimraf dist&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;webpack --bail --progress --profile --display-error-details&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To fix this, we’ll have to update the &lt;code class=&quot;highlighter-rouge&quot;&gt;task&lt;/code&gt; variable, as &lt;code class=&quot;highlighter-rouge&quot;&gt;process.env.npm_lifecycle_event&lt;/code&gt; won’t return a &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt; name, but rather &lt;code class=&quot;highlighter-rouge&quot;&gt;prebuild&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;npm_lifecycle_event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pre'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;npm_lifecycle_event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;npm_lifecycle_event&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, we can place &lt;code class=&quot;highlighter-rouge&quot;&gt;node ./scripts/env-check.js&lt;/code&gt; in any &lt;code class=&quot;highlighter-rouge&quot;&gt;pre&lt;/code&gt; script, and it will perform all of those initial checks for us.&lt;/p&gt;
+
+&lt;p&gt;I personally use it for build, server and deploy scripts, but it can certainly be effectively used in many more places.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">npm is not only the package manager for JavaScript, it's also used to set up tooling around your codebase. Linters, transpilers, testing, and servers. Everything can be configured and run using the very same thing. Basic usage is really simple, too.</summary></entry><entry><title type="html">Integration Tests Can Be Fun!</title><link href="https://kamilogorek.com/blog/integration-tests-fun" rel="alternate" type="text/html" title="Integration Tests Can Be Fun!" /><published>2017-02-21T00:00:00+01:00</published><updated>2017-02-21T00:00:00+01:00</updated><id>https://kamilogorek.com/blog/integration-tests-fun</id><content type="html" xml:base="https://kamilogorek.com/blog/integration-tests-fun">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;http://corgibytes.com/blog/2017/02/21/integration-tests-fun/&quot;&gt;corgibytes.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;One of the most mundane and frightening tasks for many developers is writing integration tests. It’s a time-consuming, fragile, and often difficult and frustrating task to accomplish. What makes it even worse is that it quickly gets out of hand and breaks often, which leads to frustration and dropping the idea completely.&lt;/p&gt;
 
 &lt;p&gt;What’s the worst thing about writing integration tests? DOM? Promises? Asynchronicity? Some strange framework API behavior? I’d say: all of them.&lt;/p&gt;
 
@@ -17,13 +272,15 @@ Refactored like 95% of the App, but I'm sure it's working and we'll be fine (b4d
 Failing tests: If you see this, you know that you messed up
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/blog/integration-tests-fun/shrug.gif&quot; alt=&quot;Shrug&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/shrug.gif&quot; alt=&quot;Shrug&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;the-world-where-browser-is-not-a-black-box&quot;&gt;The World Where Browser Is Not a Black Box&lt;/h2&gt;
 
 &lt;p&gt;Protractor, Pioneer, Nightwatch.js, Intern and probably plenty of other testing frameworks out there in the wild use something which is called Selenium. Selenium is this magic black box that can understand your code and make browsers do what you ask them to do. Navigate to pages, click elements, get values, fill forms, control back/forward buttons, etc. But it being a black box can be problematic. Especially when testing asynchronous code.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/blog/integration-tests-fun/selenium-graph.png&quot; alt=&quot;Selenium Graph&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/selenium-graph.png&quot; alt=&quot;Selenium Graph&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;What happens is the following: when your test runner issues a test, it asks Selenium &lt;em&gt;to ask a browser&lt;/em&gt; and returns an answer to you. For example, if you want to know whether a given element is already rendered, you ask Selenium to ask a browser, which in the end checks the existence of an element, gives that answer to Selenium, which hands it back to you. In other words, it’s a middleware between your test runner and a browser. A black box.&lt;/p&gt;
 
@@ -31,7 +288,7 @@ Failing tests: If you see this, you know that you messed up
 
 &lt;p&gt;This is where &lt;a href=&quot;https://www.cypress.io/&quot;&gt;Cypress&lt;/a&gt; shines. It’s a complete test runner, which lives &lt;strong&gt;inside&lt;/strong&gt; a browser, alongside your own application code. It knows everything about browser state, event loop, as well as your application’s code.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/blog/integration-tests-fun/cypress-graph.png&quot; alt=&quot;Cypress Graph&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/cypress-graph.png&quot; alt=&quot;Cypress Graph&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This simplifies things &lt;strong&gt;a lot!&lt;/strong&gt; It will politely wait for all the things to happen first, before issuing your test assertions. And even more, it will wait for the previous command to finish, before moving to another one, as everything is promise-based. You don’t have to use timeouts or any code like this anymore (thankfully, as timeouts are one of the biggest, if not &lt;em&gt;the&lt;/em&gt; biggest source of race conditions and nondeterministic results).&lt;/p&gt;
 
@@ -43,6 +300,8 @@ Failing tests: If you see this, you know that you messed up
 
 &lt;iframe src=&quot;https://player.vimeo.com/video/119067384?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;700&quot; height=&quot;394&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/119067384&quot;&gt;Cypress.io - Overview Demo&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/backbonerails&quot;&gt;Brian Mann&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;code-for-tests&quot;&gt;Code for Tests&lt;/h2&gt;
 
@@ -209,19 +468,31 @@ Failing tests: If you see this, you know that you messed up
 
 &lt;p&gt;&lt;em&gt;Results of tests for one of the components in an app I’m working on right now:&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/blog/integration-tests-fun/cypress-tests-results.png&quot; alt=&quot;Cypress Tests Results&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/cypress-tests-results.png&quot; alt=&quot;Cypress Tests Results&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve shown you less than 10% of what Cypress can actually do. Give it a spin, it can be set up within minutes and doesn’t require any code changes in your application. It cannot get easier than this.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;yes-you-should-write-integration-tests&quot;&gt;Yes, You Should Write Integration Tests&lt;/h2&gt;
 
 &lt;p&gt;Because, why not? They are the best way to tell if your application is working correctly. They allow you to iterate quickly, refactor large chunks of your application without fear of breaking it, and they are really easy (and fun!) to write. It’s a great feeling to see your application being tested in real-time, seeing all the things being clicked, manipulated, forms filled and tests passing and changing color to green.&lt;/p&gt;
 
-&lt;p&gt;Don’t be frightened, they won’t bite you. They can only help you to be a productive and happy person. Your stress level will go down, your cortisol will drop, and you’ll be able to get better sleep, build more muscles and lose fat more quickly, which will result in you being healthier. Because health comes first. It’s basic logic. Write your integration tests. You’ll be healthier and live longer. Don’t thank me, just trust me. Been there, done that.&lt;/p&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">One of the most mundane and frightening tasks for many developers is writing integration tests. It’s a time-consuming, fragile, and often difficult and frustrating task to accomplish. What makes it even worse is that it quickly gets out of hand and breaks often, which leads to frustration and dropping the idea completely.</summary></entry><entry><title type="html">Starting a Journey with Clojure and ClojureScript</title><link href="/blog/clojure-journey" rel="alternate" type="text/html" title="Starting a Journey with Clojure and ClojureScript" /><published>2017-01-03T00:00:00+01:00</published><updated>2017-01-03T00:00:00+01:00</updated><id>/blog/clojure-journey</id><content type="html" xml:base="/blog/clojure-journey">&lt;p&gt;&lt;a href=&quot;https://clojure.org&quot;&gt;Clojure&lt;/a&gt;, as described on their official page:&lt;/p&gt;
+&lt;p&gt;Don’t be frightened, they won’t bite you. They can only help you to be a productive and happy person. Your stress level will go down, your cortisol will drop, and you’ll be able to get better sleep, build more muscles and lose fat more quickly, which will result in you being healthier. Because health comes first. It’s basic logic. Write your integration tests. You’ll be healthier and live longer. Don’t thank me, just trust me. Been there, done that.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">One of the most mundane and frightening tasks for many developers is writing integration tests. It's a time-consuming, fragile, and often difficult and frustrating task to accomplish. What makes it even worse is that it quickly gets out of hand and breaks often, which leads to frustration and dropping the idea completely.</summary></entry><entry><title type="html">Starting a Journey with Clojure and ClojureScript</title><link href="https://kamilogorek.com/blog/clojure-journey" rel="alternate" type="text/html" title="Starting a Journey with Clojure and ClojureScript" /><published>2017-01-03T00:00:00+01:00</published><updated>2017-01-03T00:00:00+01:00</updated><id>https://kamilogorek.com/blog/clojure-journey</id><content type="html" xml:base="https://kamilogorek.com/blog/clojure-journey">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;http://corgibytes.com/blog/2017/01/03/clojure-journey/&quot;&gt;corgibytes.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/stack-of-books.jpg&quot; alt=&quot;Stack of Books&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://clojure.org&quot;&gt;Clojure&lt;/a&gt;, as described on their official page:&lt;/p&gt;
 
 &lt;p&gt;“&lt;em&gt;Clojure is a dynamic, general-purpose programming language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming. Clojure is a compiled language, yet remains completely dynamic – every feature supported by Clojure is supported at runtime. Clojure provides easy access to the Java frameworks, with optional type hints and type inference, to ensure that calls to Java can avoid reflection.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Clojure is a dialect of Lisp, and shares with Lisp the code-as-data philosophy and a powerful macro system. Clojure is predominantly a functional programming language, and features a rich set of immutable, persistent data structures. When mutable state is needed, Clojure offers a software transactional memory system and reactive Agent system that ensure clean, correct, multithreaded designs.&lt;/em&gt;”&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;why-functional-programming&quot;&gt;Why Functional Programming&lt;/h2&gt;
 
@@ -230,6 +501,8 @@ Failing tests: If you see this, you know that you messed up
 &lt;p&gt;Functional programming is on the rise. Clojure, Scala, F#, Erlang, Elixir, Elm, Haskell, only to name a few. Those are all functional languages, used by the biggest companies in the world to drive their major systems.&lt;/p&gt;
 
 &lt;p&gt;It’s good to understand how they work, but it’s even better to be able to write something using them. Always remember one thing: “A programming language is just another tool.” You should always pick a language based on your needs, not on how hyped it is or how much you love it. FP is the biggest paradigm next to OO and learning its basics will be worth it long term.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;why-clojure&quot;&gt;Why Clojure&lt;/h2&gt;
 
@@ -280,6 +553,8 @@ Failing tests: If you see this, you know that you messed up
 
 &lt;p&gt;The best introduction to this concept is this talk: &lt;a href=&quot;https://www.youtube.com/watch?v=do-_nQL6tJg&quot;&gt;Clojure All the Way Down: Finally a Useful LISP — Ricardo J. Méndez&lt;/a&gt;&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;how&quot;&gt;How&lt;/h2&gt;
 
 &lt;p&gt;“Alright, but how should I approach my learning process?”&lt;/p&gt;
@@ -324,12 +599,20 @@ Carin’s writing is the shortest of all the mentioned books, and it’s also th
   &lt;li&gt;&lt;a href=&quot;http://www.goodreads.com/book/show/43713.Structure_and_Interpretation_of_Computer_Programs&quot;&gt;Structure and Interpretation of Computer Programs&lt;/a&gt; by Harold Abelson, Gerald Jay Sussman and Julie Sussman&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.goodreads.com/book/show/594288.Purely_Functional_Data_Structures&quot;&gt;Purely Functional Data Structures&lt;/a&gt; by Chris Okasaki&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.goodreads.com/book/show/12169041-an-introduction-to-functional-programming-through-lambda-calculus&quot;&gt;An Introduction to Functional Programming Through Lambda Calculus&lt;/a&gt; by Greg Michaelson&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">Clojure, as described on their official page:</summary></entry><entry><title type="html">Highlights of This Year’s EuroClojure and ReactiveConf</title><link href="/blog/bratislava-conference" rel="alternate" type="text/html" title="Highlights of This Year's EuroClojure and ReactiveConf" /><published>2016-11-08T00:00:00+01:00</published><updated>2016-11-08T00:00:00+01:00</updated><id>/blog/bratislava-conference</id><content type="html" xml:base="/blog/bratislava-conference">&lt;p&gt;If you love old architecture and castles, you’ll fall for Bratislava. Easily one of the most beautiful places you can visit in Europe, this Slovakian capital is small enough that you can drive/walk quickly to most places, but big enough to fill your schedule for a few days. It’s also very close to Vienna (Austria), making it a real two-for-one bargain! Both places are very cheap, offer plenty of attractions and great – oooh great – food! It may surprise some to find out that, when it comes to software development, the area is very quickly becoming one of the European tech hubs. Last month, Bratislava hosted two big conferences in one week:&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">If you've never tried functional programming development, I assure you that this is one of the best time investments you can make. You will not only learn a new programming language, but also a completely new way of thinking. A completely different paradigm.</summary></entry><entry><title type="html">Highlights of This Year’s EuroClojure and ReactiveConf</title><link href="https://kamilogorek.com/blog/bratislava-conference" rel="alternate" type="text/html" title="Highlights of This Year's EuroClojure and ReactiveConf" /><published>2016-11-08T00:00:00+01:00</published><updated>2016-11-08T00:00:00+01:00</updated><id>https://kamilogorek.com/blog/bratislava-conference</id><content type="html" xml:base="https://kamilogorek.com/blog/bratislava-conference">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;http://corgibytes.com/blog/2016/11/08/bratislava-conferences/&quot;&gt;corgibytes.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you love old architecture and castles, you’ll fall for Bratislava. Easily one of the most beautiful places you can visit in Europe, this Slovakian capital is small enough that you can drive/walk quickly to most places, but big enough to fill your schedule for a few days. It’s also very close to Vienna (Austria), making it a real two-for-one bargain! Both places are very cheap, offer plenty of attractions and great – oooh great – food! It may surprise some to find out that, when it comes to software development, the area is very quickly becoming one of the European tech hubs. Last month, Bratislava hosted two big conferences in one week:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://euroclojure.org/&quot;&gt;EuroClojure&lt;/a&gt;, the biggest Clojure-related conference, created by Cognicast (a company where Rich Hickey, creator of Clojure, and David Nolen, creator of ClojureScript, both work), and&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://reactiveconf.com&quot;&gt;ReactiveConf&lt;/a&gt;, which gathers all the ideas around reactive programming, asynchrony, real-time, React.js or React Native.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;the-extras&quot;&gt;The Extras&lt;/h2&gt;
 
@@ -340,6 +623,8 @@ Carin’s writing is the shortest of all the mentioned books, and it’s also th
 &lt;p&gt;Swag and promotional materials were very detailed and minimalistic. No unnecessary things, just a t-shirt, local honey wine and a snack. All useful things! I loved the schedule, which was printed as a page from an old paper, and the personalized stickers from ReactiveConf, where they used the speakers’ talks to create wordplays: eg. “Clojure your eyes for David Nolen,” “Rethink your DB with Michael Glukhovsky,” “Look at the code from the different Angular with Igor Minar,” “Spend 3 days in magic rEaLM with Richard Feldman.” Unfortunately, the schedule wasn’t useful during Day 1, as it changed quite a lot. I would have liked to have it printed on the small badge, or as an additional badge with only the schedule on it.&lt;/p&gt;
 
 &lt;p&gt;Oh, let’s not forget about the after-parties! Although I’m a huge introvert and rarely talk to strangers (Ha! I forced myself just once during the last after-party, to talk to and thank David Nolen for all his talks, knowledge and work), I went to each one of them. And boy, oh boy, that Ice Bar after the first ReactiveConf’s day was a blast! About -10 C (14 F), the room covered with ice, shot glasses made of ice that you could break after drinking your shot, and blue and red lights everywhere. Wow!&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;the-talks&quot;&gt;The Talks&lt;/h2&gt;
 
@@ -392,7 +677,13 @@ Carin’s writing is the shortest of all the mentioned books, and it’s also th
 
 &lt;p&gt;That’s it for now.&lt;/p&gt;
 
-&lt;p&gt;See you next year, folks!&lt;/p&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">If you love old architecture and castles, you’ll fall for Bratislava. Easily one of the most beautiful places you can visit in Europe, this Slovakian capital is small enough that you can drive/walk quickly to most places, but big enough to fill your schedule for a few days. It’s also very close to Vienna (Austria), making it a real two-for-one bargain! Both places are very cheap, offer plenty of attractions and great – oooh great – food! It may surprise some to find out that, when it comes to software development, the area is very quickly becoming one of the European tech hubs. Last month, Bratislava hosted two big conferences in one week:</summary></entry><entry><title type="html">Setting up a Minimal, Yet Useful Javascript Dev Environment</title><link href="/blog/minimal-useful-javascript-environment" rel="alternate" type="text/html" title="Setting up a Minimal, Yet Useful Javascript Dev Environment" /><published>2016-09-27T00:00:00+02:00</published><updated>2016-09-27T00:00:00+02:00</updated><id>/blog/minimal-useful-javascript-environment</id><content type="html" xml:base="/blog/minimal-useful-javascript-environment">&lt;p&gt;In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when.&lt;/p&gt;
+&lt;p&gt;See you next year, folks!&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">If you love old architecture and castles, you'll fall for Bratislava. Easily one of the most beautiful places you can visit in Europe, this Slovakian capital is small enough that you can drive/walk quickly to most places, but big enough to fill your schedule for a few days. It may surprise some to find out that, when it comes to software development, the area is very quickly becoming one of the European tech hubs. Last month, Bratislava hosted two big conferences in one week.</summary></entry><entry><title type="html">Setting up a Minimal, Yet Useful Javascript Dev Environment</title><link href="https://kamilogorek.com/blog/minimal-useful-javascript-environment" rel="alternate" type="text/html" title="Setting up a Minimal, Yet Useful Javascript Dev Environment" /><published>2016-09-27T00:00:00+02:00</published><updated>2016-09-27T00:00:00+02:00</updated><id>https://kamilogorek.com/blog/minimal-useful-javascript-environment</id><content type="html" xml:base="https://kamilogorek.com/blog/minimal-useful-javascript-environment">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;http://corgibytes.com/blog/2016/09/27/minimal-useful-javascript-environment/&quot;&gt;corgibytes.com&lt;/a&gt; and &lt;a href=&quot;https://dev.to/corgibytes/setting-up-a-minimal-yet-useful-javascript-dev-environment&quot;&gt;dev.to&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when.&lt;/p&gt;
 
 &lt;p&gt;I know from experience, that the first thing you do, once you decide to write a module or CLI tool, is set up an environment. Some people love it, some hate it. But no matter on which side you are, you’ll most likely end up spending way too much time doing it, polishing every aspect of the setup.&lt;/p&gt;
 
@@ -403,23 +694,27 @@ The truth is though, most of the time, as developers, we can get by with tools t
 
 &lt;p&gt;Here’s a step-by-step to help you go from having nothing, to being productive in five minutes or less (depending on NPM’s mood).&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;init-nodejs-project-and-git-repository&quot;&gt;Init Node.js project and GIT repository&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Create a directory and cd into it (#protip – $_ holds argument of your last command)
-$ mkdir awesome-module &amp;amp;&amp;amp; cd $_
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Create a directory and cd into it (#protip – $_ holds argument of your last command)&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir awesome-module &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;
 
-# Initialize Node.js project with default settings
-$ npm init --yes
+&lt;span class=&quot;c&quot;&gt;# Initialize Node.js project with default settings&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm init --yes
 
-# Create initial folders and files
-$ mkdir lib test
-$ touch index.js lib/meaningOfLife.js test/index.test.js test/meaningOfLife.test.js
+&lt;span class=&quot;c&quot;&gt;# Create initial folders and files&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir lib &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;touch index.js lib/meaningOfLife.js &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;/index.test.js &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;/meaningOfLife.test.js
 
-# Initialize GIT repository and create initial commit
-$ git init
-$ git add -A; git commit -am &quot;Awesome Module, day one&quot;
+&lt;span class=&quot;c&quot;&gt;# Initialize GIT repository and create initial commit&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git init
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add -A; git commit -am &lt;span class=&quot;s2&quot;&gt;&quot;Awesome Module, day one&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;install-tools&quot;&gt;Install tools&lt;/h2&gt;
 
@@ -427,23 +722,25 @@ $ git add -A; git commit -am &quot;Awesome Module, day one&quot;
 
 &lt;p&gt;Why those tools? Because they don’t require any configuration and take the cognitive load from your brain. One less thing to think and worry about.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ npm i --save-dev ava standard chokidar-cli precommit-hook
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm i --save-dev ava standard chokidar-cli precommit-hook
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Remember to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file and add &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; to it! We don’t want it in our repository.&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;set-up-tools&quot;&gt;Set up tools&lt;/h2&gt;
 
 &lt;p&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; and add those scripts to your file.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
-  &quot;test&quot;: &quot;ava&quot;,
-  &quot;lint&quot;: &quot;standard&quot;,
-  &quot;dev&quot;: &quot;chokidar '**/*.js' -c 'standard &amp;amp;&amp;amp; ava'&quot;
-},
-&quot;pre-commit&quot;: [&quot;test&quot;, &quot;lint&quot;],
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ava&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;lint&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;standard&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dev&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;chokidar '**/*.js' -c 'standard &amp;amp;&amp;amp; ava'&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;pre-commit&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;lint&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Aaaand you are done! Once you run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run dev&lt;/code&gt; you’ll get all of your JS files linted by Standard.js and tests run by Ava. There’s nothing more to it, and you can start working right away.&lt;/p&gt;
@@ -457,70 +754,72 @@ $ git add -A; git commit -am &quot;Awesome Module, day one&quot;
   &lt;li&gt;Because we use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt; here in the &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; script, tests won’t be triggered unless you pass linter rules. It makes the feedback loop even faster.&lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;working-with-the-setup&quot;&gt;Working with the setup&lt;/h2&gt;
 
 &lt;p&gt;Because the environment assumes you’ll work in TDD style (and you probably should!), once you run your &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; script, you can create tests and they will be added to the test suite, without any need for restarting a watcher or rebuilding anything.&lt;/p&gt;
 
 &lt;p&gt;Let’s create the first test.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// test/meaningOfLife.test.js
-const test = require('ava')
-const meaningOfLife = require('../lib/meaningOfLife')
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// test/meaningOfLife.test.js&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ava'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;meaningOfLife&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'../lib/meaningOfLife'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-test('Real meaning of life', (t) =&amp;gt; {
-  t.is(meaningOfLife(), 42)
-})
+&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Real meaning of life'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;meaningOfLife&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Once you save the file, you’ll get instantly notified that one of your tests is failing. Let’s fix it.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// lib/meaningOfLife.js
-module.exports = () =&amp;gt; 42
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// lib/meaningOfLife.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;And we are back to green! It’s as simple as that. Let’s create another module that’ll multiply a numeric parameter, unit test this module and see whether it’ll work nicely with our “meaning of life” (note that it’s already an integration test, not unit!).&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// lib/multiply.js
-module.exports = (number) =&amp;gt; {
-  if (typeof number !== 'number') throw new TypeError('Only numbers can be multiplied!')
-  return number * 2
-}
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// lib/multiply.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'number'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TypeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Only numbers can be multiplied!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// test/multiply.test.js
-const test = require('ava')
-const multiply = require('../lib/multiply')
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// test/multiply.test.js&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ava'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiply&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'../lib/multiply'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-test('Can multiply numbers', (t) =&amp;gt; {
-  t.is(multiply(10), 20)
-})
+&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Can multiply numbers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;multiply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 
-test('Throws when you try to multiply non-number value', (t) =&amp;gt; {
-  t.throws(() =&amp;gt; multiply('ohai!'), 'Only numbers can be multiplied!')
-})
+&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Throws when you try to multiply non-number value'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;throws&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ohai!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Only numbers can be multiplied!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Now, to test it all together:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// test/index.test.js
-const test = require('ava')
-const awesomeModule = require('../index')
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// test/index.test.js&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ava'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;awesomeModule&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'../index'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-test('Works nicely together', (t) =&amp;gt; {
-  t.is(awesomeModule(), 84)
-})
+&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Works nicely together'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;awesomeModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// index.js
-const meaningOfLife = require('./lib/meaningOfLife')
-const multiply = require('./lib/multiply')
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// index.js&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;meaningOfLife&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./lib/meaningOfLife'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiply&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./lib/multiply'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-module.exports = () =&amp;gt; multiply(meaningOfLife())
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multiply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;meaningOfLife&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -528,7 +827,13 @@ module.exports = () =&amp;gt; multiply(meaningOfLife())
 
 &lt;p&gt;We, as developers, are often charmed by shiny new tools. We seem to forget that those things should make our work easier, faster and less error prone. The simplest solutions are more than enough, more often than we think. Instead of spending an enormous amount of time on the setup, we should spend it on writing the software itself. And following these steps will allow you to do just that.&lt;/p&gt;
 
-&lt;p&gt;Once your project starts to grow, you may find yourself in need of something more complex. In most cases, however, it just won’t happen. And those tools will suit your needs quite well for a long, long time.&lt;/p&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when.</summary></entry><entry><title type="html">Teaching is hard, but worth it</title><link href="/blog/teaching-is-hard" rel="alternate" type="text/html" title="Teaching is hard, but worth it" /><published>2015-08-25T00:00:00+02:00</published><updated>2015-08-25T00:00:00+02:00</updated><id>/blog/teaching-is-hard</id><content type="html" xml:base="/blog/teaching-is-hard">&lt;p&gt;Last week I had a pleasure to teach JavaScript to a group of 11 people who were completely new to web development. It is not like they’ve had some experience with any programming language before. They were literally new to it, new and clueless.&lt;/p&gt;
+&lt;p&gt;Once your project starts to grow, you may find yourself in need of something more complex. In most cases, however, it just won’t happen. And those tools will suit your needs quite well for a long, long time.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when. I know from experience, that the first thing you do, once you decide to write a module or CLI tool, is set up an environment. Some people love it, some hate it. But no matter on which side you are, you’ll most likely end up spending way too much time doing it, polishing every aspect of the setup.</summary></entry><entry><title type="html">Teaching is Hard, But Worth It</title><link href="https://kamilogorek.com/blog/teaching-is-hard" rel="alternate" type="text/html" title="Teaching is Hard, But Worth It" /><published>2015-08-25T00:00:00+02:00</published><updated>2015-08-25T00:00:00+02:00</updated><id>https://kamilogorek.com/blog/teaching-is-hard</id><content type="html" xml:base="https://kamilogorek.com/blog/teaching-is-hard">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Last week I had a pleasure to teach JavaScript to a group of 11 people who were completely new to web development. It is not like they’ve had some experience with any programming language before. They were literally new to it, new and clueless.&lt;/p&gt;
 
 &lt;p&gt;My workshops were part of &lt;a href=&quot;http://www.coderslab.pl/&quot;&gt;Coder’s Lab&lt;/a&gt; 4-weeks-long course named “Become a Front-end Developer”.&lt;/p&gt;
 
@@ -580,7 +885,13 @@ expert, so behave like one, like a professional. And show them that you’re som
 
 &lt;h3 id=&quot;find-people-that-will-inspire-you&quot;&gt;Find people that will inspire you&lt;/h3&gt;
 
-&lt;p&gt;No matter how knowledgable you are, there are always things to learn. To make this experience reacher, you have to find people that will inspire you. Those are the people that will make you wiser, more determined and focused on your goals. Because of that I would like to say thank you to &lt;a href=&quot;https://twitter.com/getify&quot;&gt;Kyle Simpson @getify&lt;/a&gt; for all the work he put into his great &lt;a href=&quot;https://github.com/getify/You-Dont-Know-JS&quot;&gt;YDKJS&lt;/a&gt; series. This is the exact book that helped me to prepare and learn how programming language should be explained. Subject after subject, part after part. As well as to &lt;a href=&quot;https://twitter.com/HenrikJoreteg&quot;&gt;Henrik Joreteg @HenrikJoreteg&lt;/a&gt; for his &lt;a href=&quot;http://humanjavascript.com/&quot;&gt;Human JavaScript&lt;/a&gt; series. It really is written for “Humans”, and it helped me to learn how to explain things in the simplest words possible.&lt;/p&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">Last week I had a pleasure to teach JavaScript to a group of 11 people who were completely new to web development. It is not like they’ve had some experience with any programming language before. They were literally new to it, new and clueless.</summary></entry><entry><title type="html">File System Permissions and Umask in Node.js</title><link href="/blog/file-system-permissions-umask-node-js" rel="alternate" type="text/html" title="File System Permissions and Umask in Node.js" /><published>2015-02-18T00:00:00+01:00</published><updated>2015-02-18T00:00:00+01:00</updated><id>/blog/file-system-permissions-umask-node-js</id><content type="html" xml:base="/blog/file-system-permissions-umask-node-js">&lt;p&gt;Working as a developer sometimes requires more knowledge than just of programming itself. It’s always a good idea to grasp some concepts from other IT fields as well.&lt;br /&gt;
+&lt;p&gt;No matter how knowledgable you are, there are always things to learn. To make this experience reacher, you have to find people that will inspire you. Those are the people that will make you wiser, more determined and focused on your goals. Because of that I would like to say thank you to &lt;a href=&quot;https://twitter.com/getify&quot;&gt;Kyle Simpson @getify&lt;/a&gt; for all the work he put into his great &lt;a href=&quot;https://github.com/getify/You-Dont-Know-JS&quot;&gt;YDKJS&lt;/a&gt; series. This is the exact book that helped me to prepare and learn how programming language should be explained. Subject after subject, part after part. As well as to &lt;a href=&quot;https://twitter.com/HenrikJoreteg&quot;&gt;Henrik Joreteg @HenrikJoreteg&lt;/a&gt; for his &lt;a href=&quot;http://humanjavascript.com/&quot;&gt;Human JavaScript&lt;/a&gt; series. It really is written for “Humans”, and it helped me to learn how to explain things in the simplest words possible.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author></entry><entry><title type="html">File System Permissions and Umask in Node.js</title><link href="https://kamilogorek.com/blog/file-system-permissions-umask-node-js" rel="alternate" type="text/html" title="File System Permissions and Umask in Node.js" /><published>2015-02-18T00:00:00+01:00</published><updated>2015-02-18T00:00:00+01:00</updated><id>https://kamilogorek.com/blog/file-system-permissions-umask-node-js</id><content type="html" xml:base="https://kamilogorek.com/blog/file-system-permissions-umask-node-js">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Working as a developer sometimes requires more knowledge than just of programming itself. It’s always a good idea to grasp some concepts from other IT fields as well.&lt;br /&gt;
  One of these concepts are &lt;a href=&quot;http://en.wikipedia.org/wiki/File_system_permissions&quot;&gt;file system permissions&lt;/a&gt;, proper management of which is a must when it comes to working with files, eg. using node.js &lt;code class=&quot;highlighter-rouge&quot;&gt;fs&lt;/code&gt; module.&lt;/p&gt;
 
 &lt;p&gt;I won’t write what exactly &lt;code class=&quot;highlighter-rouge&quot;&gt;777&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;r/w/x&lt;/code&gt; exactly mean, as it’s very broad topic, but I’ll try to show how we can use those concepts in node.js world.&lt;/p&gt;
@@ -631,7 +942,13 @@ expert, so behave like one, like a professional. And show them that you’re som
 
 &lt;p&gt;It’s worth mentioning that &lt;code class=&quot;highlighter-rouge&quot;&gt;0777 &amp;amp; ~process.umask()&lt;/code&gt; for folders and &lt;code class=&quot;highlighter-rouge&quot;&gt;0666 &amp;amp; ~process.umask()&lt;/code&gt; for files are exactly what your system would do on it’s own if you would leave those parameters.&lt;/p&gt;
 
-&lt;p&gt;If you got interested (remember, JavaScript is not the only thing worth knowing!), you should definitely dive more into studying the basics of IT science.&lt;/p&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">Working as a developer sometimes requires more knowledge than just of programming itself. It’s always a good idea to grasp some concepts from other IT fields as well. One of these concepts are file system permissions, proper management of which is a must when it comes to working with files, eg. using node.js fs module.</summary></entry><entry><title type="html">JavaScript ES5 Array Iteration Methods Explained</title><link href="/blog/javascript-es5-array-iteration-methods-explained" rel="alternate" type="text/html" title="JavaScript ES5 Array Iteration Methods Explained" /><published>2015-01-13T00:00:00+01:00</published><updated>2015-01-13T00:00:00+01:00</updated><id>/blog/javascript-es5-array-iteration-methods-explained</id><content type="html" xml:base="/blog/javascript-es5-array-iteration-methods-explained">&lt;p&gt;Although JavaScript ECMAScript 6 is just around the corner, there’re still plenty of developers that are not aware of possibilities given to them in ES5 edition, in terms of arrays-based operations. Let’s go through all seven of them and explain how they work one-by-one.&lt;/p&gt;
+&lt;p&gt;If you got interested (remember, JavaScript is not the only thing worth knowing!), you should definitely dive more into studying the basics of IT science.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author></entry><entry><title type="html">JavaScript ES5 Array Iteration Methods Explained</title><link href="https://kamilogorek.com/blog/javascript-es5-array-iteration-methods-explained" rel="alternate" type="text/html" title="JavaScript ES5 Array Iteration Methods Explained" /><published>2015-01-13T00:00:00+01:00</published><updated>2015-01-13T00:00:00+01:00</updated><id>https://kamilogorek.com/blog/javascript-es5-array-iteration-methods-explained</id><content type="html" xml:base="https://kamilogorek.com/blog/javascript-es5-array-iteration-methods-explained">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Although JavaScript ECMAScript 6 is just around the corner, there’re still plenty of developers that are not aware of possibilities given to them in ES5 edition, in terms of arrays-based operations. Let’s go through all seven of them and explain how they work one-by-one.&lt;/p&gt;
 
 &lt;h2 id=&quot;new-es5-methods&quot;&gt;New ES5 methods&lt;/h2&gt;
 
@@ -773,7 +1090,13 @@ expert, so behave like one, like a professional. And show them that you’re som
 &lt;/noscript&gt;
 &lt;h2 id=&quot;more-informations&quot;&gt;More informations&lt;/h2&gt;
 
-&lt;p&gt;If you want to read in depth about all available methods, their quirks, browser incompatibilities etc., go to &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array&quot;&gt;Mozilla Developer Network&lt;/a&gt;, where you can find every piece of information you’ll need.&lt;/p&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">Although JavaScript ECMAScript 6 is just around the corner, there’re still plenty of developers that are not aware of possibilities given to them in ES5 edition, in terms of arrays-based operations. Let’s go through all seven of them and explain how they work one-by-one.</summary></entry><entry><title type="html">Build a Fearless Development Cycle With Git Hooks</title><link href="/blog/fearless-development-cycle-git-hooks" rel="alternate" type="text/html" title="Build a Fearless Development Cycle With Git Hooks" /><published>2014-11-22T00:00:00+01:00</published><updated>2014-11-22T00:00:00+01:00</updated><id>/blog/fearless-development-cycle-git-hooks</id><content type="html" xml:base="/blog/fearless-development-cycle-git-hooks">&lt;p&gt;One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Having the ability to change is tempting and dangerous at the same time.&lt;/p&gt;
+&lt;p&gt;If you want to read in depth about all available methods, their quirks, browser incompatibilities etc., go to &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array&quot;&gt;Mozilla Developer Network&lt;/a&gt;, where you can find every piece of information you’ll need.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author></entry><entry><title type="html">Build a Fearless Development Cycle With Git Hooks</title><link href="https://kamilogorek.com/blog/fearless-development-cycle-git-hooks" rel="alternate" type="text/html" title="Build a Fearless Development Cycle With Git Hooks" /><published>2014-11-22T00:00:00+01:00</published><updated>2014-11-22T00:00:00+01:00</updated><id>https://kamilogorek.com/blog/fearless-development-cycle-git-hooks</id><content type="html" xml:base="https://kamilogorek.com/blog/fearless-development-cycle-git-hooks">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Having the ability to change is tempting and dangerous at the same time.&lt;/p&gt;
 
 &lt;p&gt;If you work in a development team, especially one made of mostly remote developers, you might find that without necessary preparations, you will spend plenty of time on obvious bugs fixes, coding guidelines changes (if you have one!) or linting errors patches.&lt;/p&gt;
 
@@ -824,7 +1147,13 @@ expert, so behave like one, like a professional. And show them that you’re som
 
 &lt;p&gt;This was just a few minutes of work that can save you plenty of time in the long run, and for me it should be treated as &lt;strong&gt;must-have&lt;/strong&gt; for any projects you are working on.&lt;/p&gt;
 
-&lt;p&gt;If you’d like to see whole repository used here, you can visit this &lt;a href=&quot;https://github.com/kamilogorek/githooks-article&quot; title=&quot;article's github repository&quot;&gt;article’s github repository&lt;/a&gt;.&lt;/p&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Having the ability to change is tempting and dangerous at the same time.</summary></entry><entry><title type="html">The Interviewed – Kamil Ogórek, Senior Client-side Engineer</title><link href="/blog/interviewed-kamil-ogorek-senior-client-side-engineer" rel="alternate" type="text/html" title="The Interviewed – Kamil Ogórek, Senior Client-side Engineer" /><published>2014-08-26T00:00:00+02:00</published><updated>2014-08-26T00:00:00+02:00</updated><id>/blog/interviewed-kamil-ogorek-senior-client-side-engineer</id><content type="html" xml:base="/blog/interviewed-kamil-ogorek-senior-client-side-engineer">&lt;p&gt;When there is a problem, there is a solution. In XHTMLized we often say: if there is a solution - Kamil has it.&lt;/p&gt;
+&lt;p&gt;If you’d like to see whole repository used here, you can visit this &lt;a href=&quot;https://github.com/kamilogorek/githooks-article&quot; title=&quot;article's github repository&quot;&gt;article’s github repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author></entry><entry><title type="html">The Interviewed: Kamil Ogórek, Senior Client-side Engineer</title><link href="https://kamilogorek.com/blog/interviewed-kamil-ogorek-senior-client-side-engineer" rel="alternate" type="text/html" title="The Interviewed: Kamil Ogórek, Senior Client-side Engineer" /><published>2014-08-26T00:00:00+02:00</published><updated>2014-08-26T00:00:00+02:00</updated><id>https://kamilogorek.com/blog/interviewed-kamil-ogorek-senior-client-side-engineer</id><content type="html" xml:base="https://kamilogorek.com/blog/interviewed-kamil-ogorek-senior-client-side-engineer">&lt;p&gt;&lt;em&gt;Originally posted on &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;When there is a problem, there is a solution. In XHTMLized we often say: if there is a solution - Kamil has it.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Today we would like to share the first episode of &lt;strong&gt;The Interviewed&lt;/strong&gt; with you. Under this name a series of conversations will be published on our blog. Conversations with developers, project managers, operational staff – and other spirits performing various roles in XHTMLized.&lt;/em&gt;&lt;/p&gt;
 
@@ -884,96 +1213,6 @@ expert, so behave like one, like a professional. And show them that you’re som
 
 &lt;p&gt;&lt;strong&gt;JD: &lt;em&gt;Thanks! /five!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;KO:&lt;/strong&gt; /five!&lt;/p&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">When there is a problem, there is a solution. In XHTMLized we often say: if there is a solution - Kamil has it.</summary></entry><entry><title type="html">Speed up your GitHub workflow with Hub</title><link href="/blog/speed-up-your-github-workflow-with-hub" rel="alternate" type="text/html" title="Speed up your GitHub workflow with Hub" /><published>2014-02-12T00:00:00+01:00</published><updated>2014-02-12T00:00:00+01:00</updated><id>/blog/speed-up-your-github-workflow-with-hub</id><content type="html" xml:base="/blog/speed-up-your-github-workflow-with-hub">&lt;p&gt;&lt;span style=&quot;line-height: 1.5em;&quot;&gt;As awesome as Github’s web interface is, trying to use it alongside your terminal can be rather time consuming and may slow down your workflow.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;KO:&lt;/strong&gt; /five!&lt;/p&gt;
 
-&lt;p&gt;Why couldn’t you just perform all your common actions straight from the CLI? Well, you can. And it’s not just another homemade application. It comes straight from GitHub itself.&lt;/p&gt;
-
-&lt;p&gt;Let me introduce you to &lt;a href=&quot;http://hub.github.com/&quot;&gt;Hub&lt;/a&gt;, a simple wrapper around Git’s CLI which allows you to make any operation that can be done with GitHub’s API.&lt;/p&gt;
-
-&lt;p&gt;Opening pull requests, issues or forking are just a few basic and helpful things that’ll make your life better.&lt;/p&gt;
-
-&lt;p&gt;Installation is pretty straight-forward. Nothing fancy.&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-install-brew.sh&quot;&gt;&lt;/script&gt;
-&lt;noscript&gt;View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).&lt;/noscript&gt;
-
-&lt;p&gt;Or if you’re not an OSX user, you can install it straight from a source.&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-install-source.sh&quot;&gt;&lt;/script&gt;
-&lt;noscript&gt;View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).&lt;/noscript&gt;
-
-&lt;p&gt;##Basic repositories actions&lt;/p&gt;
-
-&lt;p&gt;Let’s start from the most common scenario, creating and forking a repository for a new project.&lt;/p&gt;
-
-&lt;p&gt;The regular process using a CLI looks like this:&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-repo-raw.sh&quot;&gt;&lt;/script&gt;
-&lt;noscript&gt;View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).
-
-&lt;/noscript&gt;
-&lt;p&gt;It doesn’t look like something that can be done within seconds. Let’s now look how you can do the same thing using Hub:&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-repo.sh&quot;&gt;&lt;/script&gt;
-&lt;noscript&gt;View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).
-
-&lt;/noscript&gt;
-&lt;p&gt;If you want to repeat the first scenario using the origin/upstream naming convention, all you need to do are two additional steps:&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-repo-naming.sh&quot;&gt;&lt;/script&gt;
-&lt;noscript&gt;View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).
-
-&lt;/noscript&gt;
-&lt;p&gt;&lt;strong&gt;That’s all.&lt;/strong&gt; Everything straight from your terminal with a few simple steps.&lt;/p&gt;
-
-&lt;p&gt;You could even write a small script, which could execute all those commands for you.&lt;/p&gt;
-
-&lt;p&gt;Everything that you need to remember is to &lt;em&gt;correctly set your global Git config&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;remotes-management-and-fetching-data&quot;&gt;Remotes management and fetching data&lt;/h2&gt;
-
-&lt;p&gt;Now let’s say that after few days into your project, you need to get some changes from multiple forks from your teammates.&lt;/p&gt;
-
-&lt;p&gt;Instead of manually adding all remotes and fetching them, you can do the same thing in one step.&lt;/p&gt;
-
-&lt;p&gt;Instead of using:&lt;br /&gt;
-&lt;script src=&quot;https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-forks-raw.sh&quot;&gt;&lt;/script&gt;&lt;noscript&gt;View the code on &lt;a href=&quot;https://gist.github.com/b7d3682af00a5ada17bc&quot;&gt;Gist&lt;/a&gt;.&lt;/noscript&gt;&lt;/p&gt;
-
-&lt;p&gt;you can now just type &lt;code class=&quot;highlighter-rouge&quot;&gt;$ git fetch &amp;lt;username&amp;gt;, &amp;lt;username&amp;gt;, &amp;lt;username&amp;gt;&lt;/code&gt; which will repeat above operations for every comma-separated user for you.&lt;/p&gt;
-
-&lt;h2 id=&quot;maintaining-commits&quot;&gt;Maintaining commits&lt;/h2&gt;
-
-&lt;p&gt;Want to do a QA or local code-review for a friend?&lt;/p&gt;
-
-&lt;p&gt;I assure you that &lt;code class=&quot;highlighter-rouge&quot;&gt;$ git checkout https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repo&amp;gt;/pull/&amp;lt;PR.number&amp;gt;&lt;/code&gt; is much smoother and easier to type than:&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-commits.sh&quot;&gt;&lt;/script&gt;
-&lt;noscript&gt;View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).&lt;/noscript&gt;
-
-&lt;p&gt;Or maybe you just want to grab one commit from your friend’s fork without all remote/fetch/cherry-pick hassle.&lt;/p&gt;
-
-&lt;p&gt;Easy: Just use &lt;code class=&quot;highlighter-rouge&quot;&gt;$ git cherry-pick https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repo&amp;gt;/commit/&amp;lt;commit-hash&amp;gt;&lt;/code&gt; and all changes will be applied to your current branch.&lt;/p&gt;
-
-&lt;h2 id=&quot;pull-requests&quot;&gt;Pull requests&lt;/h2&gt;
-
-&lt;p&gt;And the thing that saved me the most of my precious time. &lt;strong&gt;Pull requests straight from a CLI&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-pr.sh&quot;&gt;&lt;/script&gt;
-&lt;noscript&gt;View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).&lt;/noscript&gt;
-
-&lt;p&gt;As simple as that. You don’t have to go to github.com, select repos, branches, etc.&lt;/p&gt;
-
-&lt;p&gt;By default, Hub opens a pull request for an &lt;code class=&quot;highlighter-rouge&quot;&gt;origin/master&lt;/code&gt;. If you want to use this shorthand you have to set your main repository remote as &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;username&amp;gt;&lt;/code&gt; as your fork.&lt;/p&gt;
-
-&lt;p&gt;If you want to use any remotes names, you can specify BASE and HEAD for a pull request using -b and -h flag.&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/b7d3682af00a5ada17bc.js?file=hub-pr-pointers.sh&quot;&gt;&lt;/script&gt;
-&lt;noscript&gt;View the code on [Gist](https://gist.github.com/b7d3682af00a5ada17bc).&lt;/noscript&gt;
-
-&lt;p&gt;&lt;strong&gt;One helpful tip from the official Hub page:&lt;/strong&gt; If you’re making a new PR, append &lt;code class=&quot;highlighter-rouge&quot;&gt;| pbcopy&lt;/code&gt; to the whole command. This way you’ll instantly get the PR URL copied into your clipboard, ready to post into a ticket or send to co-workers.&lt;/p&gt;
-
-&lt;p&gt;Additional shortcuts like opening your GitHub project on a specific page like &lt;code class=&quot;highlighter-rouge&quot;&gt;git browse&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;git browse -- issues&lt;/code&gt; are just a cherry on top, but it’s always good to keep them in mind.&lt;/p&gt;
-
-&lt;p&gt;There are many more commands which Hub provides. If you want to wrap your head around it, you can find the documentation in the official project manual &lt;a href=&quot;http://hub.github.com/hub.1.html&quot; title=&quot;http://hub.github.com/hub.1.html&quot;&gt;http://hub.github.com/hub.1.html&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;/Fives!&lt;/p&gt;</content><author><name>Kamil Ogórek</name></author><summary type="html">As awesome as Github’s web interface is, trying to use it alongside your terminal can be rather time consuming and may slow down your workflow.</summary></entry></feed>
+&lt;hr /&gt;</content><author><name>Kamil Ogórek</name></author></entry></feed>

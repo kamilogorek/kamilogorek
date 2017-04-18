@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>npm Scripts: Tips Everyone Should Know | Kamil Ogórek</title>
+  <meta name="description" content="npm is not only the package manager for JavaScript, it&#39;s also used to set up tooling around your codebase. Linters, transpilers, testing, and servers. Everything can be configured and run using the very same thing. Basic usage is really simple, too.">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://kamilogorek.com/blog/npm-tips">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Kamil Ogórek" href="https://kamilogorek.com/feed.xml">
+
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="kamilogorek">
+  <meta name="twitter:title" content="npm Scripts: Tips Everyone Should Know | Kamil Ogórek">
+  <meta name="twitter:description" content="npm is not only the package manager for JavaScript, it&#39;s also used to set up tooling around your codebase. Linters, transpilers, testing, and servers. Everything can be configured and run using...">
+  
+    <meta name="twitter:creator" content="kamilogorek">
+  
+  
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Bitter:400,700,400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-29832978-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+	<div class="wrapper">
+
+		<a class="site-title" href="/">Kamil Ogórek</a>
+
+		<nav class="site-nav">
+			
+				
+				<a class="page-link" href="/blog/">Blog</a>
+			
+				
+				<a class="page-link" href="/talks/">Talks</a>
+			
+				
+				<a class="page-link" href="/workshops/">Workshops</a>
+			
+				
+				<a class="page-link" href="/training/">Training</a>
+			
+				
+				<a class="page-link" href="/nutrition/">Nutrition</a>
+			
+
+			<a class="page-link icon-link" href="https://twitter.com/kamilogorek">
+				<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg>
+			</a>
+			<a class="page-link icon-link" href="https://github.com/kamilogorek">
+				<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg>
+			</a>
+			<a class="page-link icon-link" href="https://linkedin.com/in/kamilogorek">
+				<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg>
+			</a>
+		</nav>
+
+	</div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">npm Scripts: Tips Everyone Should Know</h1>
+  </header>
+
+  <div class="post-content">
+    <p><em>Originally posted on <a href="http://corgibytes.com/blog/2017/04/18/npm-tips/">corgibytes.com</a></em></p>
+
+<hr />
+
+<p>npm is not only the package manager for JavaScript, it’s also <a href="https://docs.npmjs.com/misc/scripts">used to set up tooling around your codebase</a>. Linters, transpilers, testing, and servers. Everything can be configured and run using the very same thing. Basic usage is really simple, too.</p>
+
+<p>You specify your scripts within the <code class="highlighter-rouge">scripts</code> attribute of the main object in <code class="highlighter-rouge">package.json</code> and then run it using <code class="highlighter-rouge">npm run &lt;name&gt;</code>.</p>
+
+<p>For example:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack --progress"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"karma start"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack-dev-server"</span><span class="w">  
+  </span><span class="p">}</span><span class="w">  
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>There are, however, some details that may be useful while performing your setup.</p>
+
+<hr />
+
+<h2 id="running-scripts-with-additional-arguments">Running Scripts with Additional Arguments</h2>
+
+<p>Let’s say that you want to run Karma, which by default is watching all of your files for changes, without this feature.</p>
+
+<p>To do this, they provide a <code class="highlighter-rouge">--single-run</code> flag that can be used with their script.</p>
+
+<p>The simplest way to achieve this would be to add a new entry in our scripts.</p>
+
+<p>For example:</p>
+
+<p><code class="highlighter-rouge">"test:single-run": "karma start --single-run"</code></p>
+
+<p>If we’d like to modify our default test parameters, however, we’d have to do this in both places, <code class="highlighter-rouge">test</code> and <code class="highlighter-rouge">test:single-run</code>.</p>
+
+<p>Or we can go around this issue by using our flag directly from the command line.</p>
+
+<p>To achieve this, we use <code class="highlighter-rouge">--</code> at the end of our command, which tells npm that anything after this should be appended directly to the command itself.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm run <span class="nb">test</span> -- --single-run
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="running-multiple-commands-in-series-or-in-parallel">Running Multiple Commands in Series or in Parallel</h2>
+
+<p>If you have one script that runs multiple commands, let’s say CSS linter, JS linter and HTML linter, it’d be nice to run them all at once to speed things up.</p>
+
+<p>If you have commands that are dependent on each other, however, like if you run transpiler before running the tests, you’ll want to change the execution flow to be one after another, not all at once.</p>
+
+<p>Because <code class="highlighter-rouge">npm</code> scripts are spawning a shell process under the hood, we can use its syntax to achieve what we need. Specifically <code class="highlighter-rouge">;</code> (and <code class="highlighter-rouge">&amp;&amp;</code>, more on this next) for running in series and <code class="highlighter-rouge">&amp;</code> for running in parallel.</p>
+
+<p>An example using this syntax could look something like this:</p>
+
+<p>Parallel:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"lint"</span><span class="err">:</span><span class="w"> </span><span class="s2">"eslint &amp; csslint &amp; htmllint"</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Series:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"build"</span><span class="err">:</span><span class="w"> </span><span class="s2">"babel; jest"</span><span class="w">
+</span></code></pre>
+</div>
+<p>(I know, Jest test runner has a built-in functionality to precompile your code. It’s only an example ;))</p>
+
+<p>It will work just fine, but there’s one rather huge issue with this approach. <code class="highlighter-rouge">&amp;</code> syntax creates a subprocess, which results in the original <code class="highlighter-rouge">npm</code> process not being able to tell whether it already finishes or not. This can be problematic, especially with long running scripts.</p>
+
+<p>To make things more coherent, we can use a package called <a href="https://www.npmjs.com/package/npm-run-all">npm-run-all</a>. It provides additional commands, more specifically <code class="highlighter-rouge">run-s</code> for series and <code class="highlighter-rouge">run-p</code> for parallel, and it will handle all of the subprocesses correctly.</p>
+
+<p>Parallel:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"lint"</span><span class="err">:</span><span class="w"> </span><span class="s2">"run-p eslint csslint htmllint"</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Series:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"build"</span><span class="err">:</span><span class="w"> </span><span class="s2">"run-s babel jest"</span><span class="w">
+</span></code></pre>
+</div>
+
+<hr />
+
+<h2 id="bailing-out-when-a-command-fails">Bailing out When a Command Fails</h2>
+
+<p>In our previous example, we run transpiler before we run our tests.</p>
+
+<p>But what’s the point of running the tests if transpilation failed in the first place?</p>
+
+<p><code class="highlighter-rouge">;</code> syntax waits until the former command finishes and then runs the next one, no matter what the exit code.</p>
+
+<p>What we’d like to do instead is to stop the execution if any command in series failed.</p>
+
+<p>To change this, we simply use <code class="highlighter-rouge">&amp;&amp;</code> instead of <code class="highlighter-rouge">;</code>:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"build"</span><span class="err">:</span><span class="w"> </span><span class="s2">"babel &amp;&amp; jest"</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Now, if <code class="highlighter-rouge">babel</code> exits with a code other than <code class="highlighter-rouge">0</code>, which means a successful command run, <code class="highlighter-rouge">jest</code> will never run.</p>
+
+<p>We can, of course, chain this syntax as many times as we want:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"build"</span><span class="err">:</span><span class="w"> </span><span class="s2">"eslint &amp;&amp; babel &amp;&amp; jest &amp;&amp; deploy"</span><span class="w">
+</span></code></pre>
+</div>
+
+<hr />
+
+<h2 id="using-life-cycle-hooks">Using Life-Cycle Hooks</h2>
+
+<p>Every script in npm runs three separate scripts under the hood. A <code class="highlighter-rouge">pre</code> script, a script itself and a <code class="highlighter-rouge">post</code> script. Those two additional scripts are run, as their names imply, before and after the main script.</p>
+
+<p>They are useful for setting up and cleaning up, for example, during deployment.</p>
+
+<p>Both of those scripts can be written using <code class="highlighter-rouge">pre&lt;script-name&gt;</code> and <code class="highlighter-rouge">post&lt;script-name&gt;</code> in the same <code class="highlighter-rouge">scripts</code> object as before.</p>
+
+<p>Let’s say that we want to build our project, it’ll be a very simple example just to show the concept.</p>
+
+<p>What we’ll do is this:</p>
+
+<ul>
+  <li>create a new one <code class="highlighter-rouge">dist</code> directory and remove everything from it if there was already one</li>
+  <li>create <code class="highlighter-rouge">tmp</code> directory</li>
+  <li>build the project to <code class="highlighter-rouge">tmp</code> directory</li>
+  <li>minify our bundle to <code class="highlighter-rouge">dist</code> directory</li>
+  <li>remove the <code class="highlighter-rouge">tmp</code> directory</li>
+</ul>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"prebuild"</span><span class="err">:</span><span class="w"> </span><span class="s2">"mkdir dist tmp; rm -rf dist/*"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"build"</span><span class="err">:</span><span class="w"> </span><span class="s2">"browserify main.js -o tmp/bundle.js &amp;&amp; uglifyjs -o dist/bundle.min.js -- tmp/bundle.js"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"postbuild"</span><span class="err">:</span><span class="w"> </span><span class="s2">"rm -rf tmp"</span><span class="w">
+</span></code></pre>
+</div>
+<p>Note that you should use the <code class="highlighter-rouge">rimraf</code> package for cross-platform compatibility, as it won’t work on Windows.</p>
+
+<p>Now, whenever you run <code class="highlighter-rouge">npm run build</code>, it will trigger all the commands, making sure they were called in a correct order.</p>
+
+<hr />
+
+<h2 id="running-group-of-commands">Running Group of Commands</h2>
+
+<p>The naming convention in npm uses a colon to group a whole set of specific tasks. In one of the code examples above, we run all lint tasks in parallel using <code class="highlighter-rouge">&amp;</code> syntax.</p>
+
+<p>What I often like to do is split those tasks into smaller chunks and run them as groups using the <code class="highlighter-rouge">npm run</code> command within the script itself.</p>
+
+<p>Our previous example looked like this:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"lint"</span><span class="err">:</span><span class="w"> </span><span class="s2">"eslint &amp; csslint &amp; htmllint"</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>What we can do is separate every single one of them (in case we need to add some flags to configure them, for example) and group them together.</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"lint: "</span><span class="err">npm</span><span class="w"> </span><span class="err">run</span><span class="w"> </span><span class="err">lint:js</span><span class="w"> </span><span class="err">&amp;</span><span class="w"> </span><span class="err">npm</span><span class="w"> </span><span class="err">run</span><span class="w"> </span><span class="err">lint:css</span><span class="w"> </span><span class="err">&amp;</span><span class="w"> </span><span class="err">npm</span><span class="w"> </span><span class="err">run</span><span class="w"> </span><span class="err">lint:html</span><span class="s2">",
+"</span><span class="err">lint:js</span><span class="s2">": "</span><span class="err">eslint</span><span class="w"> </span><span class="err">--some-flag</span><span class="s2">",
+"</span><span class="err">lint:css</span><span class="s2">": "</span><span class="err">csslint</span><span class="w"> </span><span class="err">--that-will-change</span><span class="s2">",
+"</span><span class="err">lint:html</span><span class="s2">": "</span><span class="err">htmllint</span><span class="w"> </span><span class="err">--how-things-work"</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>After this change, it will work exactly the same way, but now we can run either all of them at once, or each one separately whenever we need.</p>
+
+<p>To make it even cleaner, we could use an <code class="highlighter-rouge">npm-run-all</code> here again and change our main <code class="highlighter-rouge">lint</code> command to <code class="highlighter-rouge">npm-run-all lint:*</code>, which would then match all scripts starting with the <code class="highlighter-rouge">lint:</code> group.</p>
+
+<hr />
+
+<h2 id="npm-completion">npm Completion</h2>
+
+<p>One of the things I learned recently is that npm itself provides us with a baked-in way to <a href="https://docs.npmjs.com/cli/completion">add commands completion in the terminal</a>. And what’s even better is that it will also include all of your custom scripts!</p>
+
+<p>Depending on your environment (bash or zsh), you just pipe the result of your <code class="highlighter-rouge">npm completion</code> command directly to <code class="highlighter-rouge">~/.bashrc</code> or <code class="highlighter-rouge">~/.zshrc</code>. Remember to reload this file afterwards using <code class="highlighter-rouge">source ~/.bashrc</code>!</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm completion &gt;&gt; ~/.bashrc
+<span class="gp">$ </span>npm completion &gt;&gt; ~/.zshrc
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="writing-custom-checks-for-your-npm-scripts">Writing Custom Checks for Your npm Scripts</h2>
+
+<p>Thanks to the <code class="highlighter-rouge">&amp;&amp;</code> syntax and npm understanding regular exit codes as described above, we can write very simple node scripts that will do some initial checks for us.</p>
+
+<p>For example, making sure that the user specified all of the required ENV variables or that the command name doesn’t contain any typos when trying to run it.</p>
+
+<p>What I used recently, is this nodel.js script verifying that I have <code class="highlighter-rouge">NODE_ENV</code> set up and that developers are using one of the predefined env-specific scripts.</p>
+
+<p>My scripts look something like this:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"build"</span><span class="err">:</span><span class="w"> </span><span class="s2">"node ./scripts/env-check.js &amp;&amp; rimraf dist &amp;&amp; webpack --bail --progress --profile --display-error-details"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"build:development"</span><span class="err">:</span><span class="w"> </span><span class="s2">"NODE_ENV=development npm run build"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"build:staging"</span><span class="err">:</span><span class="w"> </span><span class="s2">"NODE_ENV=staging npm run build"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"build:production"</span><span class="err">:</span><span class="w"> </span><span class="s2">"NODE_ENV=production npm run build"</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>And <code class="highlighter-rouge">env-check.js</code> content:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">task</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">npm_lifecycle_event</span>
+<span class="kr">const</span> <span class="nx">packageJSON</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../package.json'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">availableEnvironments</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">packageJSON</span><span class="p">.</span><span class="nx">scripts</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">key</span> <span class="o">=&gt;</span> <span class="nx">key</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="nx">task</span><span class="p">))</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">key</span> <span class="o">=&gt;</span> <span class="nx">key</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">key</span> <span class="o">=&gt;</span> <span class="nx">key</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="err">`</span><span class="p">[</span> <span class="nb">Error</span> <span class="p">]</span> <span class="nx">NODE_ENV</span> <span class="nx">is</span> <span class="nx">required</span><span class="p">.</span> <span class="nx">Use</span> <span class="nx">$</span><span class="p">{</span><span class="nx">task</span><span class="p">}</span><span class="err">:</span><span class="nx">$</span><span class="p">{</span><span class="nx">availableEnvironments</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)}</span> <span class="nx">scripts</span> <span class="nx">instead</span><span class="p">.</span><span class="err">`</span><span class="p">)</span>
+  <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">availableEnvironments</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">env</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="err">`</span><span class="p">[</span> <span class="nb">Error</span> <span class="p">]</span> <span class="nx">$</span><span class="p">{</span><span class="nx">env</span><span class="p">}</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">valid</span> <span class="nx">NODE_ENV</span><span class="p">.</span> <span class="nx">Use</span> <span class="nx">$</span><span class="p">{</span><span class="nx">task</span><span class="p">}</span><span class="err">:</span><span class="nx">$</span><span class="p">{</span><span class="nx">availableEnvironments</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)}</span> <span class="nx">scripts</span> <span class="nx">instead</span><span class="p">.</span><span class="err">`</span><span class="p">)</span>
+  <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Now, whenever a developer types <code class="highlighter-rouge">npm run build</code> directly, this prompt will show up:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="o">[</span> Error <span class="o">]</span> NODE_ENV is required. Use build:development/staging/production scripts instead.
+</code></pre>
+</div>
+
+<p>One drawback of the code above is that it won’t understand <code class="highlighter-rouge">pre</code> script, which seems like a perfect place for this check:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"prebuild"</span><span class="err">:</span><span class="w"> </span><span class="s2">"node ./scripts/env-check.js &amp;&amp; rimraf dist"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"build"</span><span class="err">:</span><span class="w"> </span><span class="s2">"webpack --bail --progress --profile --display-error-details"</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>To fix this, we’ll have to update the <code class="highlighter-rouge">task</code> variable, as <code class="highlighter-rouge">process.env.npm_lifecycle_event</code> won’t return a <code class="highlighter-rouge">build</code> name, but rather <code class="highlighter-rouge">prebuild</code>.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">task</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">npm_lifecycle_event</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">'pre'</span><span class="p">)</span> <span class="p">?</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">npm_lifecycle_event</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">npm_lifecycle_event</span>
+</code></pre>
+</div>
+
+<p>Now, we can place <code class="highlighter-rouge">node ./scripts/env-check.js</code> in any <code class="highlighter-rouge">pre</code> script, and it will perform all of those initial checks for us.</p>
+
+<p>I personally use it for build, server and deploy scripts, but it can certainly be effectively used in many more places.</p>
+
+<hr />
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      &copy; Kamil Ogórek - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="/feed.xml">RSS</a> - <a href="https://github.com/kamilogorek/kamilogorek">GitHub Repository</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

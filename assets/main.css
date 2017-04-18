@@ -433,6 +433,15 @@ pre {
   clear: both;
   text-align: right; }
 
+.icon-link:hover {
+  text-decoration: none; }
+  .icon-link:hover svg {
+    opacity: 0.5; }
+.icon-link svg {
+  width: 19px;
+  vertical-align: -4px;
+  color: #111; }
+
 @media only screen and (min-width: 480px) {
   .bio-photo {
     float: left;
@@ -440,4 +449,7 @@ pre {
 @media only screen and (min-width: 768px) {
   .bio {
     float: left;
-    width: calc(100% - 200px); } }
+    width: calc(100% - 184px); }
+
+  .bio-photo {
+    margin-left: 0; } }

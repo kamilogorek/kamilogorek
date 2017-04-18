@@ -10,14 +10,14 @@
   
   
   <title>Setting up a Minimal, Yet Useful Javascript Dev Environment | Kamil Ogórek</title>
-  <meta name="description" content="In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when.">
+  <meta name="description" content="In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when. I know from experience, that the first thing you do, once you decide to write a module or CLI tool, is set up an environment. Some people love it, some hate it. But no matter on which side you are, you’ll most likely end up spending way too much time doing it, polishing every aspect of the setup.">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/blog/minimal-useful-javascript-environment">
+  <link rel="canonical" href="https://kamilogorek.com/blog/minimal-useful-javascript-environment">
   
   
-  <link rel="alternate" type="application/rss+xml" title="Kamil Ogórek" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Kamil Ogórek" href="https://kamilogorek.com/feed.xml">
 
   
 
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="kamilogorek">
   <meta name="twitter:title" content="Setting up a Minimal, Yet Useful Javascript Dev Environment | Kamil...">
-  <meta name="twitter:description" content="In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when.">
+  <meta name="twitter:description" content="In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when. I know from experience, that the first thing you do, once you decide to write a modul...">
   
     <meta name="twitter:creator" content="kamilogorek">
   
@@ -67,33 +67,40 @@
 
     <header class="site-header">
 
-  <div class="wrapper">
+	<div class="wrapper">
 
-    <a class="site-title" href="/">Kamil Ogórek</a>
+		<a class="site-title" href="/">Kamil Ogórek</a>
 
-    <nav class="site-nav">
-      
-        
-        <a class="page-link" href="/about/">About</a>
-      
-        
-        <a class="page-link" href="/blog/">Blog</a>
-      
-        
-        <a class="page-link" href="/talks/">Talks</a>
-      
-        
-        <a class="page-link" href="/workshops/">Workshops</a>
-      
-        
-        <a class="page-link" href="/training/">Training</a>
-      
-        
-        <a class="page-link" href="/nutrition/">Nutrition</a>
-      
-    </nav>
+		<nav class="site-nav">
+			
+				
+				<a class="page-link" href="/blog/">Blog</a>
+			
+				
+				<a class="page-link" href="/talks/">Talks</a>
+			
+				
+				<a class="page-link" href="/workshops/">Workshops</a>
+			
+				
+				<a class="page-link" href="/training/">Training</a>
+			
+				
+				<a class="page-link" href="/nutrition/">Nutrition</a>
+			
 
-  </div>
+			<a class="page-link icon-link" href="https://twitter.com/kamilogorek">
+				<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg>
+			</a>
+			<a class="page-link icon-link" href="https://github.com/kamilogorek">
+				<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg>
+			</a>
+			<a class="page-link icon-link" href="https://linkedin.com/in/kamilogorek">
+				<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg>
+			</a>
+		</nav>
+
+	</div>
 
 </header>
 
@@ -107,7 +114,11 @@
   </header>
 
   <div class="post-content">
-    <p>In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when.</p>
+    <p><em>Originally posted on <a href="http://corgibytes.com/blog/2016/09/27/minimal-useful-javascript-environment/">corgibytes.com</a> and <a href="https://dev.to/corgibytes/setting-up-a-minimal-yet-useful-javascript-dev-environment">dev.to</a></em></p>
+
+<hr />
+
+<p>In an era of omnipresent frameworks, libraries and tooling, it may be hard to decide what tool to use and when.</p>
 
 <p>I know from experience, that the first thing you do, once you decide to write a module or CLI tool, is set up an environment. Some people love it, some hate it. But no matter on which side you are, you’ll most likely end up spending way too much time doing it, polishing every aspect of the setup.</p>
 
@@ -118,23 +129,27 @@ The truth is though, most of the time, as developers, we can get by with tools t
 
 <p>Here’s a step-by-step to help you go from having nothing, to being productive in five minutes or less (depending on NPM’s mood).</p>
 
+<hr />
+
 <h2 id="init-nodejs-project-and-git-repository">Init Node.js project and GIT repository</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Create a directory and cd into it (#protip – $_ holds argument of your last command)
-$ mkdir awesome-module &amp;&amp; cd $_
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="c"># Create a directory and cd into it (#protip – $_ holds argument of your last command)</span>
+<span class="gp">$ </span>mkdir awesome-module <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$_</span>
 
-# Initialize Node.js project with default settings
-$ npm init --yes
+<span class="c"># Initialize Node.js project with default settings</span>
+<span class="gp">$ </span>npm init --yes
 
-# Create initial folders and files
-$ mkdir lib test
-$ touch index.js lib/meaningOfLife.js test/index.test.js test/meaningOfLife.test.js
+<span class="c"># Create initial folders and files</span>
+<span class="gp">$ </span>mkdir lib <span class="nb">test</span>
+<span class="gp">$ </span>touch index.js lib/meaningOfLife.js <span class="nb">test</span>/index.test.js <span class="nb">test</span>/meaningOfLife.test.js
 
-# Initialize GIT repository and create initial commit
-$ git init
-$ git add -A; git commit -am "Awesome Module, day one"
+<span class="c"># Initialize GIT repository and create initial commit</span>
+<span class="gp">$ </span>git init
+<span class="gp">$ </span>git add -A; git commit -am <span class="s2">"Awesome Module, day one"</span>
 </code></pre>
 </div>
+
+<hr />
 
 <h2 id="install-tools">Install tools</h2>
 
@@ -142,23 +157,25 @@ $ git add -A; git commit -am "Awesome Module, day one"
 
 <p>Why those tools? Because they don’t require any configuration and take the cognitive load from your brain. One less thing to think and worry about.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ npm i --save-dev ava standard chokidar-cli precommit-hook
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i --save-dev ava standard chokidar-cli precommit-hook
 </code></pre>
 </div>
 
 <p>Remember to create a <code class="highlighter-rouge">.gitignore</code> file and add <code class="highlighter-rouge">node_modules</code> to it! We don’t want it in our repository.</p>
 
+<hr />
+
 <h2 id="set-up-tools">Set up tools</h2>
 
 <p>Open <code class="highlighter-rouge">package.json</code> and add those scripts to your file.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"scripts": {
-  "test": "ava",
-  "lint": "standard",
-  "dev": "chokidar '**/*.js' -c 'standard &amp;&amp; ava'"
-},
-"pre-commit": ["test", "lint"],
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ava"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chokidar '**/*.js' -c 'standard &amp;&amp; ava'"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="s2">"pre-commit"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"test"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lint"</span><span class="p">]</span><span class="err">,</span><span class="w">
+</span></code></pre>
 </div>
 
 <p>Aaaand you are done! Once you run <code class="highlighter-rouge">npm run dev</code> you’ll get all of your JS files linted by Standard.js and tests run by Ava. There’s nothing more to it, and you can start working right away.</p>
@@ -172,70 +189,72 @@ $ git add -A; git commit -am "Awesome Module, day one"
   <li>Because we use <code class="highlighter-rouge">&amp;&amp;</code> instead of <code class="highlighter-rouge">;</code> here in the <code class="highlighter-rouge">dev</code> script, tests won’t be triggered unless you pass linter rules. It makes the feedback loop even faster.</li>
 </ol>
 
+<hr />
+
 <h2 id="working-with-the-setup">Working with the setup</h2>
 
 <p>Because the environment assumes you’ll work in TDD style (and you probably should!), once you run your <code class="highlighter-rouge">dev</code> script, you can create tests and they will be added to the test suite, without any need for restarting a watcher or rebuilding anything.</p>
 
 <p>Let’s create the first test.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// test/meaningOfLife.test.js
-const test = require('ava')
-const meaningOfLife = require('../lib/meaningOfLife')
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// test/meaningOfLife.test.js</span>
+<span class="kr">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ava'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">meaningOfLife</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../lib/meaningOfLife'</span><span class="p">)</span>
 
-test('Real meaning of life', (t) =&gt; {
-  t.is(meaningOfLife(), 42)
-})
+<span class="nx">test</span><span class="p">(</span><span class="s1">'Real meaning of life'</span><span class="p">,</span> <span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">t</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="nx">meaningOfLife</span><span class="p">(),</span> <span class="mi">42</span><span class="p">)</span>
+<span class="p">})</span>
 </code></pre>
 </div>
 
 <p>Once you save the file, you’ll get instantly notified that one of your tests is failing. Let’s fix it.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// lib/meaningOfLife.js
-module.exports = () =&gt; 42
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// lib/meaningOfLife.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="mi">42</span>
 </code></pre>
 </div>
 
 <p>And we are back to green! It’s as simple as that. Let’s create another module that’ll multiply a numeric parameter, unit test this module and see whether it’ll work nicely with our “meaning of life” (note that it’s already an integration test, not unit!).</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// lib/multiply.js
-module.exports = (number) =&gt; {
-  if (typeof number !== 'number') throw new TypeError('Only numbers can be multiplied!')
-  return number * 2
-}
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// lib/multiply.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">number</span> <span class="o">!==</span> <span class="s1">'number'</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s1">'Only numbers can be multiplied!'</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">number</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// test/multiply.test.js
-const test = require('ava')
-const multiply = require('../lib/multiply')
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// test/multiply.test.js</span>
+<span class="kr">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ava'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">multiply</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../lib/multiply'</span><span class="p">)</span>
 
-test('Can multiply numbers', (t) =&gt; {
-  t.is(multiply(10), 20)
-})
+<span class="nx">test</span><span class="p">(</span><span class="s1">'Can multiply numbers'</span><span class="p">,</span> <span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">t</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="nx">multiply</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="mi">20</span><span class="p">)</span>
+<span class="p">})</span>
 
-test('Throws when you try to multiply non-number value', (t) =&gt; {
-  t.throws(() =&gt; multiply('ohai!'), 'Only numbers can be multiplied!')
-})
+<span class="nx">test</span><span class="p">(</span><span class="s1">'Throws when you try to multiply non-number value'</span><span class="p">,</span> <span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">t</span><span class="p">.</span><span class="kr">throws</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">multiply</span><span class="p">(</span><span class="s1">'ohai!'</span><span class="p">),</span> <span class="s1">'Only numbers can be multiplied!'</span><span class="p">)</span>
+<span class="p">})</span>
 </code></pre>
 </div>
 
 <p>Now, to test it all together:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// test/index.test.js
-const test = require('ava')
-const awesomeModule = require('../index')
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// test/index.test.js</span>
+<span class="kr">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ava'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">awesomeModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../index'</span><span class="p">)</span>
 
-test('Works nicely together', (t) =&gt; {
-  t.is(awesomeModule(), 84)
-})
+<span class="nx">test</span><span class="p">(</span><span class="s1">'Works nicely together'</span><span class="p">,</span> <span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">t</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="nx">awesomeModule</span><span class="p">(),</span> <span class="mi">84</span><span class="p">)</span>
+<span class="p">})</span>
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// index.js
-const meaningOfLife = require('./lib/meaningOfLife')
-const multiply = require('./lib/multiply')
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// index.js</span>
+<span class="kr">const</span> <span class="nx">meaningOfLife</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./lib/meaningOfLife'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">multiply</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./lib/multiply'</span><span class="p">)</span>
 
-module.exports = () =&gt; multiply(meaningOfLife())
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">meaningOfLife</span><span class="p">())</span>
 </code></pre>
 </div>
 
@@ -244,6 +263,8 @@ module.exports = () =&gt; multiply(meaningOfLife())
 <p>We, as developers, are often charmed by shiny new tools. We seem to forget that those things should make our work easier, faster and less error prone. The simplest solutions are more than enough, more often than we think. Instead of spending an enormous amount of time on the setup, we should spend it on writing the software itself. And following these steps will allow you to do just that.</p>
 
 <p>Once your project starts to grow, you may find yourself in need of something more complex. In most cases, however, it just won’t happen. And those tools will suit your needs quite well for a long, long time.</p>
+
+<hr />
 
   </div>
 
@@ -257,9 +278,7 @@ module.exports = () =&gt; multiply(meaningOfLife())
   <div class="wrapper">
 
     <p>
-      
-
-&copy; Kamil Ogórek - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="/feed.xml">RSS</a>
+      &copy; Kamil Ogórek - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="/feed.xml">RSS</a> - <a href="https://github.com/kamilogorek/kamilogorek">GitHub Repository</a>
 
     </p>
 
