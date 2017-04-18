@@ -1,9 +1,9 @@
 ---
 title: "Build a Fearless Development Cycle With Git Hooks"
-excerpt: ""
+excerpt: "One of the greatest things about programming is that you can change stuff. You can modify them, shape, bend to your needs. But as good as it may sound, unfortunately it is a double-edged sword. Having the ability to change is tempting and dangerous at the same time."
 ---
 
-_Originally posted on []()_
+_Originally posted on [x-team.com](https://x-team.com/blog/fearless-development-cycle-git-hooks/)_
 
 ---
 
@@ -27,26 +27,70 @@ Just to keep it simple, we will use only 3 tools as our pre-commit validation, `
 
 Let's start by installing `precommit-hook` package and storing it in our package.json file as devDependency.
 
-<script src="https://gist.github.com/3f619c53e10e46cddb56.js?file="></script><noscript>View the code on [Gist](https://gist.github.com/3f619c53e10e46cddb56).
+```sh
+$ npm install --save-dev precommit-hook
+```
 
-</noscript>What we only need to do is specify our checks in the exact same file and let the package do the rest (for the sake of simplicity I used only one file and not an entire project structure, so you'd rather want to use wildcards instead, eg. `./src/app/**/*.js` or `./tests/*.js`):
+What we only need to do is specify our checks in the exact same file and let the package do the rest (for the sake of simplicity I used only one file and not an entire project structure, so you'd rather want to use wildcards instead, eg. `./src/app/**/*.js` or `./tests/*.js`):
 
-<script src="https://gist.github.com/23a317d185b7f26b7d95.js?file="></script><noscript>View the code on [Gist](https://gist.github.com/23a317d185b7f26b7d95).
+```json
+"scripts": {
+  "jshint": "jshint app.js --reporter node_modules/jshint-stylish/stylish.js",
+  "jscs": "jscs app.js",
+  "test": "browserify test.js | tape-run | tap-spec"
+},
+"precommit": [
+  "jshint",
+  "jscs",
+  "test"
+]
+```
 
-</noscript>Now every time we run `git commit`, those three checks will be run in a given order and if any of them fails, a commit won't be created and we will have to fix our errors first.
+Now every time we run `git commit`, those three checks will be run in a given order and if any of them fails, a commit won't be created and we will have to fix our errors first.
 
 Ok, but what if you use `gulp` or `grunt`? There is no problem at all, as they are capable of exiting with valid codes as well! In addition to that, `precommit-hook` or your own created hook can use exactly the same commands you'd normally do, as you can set specific environment in which scripts will be run.
 
 As an example here, I will use `gulp` as this is the tool I use on a daily basis.  
  Basic `gulpfile` for our tasks could look like this:
 
-<script src="https://gist.github.com/c79d54278df7b4bb4fdd.js?file="></script><noscript>View the code on [Gist](https://gist.github.com/c79d54278df7b4bb4fdd).
+```js
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
+var jscs = require('gulp-jscs');
+var browserify = require('browserify');
+var tapeRun = require('tape-run');
+var tapSpec = require('tap-spec');
 
-</noscript>To make it work with `precommit-hook`, we have to modify what scripts should get run before our commit command will proceed, and since I already mentioned that it is able to work with any command we'd normally use in CLI, it is as easy as it sounds.
+gulp.task('lint', function () {
+    return gulp.src('app.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jscs());
+});
 
-<script src="https://gist.github.com/3e2f02aeddffef92b0cd.js?file="></script><noscript>View the code on [Gist](https://gist.github.com/3e2f02aeddffef92b0cd).
+gulp.task('test', function () {
+    return browserify('./test.js')
+        .bundle()
+        .pipe(tapeRun())
+        .pipe(tapSpec())
+        .pipe(process.stdout);
+});
 
-</noscript>That is all. Now it will behave in the same way as we set it up without any build tool and will output exactly the same result in case anything goes wrong.
+gulp.task('validate', ['lint', 'test']);
+```
+
+To make it work with `precommit-hook`, we have to modify what scripts should get run before our commit command will proceed, and since I already mentioned that it is able to work with any command we'd normally use in CLI, it is as easy as it sounds.
+
+```json
+"scripts": {
+  "validate": "gulp validate"
+},
+"precommit": [
+  "validate"
+]
+```
+
+That is all. Now it will behave in the same way as we set it up without any build tool and will output exactly the same result in case anything goes wrong.
 
 This was just a few minutes of work that can save you plenty of time in the long run, and for me it should be treated as **must-have** for any projects you are working on.
 

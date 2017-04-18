@@ -21,8 +21,15 @@ defaults:
   -
     scope:
       path: ""
+      type: "pages"
     values:
       layout: page
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
 
 twitter_username: kamilogorek
 github_username:  kamilogorek

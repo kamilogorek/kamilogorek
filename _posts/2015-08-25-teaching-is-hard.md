@@ -1,15 +1,15 @@
 ---
 title: "Teaching is Hard, But Worth It"
-excerpt: ""
+excerpt: "Some may say that it is not possible to teach a person how to do \"web development\" in such a short period of time and I totally agree with it. But where does that magical point beyond which one knows how to do \"web development\" lay? I don't know an answer to this question, but I think that those 28 days are enough to plant a small seed in a brain of a person who came there willing to learn — and that it will grow enormously if done correctly."
 ---
 
-_Originally posted on []()_
+_Originally posted on [medium.com](https://medium.com/age-of-awareness/teaching-is-hard-e467bc2c766b)_
 
 ---
 
 Last week I had a pleasure to teach JavaScript to a group of 11 people who were completely new to web development. It is not like they've had some experience with any programming language before. They were literally new to it, new and clueless.
 
-My workshops were part of [Coder's Lab](http://www.coderslab.pl/) 4-weeks-long course named "Become a Front-end Developer".
+My workshops were part of [Coder's Lab](http://www.coderslab.pl/en/) 4-weeks-long course named "Become a Front-end Developer".
 
 Some may say that it is not possible to teach a person how to do "web development" in such a short period of time and I totally agree with it. But where does that magical point beyond which one knows how to do "web development" lay? I don't know an answer to this question, but I think that those 28 days are enough to plant a small seed in a brain of a person who came there willing to learn — and that it will grow enormously if done correctly.
 
@@ -19,7 +19,9 @@ What makes me think that? There were people in my classroom that only after 2 we
 
 But this text is not really supposed to be about my students, although without them I certainly wouldn't be able to write it. It is rather about myself, and perhaps even about every person that has ever had an opportunity to be a teacher, a professor, a speaker, name him or her however you want. It's about people who had an opportunity to pass on their knowledge to somebody else.
 
-### Complexity is relative
+---
+
+## Complexity is relative
 
 First and foremost I have to admit, that even though I already spoke on meet-ups, conferences, wrote plenty of articles to either web or paper magazines and created good amount of tutorials, such long workshops were something completely new for me.
 
@@ -40,7 +42,9 @@ It's because of them that I had Mozilla MDN documentation and JS specs opened fo
 
 By doing that, by reading through all the basics over and over again to make sure that you teach them something that's 100% accurate, you'll get those informations so deep in your head that that you won't forget them for a long time.
 
-### Benefits outweight the costs
+---
+
+## Benefits outweight the costs
 
 If you ever have an opportunity to become a teacher, even for a day, do it. No matter whether you won't get paid a lot (or at all), whether it will take days out of your life because of time needed to prepare content. And even when you know that there is enormous amount of stress that comes with teaching (yes, it does, especially at the beginning) — do it.
 
@@ -53,7 +57,9 @@ Teaching others, helping them grow was honestly one of the greatest experiences 
 
 And that's why I'm now focusing on becoming a consultant, a mentor, a teacher in my own future. Whether it will be in programming or personal training, health and nutrition, it doesn't matter, because as of now, I already know that what I want to do is spread the knowledge and give everyone an opportunity to learn as many things as I'll be able to teach them.
 
-### Find people that will inspire you
+---
+
+## Find people that will inspire you
 
 No matter how knowledgable you are, there are always things to learn. To make this experience reacher, you have to find people that will inspire you. Those are the people that will make you wiser, more determined and focused on your goals. Because of that I would like to say thank you to [Kyle Simpson @getify](https://twitter.com/getify) for all the work he put into his great [YDKJS](https://github.com/getify/You-Dont-Know-JS) series. This is the exact book that helped me to prepare and learn how programming language should be explained. Subject after subject, part after part. As well as to [Henrik Joreteg @HenrikJoreteg](https://twitter.com/HenrikJoreteg) for his [Human JavaScript](http://humanjavascript.com/) series. It really is written for "Humans", and it helped me to learn how to explain things in the simplest words possible.
 
