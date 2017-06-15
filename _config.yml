@@ -12,9 +12,10 @@ gems:
 
 include: ["_pages"]
 exclude:
+  - deploy.js
   - Gemfile
   - Gemfile.lock
-  - generate-cv.js
+  - package.json
   - README.md
 
 defaults:
