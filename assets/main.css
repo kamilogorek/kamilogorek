@@ -423,6 +423,9 @@ pre {
   .highlight .il {
     color: #099; }
 
+.site-nav .page-link:not(:last-child) {
+  margin-right: 15px; }
+
 .bio-photo {
   display: block;
   border-radius: 50%;
@@ -453,3 +456,40 @@ pre {
 
   .bio-photo {
     margin-left: 0; } }
+/* print */
+@media print {
+  @page {
+    margin: 0.5in 0.25in; }
+  html {
+    zoom: 0.825; }
+
+  .site-header {
+    display: none; }
+
+  .site-footer {
+    display: none; }
+
+  .post-header {
+    margin-bottom: 0; }
+
+  .post-title {
+    font-size: 36px;
+    margin-bottom: -1px;
+    letter-spacing: 0.95px; }
+
+  .post-content h1:first-of-type {
+    font-size: 48px;
+    margin-bottom: -12px; }
+
+  .post-content h2:first-of-type {
+    font-size: 32px;
+    letter-spacing: 1.85px;
+    margin-bottom: 4px; }
+
+  .post-content p:first-of-type {
+    letter-spacing: -0.32px; }
+
+  hr {
+    height: 0;
+    margin: 25px 0 15px 0;
+    border-bottom: 4px solid #e8e8e8; } }
