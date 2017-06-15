@@ -426,10 +426,13 @@ pre {
 .site-nav .page-link:not(:last-child) {
   margin-right: 15px; }
 
-.cv-pdf-version {
+.cv-pdf-download {
   display: block;
-  margin-top: -30px;
+  margin-top: -25px;
   margin-bottom: 20px; }
+
+.cv-header {
+  display: none; }
 
 .bio-photo {
   display: block;
@@ -482,17 +485,20 @@ pre {
     margin-bottom: -1px;
     letter-spacing: 0.95px; }
 
-  .post-content h1:first-of-type {
-    font-size: 48px;
-    margin-bottom: -12px; }
+  .cv-header {
+    display: block; }
+    .cv-header h1 {
+      font-size: 48px;
+      margin-bottom: -12px; }
+    .cv-header h2 {
+      font-size: 32px;
+      letter-spacing: 1.85px;
+      margin-bottom: 4px; }
+    .cv-header p {
+      letter-spacing: -0.32px; }
 
-  .post-content h2:first-of-type {
-    font-size: 32px;
-    letter-spacing: 1.85px;
-    margin-bottom: 4px; }
-
-  .post-content p:first-of-type {
-    letter-spacing: -0.32px; }
+  .post-content p:first-child {
+    display: none; }
 
   hr {
     height: 0;
