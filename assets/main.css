@@ -426,6 +426,11 @@ pre {
 .site-nav .page-link:not(:last-child) {
   margin-right: 15px; }
 
+.cv-pdf-version {
+  display: block;
+  margin-top: -30px;
+  margin-bottom: 20px; }
+
 .bio-photo {
   display: block;
   border-radius: 50%;
