@@ -12,7 +12,6 @@ layout: page
 #### React.js Courses
 - _June 03 - June 04, 2017 , Warsaw, Poland_
 - _June 17, 2017 , Warsaw, Poland_
-- _June 24 - June 25, 2017 , Warsaw, Poland_
 
 #### JavaScript Courses
 - _May 23 - May 26, 2017 , Warsaw, Poland_

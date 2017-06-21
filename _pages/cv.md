@@ -27,14 +27,14 @@ permalink: /cv/
 ### Main Technologies
 * JavaScript
 * Node.js
+* HTML/CSS
 * Test, Build &amp; Deploy
 
 ### Side Technologies
 * Elm
+* Ruby/Rails
 * Elixir
 * Clojure/ClojureScript
-* Ruby/Rails
-* HTML/CSS
 
 ### Frameworks
 * React.js
