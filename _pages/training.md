@@ -63,7 +63,7 @@ permalink: /training/
 * [Weightlifting Performance Standards](http://www.exrx.net/Testing/WeightLifting/StrengthStandards.html)
 * [The effect of inter-set rest intervals on resistance exercise-induced muscle hypertrophy.](http://www.ncbi.nlm.nih.gov/pubmed/25047853)
 * [Jak trenowac siłe/moc/mase/rzezbe/definicje? Faq, koks, suple, trening, dieta](http://www.body-factory.pl/showthread.php?t=10272)
-* [Strengthcalc.com - Proven Routines for Better Results](https://strengthcalc.com/)
+* [Strongr Fastr - A complete meal and training plan to get you there](https://www.strongrfastr.com/)
 * [Rohit Nair Fitness Program Picker](http://www.rohitnair.net/pp/)
 
 #### Training routines
