@@ -15,39 +15,21 @@ permalink: /cv/
 
 ## Summary
 <blockquote>
-<p>"Passionate about software development, Kamil has a special affinity for client-side technologies. Drawing on his experience as a speaker, workshop leader and countless hours experimenting with various (mostly JS) frameworks and tools, Kamil always sets the bar high and aims for the best possible solutions.</p>
+<p>"Passionate about software development, Kamil has a special affinity for client-side technologies. Drawing on his experience as a speaker, workshop leader and countless hours experimenting with various languages (mostly JavaScript), frameworks and tools, Kamil always sets the bar high and aims for the best possible solutions.</p>
 <p>As a strong believer in Software Craftsmanship, he is constantly learning, improving his skills, and generously sharing with the community by frequently contributing to open-source projects.</p>
 <p>After hours, Kamil is a training and nutrition geek, a weightlifter, an obstacle-course and trail runner, a recreational cyclist, a drummer and a music lover. Kamil also loves to cook and admires great food."</p>
 </blockquote>
 
 <hr/>
 
-## Skills
-
-### Main Technologies
-* JavaScript
-* Node.js
-* HTML/CSS
-* Test, Build &amp; Deploy
-
-### Side Technologies
-* Elm
-* Ruby/Rails
-* Elixir
-* Clojure/ClojureScript
-
-### Frameworks
-* React.js
-* Angular.js
-* Ember.js
-* And anything else that can possibly be in your project's stack...
-
-<hr/>
-
 ## Experience
+### Senior JavaScript Engineer
+#### Sentry
+##### August 2017 – Present
+
 ### Lead Code Whisperer
 #### Corgibytes, LLC
-##### August 2016 – Present
+##### August 2016 – August 2017
 
 ### Senior Client-side Engineer
 #### X-Team

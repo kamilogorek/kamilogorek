@@ -4,7 +4,7 @@
   "description": "Hello there!",
   "main": "deploy.js",
   "scripts": {
-    "deploy": "jekyll build && node deploy.js"
+    "deploy": "bundle exec jekyll build && node deploy.js"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0"
