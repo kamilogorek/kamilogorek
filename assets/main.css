@@ -504,3 +504,9 @@ pre {
     height: 0;
     margin: 25px 0 15px 0;
     border-bottom: 4px solid #e8e8e8; } }
+#search {
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 2px solid #e8e8e8;
+  width: 100%;
+  padding: 6px; }
