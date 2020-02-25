@@ -4,7 +4,7 @@
   "description": "Hello there!",
   "main": "deploy.js",
   "scripts": {
-    "deploy": "bundle exec jekyll build && node deploy.js"
+    "deploy": "rm -rf _site && bundle exec jekyll build && cp -r ../nutrition-database/dist _site/nutrition-database && node deploy.js"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0"

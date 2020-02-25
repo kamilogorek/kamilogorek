@@ -5,9 +5,7 @@
 
   {% if page.title %} {% capture title %}{{
     page.title | escape
-  }}
-  |
-  {{
+  }} | {{
     site.title | escape
   }}{% endcapture %} {% else %} {% capture title %}{{
     site.title | escape
