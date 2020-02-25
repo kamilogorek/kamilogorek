@@ -9345,7 +9345,7 @@ body {
 }
 
 input {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 table {
@@ -9359,7 +9359,7 @@ th {
 }
 
 .incorrect-macros {
-  background: rgba(255, 221, 87, 0.2);
+  background: rgba(255, 221, 87, 0.1);
 }
 
 /*# sourceMappingURL=/nutrition-database.80ee2152.css.map */

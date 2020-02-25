@@ -481,7 +481,7 @@ exports.options = n = {
 },{}],"data/bobbyburger.json":[function(require,module,exports) {
 module.exports = [{
   "name": "Alibaba",
-  "weight": [100],
+  "weight": [],
   "calories": 915.3,
   "macros": {
     "protein": 35.9,
@@ -490,7 +490,7 @@ module.exports = [{
   }
 }, {
   "name": "Bobby Burger",
-  "weight": [100],
+  "weight": [],
   "calories": 1035.9,
   "macros": {
     "protein": 57.4,
@@ -499,7 +499,7 @@ module.exports = [{
   }
 }, {
   "name": "Bobby’s Salad",
-  "weight": [100],
+  "weight": [],
   "calories": 368.8,
   "macros": {
     "protein": 32.5,
@@ -508,7 +508,7 @@ module.exports = [{
   }
 }, {
   "name": "Brajan",
-  "weight": [100],
+  "weight": [],
   "calories": 677.6,
   "macros": {
     "protein": 19.9,
@@ -517,7 +517,7 @@ module.exports = [{
   }
 }, {
   "name": "Cheese",
-  "weight": [100],
+  "weight": [],
   "calories": 618.7,
   "macros": {
     "protein": 34,
@@ -526,7 +526,7 @@ module.exports = [{
   }
 }, {
   "name": "Cheese Bacon",
-  "weight": [100],
+  "weight": [],
   "calories": 723.6,
   "macros": {
     "protein": 35.9,
@@ -535,7 +535,7 @@ module.exports = [{
   }
 }, {
   "name": "Chicken",
-  "weight": [100],
+  "weight": [],
   "calories": 456.6,
   "macros": {
     "protein": 27.9,
@@ -544,7 +544,7 @@ module.exports = [{
   }
 }, {
   "name": "Classic",
-  "weight": [100],
+  "weight": [],
   "calories": 543.2,
   "macros": {
     "protein": 27.6,
@@ -553,7 +553,7 @@ module.exports = [{
   }
 }, {
   "name": "Double Death by Cheese",
-  "weight": [100],
+  "weight": [],
   "calories": 1141.2,
   "macros": {
     "protein": 67.6,
@@ -562,7 +562,7 @@ module.exports = [{
   }
 }, {
   "name": "Double Trouble with Bacon",
-  "weight": [100],
+  "weight": [],
   "calories": 1140,
   "macros": {
     "protein": 59,
@@ -571,7 +571,7 @@ module.exports = [{
   }
 }, {
   "name": "Fries Box",
-  "weight": [100],
+  "weight": [],
   "calories": 738.2,
   "macros": {
     "protein": 11.9,
@@ -580,7 +580,7 @@ module.exports = [{
   }
 }, {
   "name": "Frytki",
-  "weight": [100],
+  "weight": [],
   "calories": 247.6,
   "macros": {
     "protein": 3.6,
@@ -589,7 +589,7 @@ module.exports = [{
   }
 }, {
   "name": "Frytki Skin On",
-  "weight": [100],
+  "weight": [],
   "calories": 154.6,
   "macros": {
     "protein": 3.2,
@@ -598,7 +598,7 @@ module.exports = [{
   }
 }, {
   "name": "Godzilla",
-  "weight": [100],
+  "weight": [],
   "calories": 1485.8,
   "macros": {
     "protein": 89.9,
@@ -607,7 +607,7 @@ module.exports = [{
   }
 }, {
   "name": "Grażyna",
-  "weight": [100],
+  "weight": [],
   "calories": 612.7,
   "macros": {
     "protein": 16.1,
@@ -616,7 +616,7 @@ module.exports = [{
   }
 }, {
   "name": "Hot Bacon",
-  "weight": [100],
+  "weight": [],
   "calories": 708.9,
   "macros": {
     "protein": 36.2,
@@ -625,7 +625,7 @@ module.exports = [{
   }
 }, {
   "name": "Janush",
-  "weight": [100],
+  "weight": [],
   "calories": 680.9,
   "macros": {
     "protein": 14.5,
@@ -634,7 +634,7 @@ module.exports = [{
   }
 }, {
   "name": "Keto Burger",
-  "weight": [100],
+  "weight": [],
   "calories": 526.9,
   "macros": {
     "protein": 44.7,
@@ -643,7 +643,7 @@ module.exports = [{
   }
 }, {
   "name": "Mango & Onion",
-  "weight": [100],
+  "weight": [],
   "calories": 953.4,
   "macros": {
     "protein": 37.6,
@@ -652,7 +652,7 @@ module.exports = [{
   }
 }, {
   "name": "Mozzarella Sticks",
-  "weight": [100],
+  "weight": [],
   "calories": 407.5,
   "macros": {
     "protein": 18.8,
@@ -661,7 +661,7 @@ module.exports = [{
   }
 }, {
   "name": "Narchos",
-  "weight": [100],
+  "weight": [],
   "calories": 811.6,
   "macros": {
     "protein": 34.3,
@@ -670,7 +670,7 @@ module.exports = [{
   }
 }, {
   "name": "Onion Attacks",
-  "weight": [100],
+  "weight": [],
   "calories": 1043.5,
   "macros": {
     "protein": 39.1,
@@ -679,7 +679,7 @@ module.exports = [{
   }
 }, {
   "name": "Onion Rings",
-  "weight": [100],
+  "weight": [],
   "calories": 382.2,
   "macros": {
     "protein": 6.2,
@@ -688,7 +688,7 @@ module.exports = [{
   }
 }, {
   "name": "Power Plant",
-  "weight": [100],
+  "weight": [],
   "calories": 551.8,
   "macros": {
     "protein": 28.9,
@@ -697,7 +697,7 @@ module.exports = [{
   }
 }, {
   "name": "Simple Green Salad",
-  "weight": [100],
+  "weight": [],
   "calories": 55.5,
   "macros": {
     "protein": 1.9,
@@ -706,7 +706,7 @@ module.exports = [{
   }
 }, {
   "name": "Taekwondo",
-  "weight": [100],
+  "weight": [],
   "calories": 420.3,
   "macros": {
     "protein": 30.4,
@@ -715,7 +715,7 @@ module.exports = [{
   }
 }, {
   "name": "Vedżesika",
-  "weight": [100],
+  "weight": [],
   "calories": 751.1,
   "macros": {
     "protein": 31.1,
@@ -2208,6 +2208,44 @@ module.exports = [{
     "protein": 7.53,
     "fat": 8.81,
     "carbs": 9.64
+  }
+}];
+},{}],"data/goodlood.json":[function(require,module,exports) {
+module.exports = [{
+  "name": "Ciemna czekolada",
+  "weight": [100],
+  "calories": 182.3,
+  "macros": {
+    "protein": null,
+    "fat": null,
+    "carbs": null
+  }
+}, {
+  "name": "Karmel z różową solą himalajską",
+  "weight": [100],
+  "calories": 171.8,
+  "macros": {
+    "protein": null,
+    "fat": null,
+    "carbs": null
+  }
+}, {
+  "name": "Polska truskawka",
+  "weight": [100],
+  "calories": 101.6,
+  "macros": {
+    "protein": null,
+    "fat": null,
+    "carbs": null
+  }
+}, {
+  "name": "Śmietanka ze Skały",
+  "weight": [100],
+  "calories": 194,
+  "macros": {
+    "protein": null,
+    "fat": null,
+    "carbs": null
   }
 }];
 },{}],"data/lajkonik.json":[function(require,module,exports) {
@@ -4416,48 +4454,46 @@ module.exports = [{
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "bobbyburger", {
-  enumerable: true,
-  get: function () {
-    return _bobbyburger.default;
-  }
-});
-Object.defineProperty(exports, "dagrasso", {
-  enumerable: true,
-  get: function () {
-    return _dagrasso.default;
-  }
-});
-Object.defineProperty(exports, "lajkonik", {
-  enumerable: true,
-  get: function () {
-    return _lajkonik.default;
-  }
-});
-Object.defineProperty(exports, "pasibus", {
-  enumerable: true,
-  get: function () {
-    return _pasibus.default;
-  }
-});
+exports.dataset = exports.companies = void 0;
 
 var _bobbyburger = _interopRequireDefault(require("./bobbyburger.json"));
 
 var _dagrasso = _interopRequireDefault(require("./dagrasso.json"));
 
+var _goodlood = _interopRequireDefault(require("./goodlood.json"));
+
 var _lajkonik = _interopRequireDefault(require("./lajkonik.json"));
 
 var _pasibus = _interopRequireDefault(require("./pasibus.json"));
 
+var _companies;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./bobbyburger.json":"data/bobbyburger.json","./dagrasso.json":"data/dagrasso.json","./lajkonik.json":"data/lajkonik.json","./pasibus.json":"data/pasibus.json"}],"index.js":[function(require,module,exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var companies = (_companies = {}, _defineProperty(_companies, "Bobby Burger", _bobbyburger.default), _defineProperty(_companies, "DaGrasso", _dagrasso.default), _defineProperty(_companies, "GoodLood", _goodlood.default), _defineProperty(_companies, "Lajkonik", _lajkonik.default), _defineProperty(_companies, "Pasibus", _pasibus.default), _companies);
+exports.companies = companies;
+var dataset = Object.keys(companies).map(function (company) {
+  return companies[company].map(function (v) {
+    return _objectSpread({
+      company: company
+    }, v);
+  });
+}).flat();
+exports.dataset = dataset;
+},{"./bobbyburger.json":"data/bobbyburger.json","./dagrasso.json":"data/dagrasso.json","./goodlood.json":"data/goodlood.json","./lajkonik.json":"data/lajkonik.json","./pasibus.json":"data/pasibus.json"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _preact = require("preact");
 
 var _data = require("./data");
 
-var _companies;
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -4477,23 +4513,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var NO_DATA = "—";
 var SEPARATOR = " / ";
 var CORRECTNESS_THRESHOLD = 15;
-var companies = (_companies = {}, _defineProperty(_companies, "Bobby Burger", _data.bobbyburger), _defineProperty(_companies, "DaGrasso", _data.dagrasso), _defineProperty(_companies, "Lajkonik", _data.lajkonik), _defineProperty(_companies, "Pasibus", _data.pasibus), _companies);
-var dataset = Object.keys(companies).map(function (company) {
-  return companies[company].map(function (v) {
-    return _objectSpread({
-      company: company
-    }, v);
-  });
-}).flat();
 
 function unify(input) {
   return input.toLowerCase().replace(/ą/g, "a").replace(/ć/g, "c").replace(/ę/g, "e").replace(/ł/g, "l").replace(/ń/g, "n").replace(/ó/g, "o").replace(/ś/g, "s").replace(/ż/g, "z").replace(/ź/g, "z");
@@ -4522,19 +4544,20 @@ function (_Component) {
           protein = _this$props$data$macr.protein,
           fat = _this$props$data$macr.fat,
           carbs = _this$props$data$macr.carbs;
-      var caloriesFromMacros = Math.round(protein * 4 + fat * 9 + carbs * 4);
+      var hasMissingMacro = protein === null || fat === null || carbs === null;
+      var caloriesFromMacros = hasMissingMacro ? NO_DATA : Math.round(protein * 4 + fat * 9 + carbs * 4);
       var caloriesPerPortion = weight.map(function (weight) {
         return Math.round(calories * (weight / 100));
-      });
-      var caloriesFromMacrosPerPortion = weight.map(function (weight) {
+      }).join(SEPARATOR);
+      var caloriesFromMacrosPerPortion = hasMissingMacro ? NO_DATA : weight.map(function (weight) {
         return Math.round(caloriesFromMacros * (weight / 100));
-      });
+      }).join(SEPARATOR);
       var hasIncorrectMacros = caloriesFromMacros < calories - CORRECTNESS_THRESHOLD || caloriesFromMacros > calories + CORRECTNESS_THRESHOLD;
-      return (0, _preact.h)("tr", null, (0, _preact.h)("td", null, company), (0, _preact.h)("td", null, name), (0, _preact.h)("td", null, weight.map(function (w) {
-        return Math.round(w);
-      }).join(SEPARATOR) || NO_DATA), (0, _preact.h)("td", null, Math.round(protein * 10) / 10), (0, _preact.h)("td", null, Math.round(fat * 10) / 10), (0, _preact.h)("td", null, Math.round(carbs * 10) / 10), (0, _preact.h)("td", null, Math.round(calories)), (0, _preact.h)("td", {
+      return (0, _preact.h)("tr", {
         class: hasIncorrectMacros && "incorrect-macros"
-      }, caloriesFromMacros), (0, _preact.h)("td", null, caloriesPerPortion.join(SEPARATOR) || NO_DATA), (0, _preact.h)("td", null, caloriesFromMacrosPerPortion.join(SEPARATOR) || NO_DATA));
+      }, (0, _preact.h)("td", null, company), (0, _preact.h)("td", null, name), (0, _preact.h)("td", null, weight.map(function (w) {
+        return Math.round(w);
+      }).join(SEPARATOR) || NO_DATA), (0, _preact.h)("td", null, protein === null ? NO_DATA : Math.round(protein * 10) / 10), (0, _preact.h)("td", null, fat === null ? NO_DATA : Math.round(fat * 10) / 10), (0, _preact.h)("td", null, carbs === null ? NO_DATA : Math.round(carbs * 10) / 10), (0, _preact.h)("td", null, calories === null ? NO_DATA : Math.round(calories)), (0, _preact.h)("td", null, caloriesFromMacros), (0, _preact.h)("td", null, caloriesPerPortion || NO_DATA), (0, _preact.h)("td", null, caloriesFromMacrosPerPortion || NO_DATA));
     }
   }]);
 
@@ -4600,16 +4623,17 @@ function (_Component3) {
     value: function render() {
       var _this2 = this;
 
-      var items = dataset.filter(function (item) {
+      var items = _data.dataset.filter(function (item) {
         return _this2.state.filter.split(" ").every(function (word) {
           return unify(item.name).includes(unify(word)) || unify(item.company).includes(unify(word));
         });
       });
+
       return (0, _preact.h)("div", null, (0, _preact.h)("h1", {
         class: "title"
       }, "Food Nutrition Database"), (0, _preact.h)("h2", {
         class: "subtitle"
-      }, (0, _preact.h)("strong", null, "Available datasets:"), " ", Object.keys(companies).join(", ")), (0, _preact.h)("input", {
+      }, (0, _preact.h)("strong", null, "Available datasets:"), " ", _data.companies), (0, _preact.h)("section", null, (0, _preact.h)("p", null, "- ", (0, _preact.h)("i", null, "C - calories")), (0, _preact.h)("p", null, "- ", (0, _preact.h)("i", null, "CC - calculated calories")), (0, _preact.h)("p", null, "- ", (0, _preact.h)("i", null, "CPP - calories per portion")), (0, _preact.h)("p", null, "- ", (0, _preact.h)("i", null, "CCPP - calculated calories per portion")), (0, _preact.h)("p", null, "- items that are missing weight, are already showing per-portion data"), (0, _preact.h)("p", null, "- items marked as yellow has a large difference between declared and calculated calories amount")), (0, _preact.h)("input", {
         class: "input is-medium",
         placeholder: "Filter",
         type: "text",
@@ -4617,7 +4641,7 @@ function (_Component3) {
         onInput: this.onInput
       }), (0, _preact.h)("table", {
         class: "table is-striped is-hoverable is-fullwidth"
-      }, (0, _preact.h)("thead", null, (0, _preact.h)("tr", null, (0, _preact.h)("th", null, "Company"), (0, _preact.h)("th", null, "Name"), (0, _preact.h)("th", null, "Weight"), (0, _preact.h)("th", null, "Protein"), (0, _preact.h)("th", null, "Fat"), (0, _preact.h)("th", null, "Carbs"), (0, _preact.h)("th", null, "Cals"), (0, _preact.h)("th", null, "Cals FM"), (0, _preact.h)("th", null, "Cals PP"), (0, _preact.h)("th", null, "Cals FMPP"))), (0, _preact.h)("tbody", null, items.length ? items.map(function (item) {
+      }, (0, _preact.h)("thead", null, (0, _preact.h)("tr", null, (0, _preact.h)("th", null, "Company"), (0, _preact.h)("th", null, "Name"), (0, _preact.h)("th", null, "Weight/g"), (0, _preact.h)("th", null, "Protein/g"), (0, _preact.h)("th", null, "Fat/g"), (0, _preact.h)("th", null, "Carbs/g"), (0, _preact.h)("th", null, "C/kcal"), (0, _preact.h)("th", null, "CC/kcal"), (0, _preact.h)("th", null, "CPP/kcal"), (0, _preact.h)("th", null, "CCPP/kcal"))), (0, _preact.h)("tbody", null, items.length ? items.map(function (item) {
         return (0, _preact.h)(Item, {
           data: item
         });
@@ -4657,7 +4681,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59509" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60987" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
