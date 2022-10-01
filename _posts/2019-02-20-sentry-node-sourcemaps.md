@@ -20,6 +20,7 @@ As of recently, we support [source maps for Node.js](https://docs.sentry.io/plat
 Most modern JavaScript transpilers support source maps. Below are instructions for two common tools: Webpack and Rollup.
 
 **Webpack**
+
 Webpack is a powerful build tool that resolves and bundles your JavaScript modules into larger chunks or a single file. It also supports many different “loaders” which can convert different flavors, like TypeScript, into plain JavaScript.
 
 Webpack can be configured to output source maps by editing `webpack.config.js`.
@@ -38,6 +39,7 @@ module.exports = {
 ```
 
 **Rollup**
+
 Rollup, another powerful bundler, is specifically focused on compiling small pieces of code into a larger structure, like a library. As an added benefit, Rollup is great at [tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking), right out of the box.
 
 Rollup can be configured to output source maps by editing `rollup.config.js`.
@@ -60,6 +62,7 @@ export default {
 Once the source maps for Node.js projects are generated, you can upload them directly to Sentry.
 
 **Uploading source maps to Sentry**
+
 Sentry provides an abstraction called Releases that is used to improve our error reporting abilities by correlating first seen events with the release that might have introduce the problem. Releases are necessary for source maps, and the Release API allows storage of source maps within Sentry.
 
 Attaching source artifacts can be done with the help of the `sentry-webpack-plugin`, which internally uses our Sentry CLI, and these five steps:
@@ -114,6 +117,7 @@ You don’t _have_ to use `RELEASE` environment variables, but `release` from yo
 _For more information, check out the [Releases API](https://docs.sentry.io/api/releases/) documentation._
 
 **Updating Sentry SDK configuration to support source maps**
+
 For Sentry to understand how to resolve errors, the data we send needs to be modified. You can update the Sentry SDK with the help of our [RewriteFrames](https://docs.sentry.io/platforms/javascript/pluggable-integrations/#rewriteframes) integration, which modifies that data for you.
 
 ```js

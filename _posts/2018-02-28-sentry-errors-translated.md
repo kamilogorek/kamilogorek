@@ -12,6 +12,7 @@ Internet Explorer and Edge throw errors in the end user’s language. If your en
 Now, if both you and your end user are Brazilian, seeing the error in Portuguese is not unhelpful.
 
 ![Selenium Graph](/assets/images/blog/polish-error.png)
+
 _An error in Polish, not Portuguese, but you get the point_
 
 The problem is that:
@@ -30,6 +31,7 @@ We have a large, indexed dictionary of almost every error across all IE supporte
 We have the message. We have our dictionary. Now we can check to see if there’s a match somewhere. Let’s say we have an IE error in Spanish and it’s indexed in the dictionary as IE error number 962. We can then grab the number 962 message in English and create a regex that parses out the placeholders, like “There’s been an error [something here] with a value of [something else here] and yada yada yada.”
 
 ![Translated Error](/assets/images/blog/translated-error.png)
+
 _A translated error_
 
 And that’s pretty much that. Now most errors thrown in Edge or IE across ten languages will appear to you as one error in one language, making the problem easier to tackle.
