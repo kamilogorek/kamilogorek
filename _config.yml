@@ -21,19 +21,17 @@ exclude:
   - node_modules
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: page
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: post
 
-github_username:  kamilogorek
+github_username: kamilogorek
 linkedin_username: kamilogorek
 google_analytics: UA-29832978-1

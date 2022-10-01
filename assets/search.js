@@ -1,5 +1,5 @@
-document.querySelector("#search").addEventListener("input", e => {
-  Array.from(document.querySelectorAll(".post-content ul li")).forEach(el => {
+document.querySelector("#search").addEventListener("input", (e) => {
+  Array.from(document.querySelectorAll(".post-content ul li")).forEach((el) => {
     const q = e.target.value.trim();
     el.hidden =
       q === "" ? false : !el.innerText.toLowerCase().includes(q.toLowerCase());
@@ -15,7 +15,7 @@ document.querySelector("#search").addEventListener("input", e => {
 function worstShowHideEver(el) {
   if (
     Array.from(el.nextElementSibling.querySelectorAll("li")).every(
-      el => el.hidden
+      (el) => el.hidden
     )
   ) {
     el.hidden = true;
