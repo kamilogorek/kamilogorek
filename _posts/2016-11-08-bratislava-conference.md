@@ -9,8 +9,8 @@ _Originally posted on [corgibytes.com](http://corgibytes.com/blog/2016/11/08/bra
 
 If you love old architecture and castles, you'll fall for Bratislava. Easily one of the most beautiful places you can visit in Europe, this Slovakian capital is small enough that you can drive/walk quickly to most places, but big enough to fill your schedule for a few days. It's also very close to Vienna (Austria), making it a real two-for-one bargain! Both places are very cheap, offer plenty of attractions and great -- oooh great -- food! It may surprise some to find out that, when it comes to software development, the area is very quickly becoming one of the European tech hubs. Last month, Bratislava hosted two big conferences in one week:
 
-* [EuroClojure](http://euroclojure.org/), the biggest Clojure-related conference, created by Cognicast (a company where Rich Hickey, creator of Clojure, and David Nolen, creator of ClojureScript, both work), and
-* [ReactiveConf](https://reactiveconf.com), which gathers all the ideas around reactive programming, asynchrony, real-time, React.js or React Native.
+- [EuroClojure](http://euroclojure.org/), the biggest Clojure-related conference, created by Cognicast (a company where Rich Hickey, creator of Clojure, and David Nolen, creator of ClojureScript, both work), and
+- [ReactiveConf](https://reactiveconf.com), which gathers all the ideas around reactive programming, asynchrony, real-time, React.js or React Native.
 
 ---
 
@@ -30,8 +30,8 @@ Oh, let's not forget about the after-parties! Although I'm a huge introvert and 
 
 My one-sentence summary for each of the conferences would be:
 
-* EuroClojure – "Am I really that stupid?"
-* ReactiveConf – "I've already seen it somewhere."
+- EuroClojure – "Am I really that stupid?"
+- ReactiveConf – "I've already seen it somewhere."
 
 I don't know much Clojure (yet!), but I really want to learn it. This conference simply showed me just how much of a long haul that will be. But I'll get there… one day!
 
@@ -55,7 +55,7 @@ Generating music as close to "human" as possible. Using machine learning predict
 
 #### Keynote: Genetic Programming with clojure.spec – Carin Meier
 
-Self-healing code and [clojure.spec](http://clojure.org/about/spec), just wow! The concept of a function that's able to modify itself, based on other "donor" functions is simply awesome. And using clojure.spec to do that makes it much simpler than you thought. The first part of the talk covered how we can distinguish developers using the so-called "Four Tribes of Programmers": Explorers, Alchemists, Wrestlers and Detectives. I really like that idea, it reminds me of Corgibytes' [Makers and Menders](http://corgibytes.com/blog/makers/menders/software/2015/08/14/makers-vs-menders/). And what *is* clojure.spec exactly and how we can use it for genetic programming. You should definitely see that talk for yourself! But until it's released, here are the [slides](http://www.slideshare.net/gigasquidcm/genetic-programming-with-clojurespec-and-beyond). Enjoy!
+Self-healing code and [clojure.spec](http://clojure.org/about/spec), just wow! The concept of a function that's able to modify itself, based on other "donor" functions is simply awesome. And using clojure.spec to do that makes it much simpler than you thought. The first part of the talk covered how we can distinguish developers using the so-called "Four Tribes of Programmers": Explorers, Alchemists, Wrestlers and Detectives. I really like that idea, it reminds me of Corgibytes' [Makers and Menders](http://corgibytes.com/blog/makers/menders/software/2015/08/14/makers-vs-menders/). And what _is_ clojure.spec exactly and how we can use it for genetic programming. You should definitely see that talk for yourself! But until it's released, here are the [slides](http://www.slideshare.net/gigasquidcm/genetic-programming-with-clojurespec-and-beyond). Enjoy!
 
 ### ReactiveConf
 

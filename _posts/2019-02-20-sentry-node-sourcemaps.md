@@ -31,10 +31,10 @@ module.exports = {
   entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   target: "node",
-  devtool: "source-map"
+  devtool: "source-map",
 };
 ```
 
@@ -50,8 +50,8 @@ export default {
   output: {
     file: "bundle.js",
     format: "cjs",
-    sourceMap: true
-  }
+    sourceMap: true,
+  },
 };
 ```
 
@@ -82,9 +82,9 @@ module.exports = {
   plugins: [
     new SentryPlugin({
       release: process.env.RELEASE,
-      include: "./dist"
-    })
-  ]
+      include: "./dist",
+    }),
+  ],
 };
 ```
 
@@ -93,7 +93,7 @@ You’ll also need to configure the client to send the `release`:
 ```js
 Sentry.init({
   dsn: "https://e6c75451eb1344d9865ac11985f46946@sentry.io/1274678",
-  release: process.env.RELEASE
+  release: process.env.RELEASE,
 });
 ```
 
@@ -107,8 +107,8 @@ const webpack = require("webpack");
 
 plugins: [
   new webpack.DefinePlugin({
-    "process.env.RELEASE": process.env.RELEASE
-  })
+    "process.env.RELEASE": process.env.RELEASE,
+  }),
 ];
 ```
 
@@ -123,7 +123,7 @@ For Sentry to understand how to resolve errors, the data we send needs to be mod
 ```js
 Sentry.init({
   dsn: "https://e6c75451eb1344d9865ac11985f46946@sentry.io/1274678",
-  integrations: [new Sentry.Integrations.RewriteFrames()]
+  integrations: [new Sentry.Integrations.RewriteFrames()],
 });
 ```
 

@@ -20,7 +20,7 @@ Let's start with the basics: the `forEach` method. A few years ago when we wante
 ```js
 var arr = [0, 1, 2, 3];
 for (var i = 0, len = arr.length; i < len; i++) {
-    // perform some operation on arr[i];
+  // perform some operation on arr[i];
 }
 ```
 
@@ -30,13 +30,13 @@ But now, we're able to simplify it even more and use our `forEach` method instea
 
 ```js
 [0, 1, 2, 3].forEach(function (value, i) {
-    // perform some operation on a value;
+  // perform some operation on a value;
 });
 ```
 
 We can think of `forEach` as a base for every other method, as internally the concept of iterating over an array and performing some kind of action is exactly the same.
 
-*There's no way to break `forEach` iteration, therefore if you need that feature, you've to choose different approach.*
+_There's no way to break `forEach` iteration, therefore if you need that feature, you've to choose different approach._
 
 ### map
 
@@ -45,12 +45,12 @@ But what if I want to immediately return a collection of those function calls? `
 ```js
 var foo = [0, 1, 2, 3];
 var bar = foo.map(function (value, i) {
-    return value + 5;
+  return value + 5;
 });
 console.log(bar); // [5, 6, 7, 8]
 ```
 
-*Please keep in mind that all methods we're going to talk about here are not mutating their input, therefore here, `foo` is still equal to `[0, 1, 2, 3]`.*
+_Please keep in mind that all methods we're going to talk about here are not mutating their input, therefore here, `foo` is still equal to `[0, 1, 2, 3]`._
 
 ### reduce
 
@@ -58,19 +58,26 @@ To transform an array into a single value, you can use `reduce` method. Its sign
 
 ```js
 [1, 2, 3, 4, 5].reduce(function (acc, value, i) {
-    return acc + value;
+  return acc + value;
 });
 // returns 15, as 1 became starting value
 
 [1, 2, 3, 4, 5].reduce(function (acc, value, i) {
-    return acc + value;
+  return acc + value;
 }, 10);
 // returns 25, as 10 was starting value
 
-[['car', 'Chevrolet'], ['model', 'Camaro'], ['color', 'yellow']].reduce(function (acc, value, i) {
+[
+  ["car", "Chevrolet"],
+  ["model", "Camaro"],
+  ["color", "yellow"],
+].reduce(
+  function (acc, value, i) {
     acc[value[0]] = value[1];
     return acc;
-}, { name: 'Bumblebee' });
+  },
+  { name: "Bumblebee" }
+);
 // other data types can be used as an accumulator as well
 // {name: 'Bumblebee', car: 'Chevrolet', model: 'Camaro', color: 'yellow'}
 ```
@@ -82,13 +89,13 @@ A different common use case of the `reduce` function is creating a recursive `fl
 Here's an implementation of the `flatten` function:
 
 ```js
-function flatten (input) {
-    return input.reduce(function (acc, value, i) {
-        return acc.concat(Array.isArray(value) ? flatten(value) : value);
-    }, []);
+function flatten(input) {
+  return input.reduce(function (acc, value, i) {
+    return acc.concat(Array.isArray(value) ? flatten(value) : value);
+  }, []);
 }
 
-console.log(flatten([1, 2, [3, 4,[5, 6], 7], 8, 9])); // [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(flatten([1, 2, [3, 4, [5, 6], 7], 8, 9])); // [1, 2, 3, 4, 5, 6, 7, 8, 9];
 ```
 
 ### reduceRight
@@ -100,56 +107,56 @@ It behaves exactly the same as `reduce` function, with the only difference of it
 Returns a copy of an array, including only values that pass the given condition.
 
 ```js
-function isEven (number) {
-    return number % 2 === 0;
+function isEven(number) {
+  return number % 2 === 0;
 }
 
 [0, 1, 2, 3, 4, 5].filter(isEven); // [0, 2, 4]
 
-function getEveryThirdValue (value, i) {
-    return (i + 1) % 3 === 0;
+function getEveryThirdValue(value, i) {
+  return (i + 1) % 3 === 0;
 }
 
 [0, 1, 2, 3, 4, 5].filter(getEveryThirdValue); // [2, 5]
 ```
 
-*In all array methods, passed functions can be defined before as well, just like we did here.*
+_In all array methods, passed functions can be defined before as well, just like we did here._
 
 ### some
 
-Returns `true` if *any* value passes the given condition, returns `false` otherwise.
+Returns `true` if _any_ value passes the given condition, returns `false` otherwise.
 
 ```js
-function doesAnyValueEqualsOne (input) {
-    return input.some(function (value, i) {
-        return value === 1;
-    });
+function doesAnyValueEqualsOne(input) {
+  return input.some(function (value, i) {
+    return value === 1;
+  });
 }
 ```
 
 ### every
 
-Returns `true` only if *all* values pass the given condition, returns `false` otherwise.
+Returns `true` only if _all_ values pass the given condition, returns `false` otherwise.
 
 ```js
-function areAllValuesEqualOne (input) {
-    return input.every(function (value, i) {
-        return value === 1;
-    });
+function areAllValuesEqualOne(input) {
+  return input.every(function (value, i) {
+    return value === 1;
+  });
 }
 ```
 
 `some` and `every` function will help you get rid of redundant iteration flags, like the one in the example below:
 
 ```js
-function areAllValuesEqualOne (input) {
-    var flag = true;
+function areAllValuesEqualOne(input) {
+  var flag = true;
 
-    for (var i = 0; i < input.length; i++) {
-        if (input[i] !== 1) flag = false;
-    }
+  for (var i = 0; i < input.length; i++) {
+    if (input[i] !== 1) flag = false;
+  }
 
-    return flag;
+  return flag;
 }
 ```
 
@@ -167,11 +174,13 @@ It all can be boiled down to two function calls, `map` and `reduce`.
 `map` will get necessary data and modify it to our needs and `reduce` will squeeze it down to a single value.
 
 ```js
-function getTotalVotesNumber (movies) {
-    return movies.map(function (movie) {
-        return parseInt(movie.votes, 10);
-    }).reduce(function (acc, vote) {
-        return acc + vote;
+function getTotalVotesNumber(movies) {
+  return movies
+    .map(function (movie) {
+      return parseInt(movie.votes, 10);
+    })
+    .reduce(function (acc, vote) {
+      return acc + vote;
     }, 0);
 }
 ```
@@ -205,13 +214,13 @@ You could get even fancier by using partial function application (currying) and 
 
 ```js
 var getMoviesWithRatingOver2 = function (movies) {
-    return getMoviesWithRatingOverN.call(null, movies, 2);
+  return getMoviesWithRatingOverN.call(null, movies, 2);
 };
 var getMoviesWithRatingOver3 = function (movies) {
-    return getMoviesWithRatingOverN.call(null, movies, 3);
+  return getMoviesWithRatingOverN.call(null, movies, 3);
 };
 var getMoviesWithRatingOver4 = function (movies) {
-    return getMoviesWithRatingOverN.call(null, movies, 4);
+  return getMoviesWithRatingOverN.call(null, movies, 4);
 };
 ```
 
@@ -220,15 +229,19 @@ var getMoviesWithRatingOver4 = function (movies) {
 Simple scenario. We have a form that the user has to fill in. There are 3 text inputs and 8 select boxes, and all of them are required. How can you quickly make sure that they're all filled in?
 
 ```js
-function isFormFilled (form) {
-    // get all inputs and selects and merge them into single array. Because querySelectorAll is returning nodeList, which has to be transformed into array to perform any array-based methods on it, we've to use slice method on our query results.
-    var slice = Array.prototype.slice; // just a quick shorthand
-    var inputs = slice.call(form.querySelectorAll('input')).concat(slice.call(form.querySelectorAll('select')));
-    
-    return inputs.map(function (input) {
-        return input.value;
-    }).every(function (value) {
-        return value !== '' && value !== '0';
+function isFormFilled(form) {
+  // get all inputs and selects and merge them into single array. Because querySelectorAll is returning nodeList, which has to be transformed into array to perform any array-based methods on it, we've to use slice method on our query results.
+  var slice = Array.prototype.slice; // just a quick shorthand
+  var inputs = slice
+    .call(form.querySelectorAll("input"))
+    .concat(slice.call(form.querySelectorAll("select")));
+
+  return inputs
+    .map(function (input) {
+      return input.value;
+    })
+    .every(function (value) {
+      return value !== "" && value !== "0";
     });
 }
 ```
@@ -242,10 +255,10 @@ Of course `every` method's check is completely up to you and you can perform any
 Iterate through all values, get their lengths and compare to each other. Then return characters count of the longest one.
 
 ```js
-function getMaximumStringLength (list) {
-    return list.reduce(function (acc, value) {
-        return value.length > acc ? value.length : acc;
-    }, 0);
+function getMaximumStringLength(list) {
+  return list.reduce(function (acc, value) {
+    return value.length > acc ? value.length : acc;
+  }, 0);
 }
 ```
 

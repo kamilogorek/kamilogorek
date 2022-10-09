@@ -11,9 +11,9 @@ _Originally posted on [corgibytes.com](http://corgibytes.com/blog/2017/01/03/clo
 
 [Clojure](https://clojure.org), as described on their official page:
 
-  "_Clojure is a dynamic, general-purpose programming language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming. Clojure is a compiled language, yet remains completely dynamic – every feature supported by Clojure is supported at runtime. Clojure provides easy access to the Java frameworks, with optional type hints and type inference, to ensure that calls to Java can avoid reflection._  
+"_Clojure is a dynamic, general-purpose programming language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming. Clojure is a compiled language, yet remains completely dynamic – every feature supported by Clojure is supported at runtime. Clojure provides easy access to the Java frameworks, with optional type hints and type inference, to ensure that calls to Java can avoid reflection._
 
-  _Clojure is a dialect of Lisp, and shares with Lisp the code-as-data philosophy and a powerful macro system. Clojure is predominantly a functional programming language, and features a rich set of immutable, persistent data structures. When mutable state is needed, Clojure offers a software transactional memory system and reactive Agent system that ensure clean, correct, multithreaded designs._"
+_Clojure is a dialect of Lisp, and shares with Lisp the code-as-data philosophy and a powerful macro system. Clojure is predominantly a functional programming language, and features a rich set of immutable, persistent data structures. When mutable state is needed, Clojure offers a software transactional memory system and reactive Agent system that ensure clean, correct, multithreaded designs._"
 
 ---
 
@@ -39,7 +39,7 @@ There's no better way to understand the reasoning behind the choices than to lis
 
 If you still need convincing, here is more of his reasoning:
 
-[Simplicity Matters — Rich Hickey](https://www.youtube.com/watch?v=rI8tNMsozo0)  
+[Simplicity Matters — Rich Hickey](https://www.youtube.com/watch?v=rI8tNMsozo0)
 
 [Hammock Driven Development — Rich Hickey](https://www.youtube.com/watch?v=f84n5oFoZBc)
 
@@ -85,10 +85,10 @@ There are two ways: books and videos. Some people prefer the former and some the
 There are tons of books about Clojure. _[Clojure in Action](https://www.amazon.com/Clojure-Action-Elegant-Applications-JVM/dp/1935182595)_, _[Clojure Programming](https://www.amazon.com/Clojure-Programming-Practical-Lisp-World/dp/1449394701)_, _[The Joy of Clojure](https://www.amazon.com/Joy-Clojure-Michael-Fogus/dp/1617291412/ref=dp_ob_title_bk)_, but I'd like to focus on two positions:
 
 - _[Clojure for the Brave and True](http://www.braveclojure.com/) — Daniel Higginbotham_  
-It's not often the case, but this book is **FREE** and you can jump to reading it straight away. Of course, I highly encourage you to buy a printed copy! It's one of the best books you can find on the topic. It explores it in a very easy to digest manner and approaches it from the point of view of people completely new to the functional programming world.
+  It's not often the case, but this book is **FREE** and you can jump to reading it straight away. Of course, I highly encourage you to buy a printed copy! It's one of the best books you can find on the topic. It explores it in a very easy to digest manner and approaches it from the point of view of people completely new to the functional programming world.
 
 - _[Living Clojure](http://www.goodreads.com/book/show/24701168-living-clojure) — Carin Meier_  
-Carin's writing is the shortest of all the mentioned books, and it's also the most condensed one. You'll find everything you need to start your journey with Clojure. It's also written somewhat as a tale about "Alice's Adventures in Wonderland." How cool is that?! It also contains what I found to be a great concept that could also help many of you: a "Weekly Living Clojure Training Plan!" It's split into seven weekly assignments, and step-by-step guide to learning Clojure.
+  Carin's writing is the shortest of all the mentioned books, and it's also the most condensed one. You'll find everything you need to start your journey with Clojure. It's also written somewhat as a tale about "Alice's Adventures in Wonderland." How cool is that?! It also contains what I found to be a great concept that could also help many of you: a "Weekly Living Clojure Training Plan!" It's split into seven weekly assignments, and step-by-step guide to learning Clojure.
 
 ### Courses
 
@@ -108,7 +108,7 @@ This one isn't a course "per se," but rather a series of tutorials on Clojure an
 
 Although I'll openly admit that I haven't read them yet, these are books that were often recommended. I am told they provide more understanding about Functional Programming. I'll read them one day!
 
-- [The Little Schemer](http://www.goodreads.com/book/show/548914.The_Little_Schemer) by  Daniel P. Friedman and Matthias Felleisen
+- [The Little Schemer](http://www.goodreads.com/book/show/548914.The_Little_Schemer) by Daniel P. Friedman and Matthias Felleisen
 - [Structure and Interpretation of Computer Programs](http://www.goodreads.com/book/show/43713.Structure_and_Interpretation_of_Computer_Programs) by Harold Abelson, Gerald Jay Sussman and Julie Sussman
 - [Purely Functional Data Structures](http://www.goodreads.com/book/show/594288.Purely_Functional_Data_Structures) by Chris Okasaki
 - [An Introduction to Functional Programming Through Lambda Calculus](http://www.goodreads.com/book/show/12169041-an-introduction-to-functional-programming-through-lambda-calculus) by Greg Michaelson

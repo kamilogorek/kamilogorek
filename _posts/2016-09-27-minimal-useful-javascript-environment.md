@@ -88,19 +88,19 @@ Let's create the first test.
 
 ```js
 // test/meaningOfLife.test.js
-const test = require('ava')
-const meaningOfLife = require('../lib/meaningOfLife')
+const test = require("ava");
+const meaningOfLife = require("../lib/meaningOfLife");
 
-test('Real meaning of life', (t) => {
-  t.is(meaningOfLife(), 42)
-})
+test("Real meaning of life", (t) => {
+  t.is(meaningOfLife(), 42);
+});
 ```
 
 Once you save the file, you'll get instantly notified that one of your tests is failing. Let's fix it.
 
 ```js
 // lib/meaningOfLife.js
-module.exports = () => 42
+module.exports = () => 42;
 ```
 
 And we are back to green! It's as simple as that. Let's create another module that'll multiply a numeric parameter, unit test this module and see whether it'll work nicely with our "meaning of life" (note that it's already an integration test, not unit!).
@@ -108,43 +108,44 @@ And we are back to green! It's as simple as that. Let's create another module th
 ```js
 // lib/multiply.js
 module.exports = (number) => {
-  if (typeof number !== 'number') throw new TypeError('Only numbers can be multiplied!')
-  return number * 2
-}
+  if (typeof number !== "number")
+    throw new TypeError("Only numbers can be multiplied!");
+  return number * 2;
+};
 ```
 
 ```js
 // test/multiply.test.js
-const test = require('ava')
-const multiply = require('../lib/multiply')
+const test = require("ava");
+const multiply = require("../lib/multiply");
 
-test('Can multiply numbers', (t) => {
-  t.is(multiply(10), 20)
-})
+test("Can multiply numbers", (t) => {
+  t.is(multiply(10), 20);
+});
 
-test('Throws when you try to multiply non-number value', (t) => {
-  t.throws(() => multiply('ohai!'), 'Only numbers can be multiplied!')
-})
+test("Throws when you try to multiply non-number value", (t) => {
+  t.throws(() => multiply("ohai!"), "Only numbers can be multiplied!");
+});
 ```
 
 Now, to test it all together:
 
 ```js
 // test/index.test.js
-const test = require('ava')
-const awesomeModule = require('../index')
+const test = require("ava");
+const awesomeModule = require("../index");
 
-test('Works nicely together', (t) => {
-  t.is(awesomeModule(), 84)
-})
+test("Works nicely together", (t) => {
+  t.is(awesomeModule(), 84);
+});
 ```
 
 ```js
 // index.js
-const meaningOfLife = require('./lib/meaningOfLife')
-const multiply = require('./lib/multiply')
+const meaningOfLife = require("./lib/meaningOfLife");
+const multiply = require("./lib/multiply");
 
-module.exports = () => multiply(meaningOfLife())
+module.exports = () => multiply(meaningOfLife());
 ```
 
 It works! In just a few minutes, we got everything up and running.

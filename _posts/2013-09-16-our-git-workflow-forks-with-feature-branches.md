@@ -318,7 +318,7 @@ Basically, conflicts are lines of code that were changed by more then one develo
 =======
     var foo = 'Hey Dad!';
 >>>>>>> fix-foo
-       
+
     return foo;
 })();
 ```
@@ -331,9 +331,9 @@ After resolving, this file could look like this:
 
 ```js
 (function () {
-    var foo = 'Hello Mom!';
-        
-    return foo;
+  var foo = "Hello Mom!";
+
+  return foo;
 })();
 ```
 
@@ -347,7 +347,6 @@ Unmerged paths:
 ```
 
 When you resolve your conflicts you just need to add those conflicted files back using `git add [file-name]` or `git add -A ` (if you want to add all files at once) and you're good to go.
-
 
 ## Deleting redundant branches
 
@@ -370,7 +369,6 @@ If you want to remove your remote branch, you do this by prepending a colon sign
 ```sh
 $ git push origin :[branch-name]
 ```
-
 
 ## Whole workflow example in a nutshell
 

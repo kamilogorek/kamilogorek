@@ -17,8 +17,8 @@ _An error in Polish, not Portuguese, but you get the point_
 
 The problem is that:
 
-* No other browser does this. Chrome, Firefox, and Safari all throw errors in English.
-* You’re very likely to have users who speak a wide variety of languages, which means you’re almost certainly going to end up with plenty of individual errors that each appear to be multiple different errors.
+- No other browser does this. Chrome, Firefox, and Safari all throw errors in English.
+- You’re very likely to have users who speak a wide variety of languages, which means you’re almost certainly going to end up with plenty of individual errors that each appear to be multiple different errors.
 
 So if you had the same IE issue in 20 different countries, you’d end up with 20 different error messages. Though Sentry would still use the stack trace to group all these errors into a single Issue, the variety of messages could make it more difficult to measure an issue’s impact and severity, and then to appropriately resolve it once you’ve managed to do so. We’ve experienced this problem ourselves, puzzling over errors thrown in languages we don’t speak.
 

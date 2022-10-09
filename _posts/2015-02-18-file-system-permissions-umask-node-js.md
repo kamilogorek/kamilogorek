@@ -7,7 +7,7 @@ _Originally posted on [x-team.com](https://x-team.com/blog/file-system-permissio
 
 ---
 
-Working as a developer sometimes requires more knowledge than just of programming itself. It's always a good idea to grasp some concepts from other IT fields as well.  
+Working as a developer sometimes requires more knowledge than just of programming itself. It's always a good idea to grasp some concepts from other IT fields as well.
 
 One of these concepts are [file system permissions](http://en.wikipedia.org/wiki/File_system_permissions), proper management of which is a must when it comes to working with files, eg. using node.js `fs` module.
 
@@ -63,7 +63,7 @@ Here we've got `0664` instead of `0755` as our mode. Why is that?
 
 Now that we've our `mode`, we can go ahead and be sure that we know what we're doing and what permissions to our newly created files people will have.
 
-It's worth mentioning that `0777 & ~process.umask()` for folders and `0666 & ~process.umask()` for files are exactly what your system would do on it's own if you would leave those parameters.
+It's worth mentioning that `0777 & ~process.umask()` for folders and `0666 & ~process.umask()` for files are exactly what your system would do on it's own if you would leave those parameters.
 
 If you got interested (remember, JavaScript is not the only thing worth knowing!), you should definitely dive more into studying the basics of IT science.
 

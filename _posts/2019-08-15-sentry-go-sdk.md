@@ -11,17 +11,17 @@ According to [Stack Overflow’s Developer Survey 2019](https://insights.stackov
 
 Some of the features Go provides:
 
-* recovering from panic
-* reporting errors
-* recording breadcrumbs
-* logging messages
-* extracting stack traces from errors and panics
-* errors filtering
-* integration with various HTTP libraries
-* async/sync transports
-* serverless support
-* extracting request/os/device data
-* thread-safe data separation
+- recovering from panic
+- reporting errors
+- recording breadcrumbs
+- logging messages
+- extracting stack traces from errors and panics
+- errors filtering
+- integration with various HTTP libraries
+- async/sync transports
+- serverless support
+- extracting request/os/device data
+- thread-safe data separation
 
 We decided to spend some time on writing a new, unified SDK, that supports all recent versions of the language, utilizes its features, and gives developers the most helpful hints possible for where and why the error might happen.
 
@@ -42,7 +42,7 @@ $ go get github.com/getsentry/sentry-go
 The only thing you need to call to initialize the SDK is `sentry.Init` with a proper DSN obtained from your Sentry account.
 
 ```go
-sentry.Init(sentry.ClientOptions{ 
+sentry.Init(sentry.ClientOptions{
   Dsn: "YOUR_PUBLIC_DSN",
 })
 ```
@@ -126,7 +126,7 @@ func main() {
   if _, err := getLuckyNumber("pickle"); err != nil {
     sentry.CaptureMessage("Lucky number wasn't there, but let just log it as a message and proceed")
   }
-  
+
   // the rest of your  program
 }
 ```
@@ -166,7 +166,7 @@ func processData(data string) error {
 
 func main() {
   // Initialize Sentry here
-  
+
   url := performDBQuery("Robert;); DROP TABLE Students;--")
 
   if data := performHTTPRequest(url); data != "" {
@@ -199,7 +199,7 @@ func main() {
       ID: "1337",
     })
   })
-  
+
   // For example this one
   sentry.CaptureMessage("hey there!")
 
@@ -303,7 +303,7 @@ func main() {
         hub.CaptureMessage("User provided unwanted query string, but we recovered just fine")
       })
     }
-    
+
     ctx.Status(http.StatusOK)
   })
 

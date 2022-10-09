@@ -72,7 +72,7 @@ $ git branch -m <username> origin
 
 You could even write a small script, which could execute all those commands for you.
 
-Everything that you need to remember is to *correctly set your global Git config*.
+Everything that you need to remember is to _correctly set your global Git config_.
 
 ---
 
@@ -82,7 +82,7 @@ Now let's say that after few days into your project, you need to get some change
 
 Instead of manually adding all remotes and fetching them, you can do the same thing in one step.
 
-Instead of using:  
+Instead of using:
 
 ```sh
 $ git remote add <username> <fork-url>

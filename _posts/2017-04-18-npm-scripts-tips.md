@@ -19,8 +19,8 @@ For example:
   "scripts": {
     "build": "webpack --progress",
     "test": "karma start",
-    "server": "webpack-dev-server"  
-  }  
+    "server": "webpack-dev-server"
+  }
   ...
 }
 ```
@@ -74,6 +74,7 @@ Series:
 ```json
 "build": "babel; jest"
 ```
+
 (I know, Jest test runner has a built-in functionality to precompile your code. It's only an example ;))
 
 It will work just fine, but there's one rather huge issue with this approach. `&` syntax creates a subprocess, which results in the original `npm` process not being able to tell whether it already finishes or not. This can be problematic, especially with long running scripts.
@@ -143,6 +144,7 @@ What we'll do is this:
 "build": "browserify main.js -o tmp/bundle.js && uglifyjs -o dist/bundle.min.js -- tmp/bundle.js",
 "postbuild": "rm -rf tmp"
 ```
+
 Note that you should use the `rimraf` package for cross-platform compatibility, as it won't work on Windows.
 
 Now, whenever you run `npm run build`, it will trigger all the commands, making sure they were called in a correct order.
@@ -209,24 +211,32 @@ My scripts look something like this:
 And `env-check.js` content:
 
 ```js
-const task = process.env.npm_lifecycle_event
-const packageJSON = require('../package.json')
+const task = process.env.npm_lifecycle_event;
+const packageJSON = require("../package.json");
 const availableEnvironments = Object.keys(packageJSON.scripts)
-  .filter(key => key.startsWith(task))
-  .map(key => key.split(':')[1])
-  .filter(key => key)
+  .filter((key) => key.startsWith(task))
+  .map((key) => key.split(":")[1])
+  .filter((key) => key);
 
 if (!process.env.NODE_ENV) {
-  console.error(`[ Error ] NODE_ENV is required. Use ${task}:${availableEnvironments.join('/')} scripts instead.`)
-  process.exit(1)
+  console.error(
+    `[ Error ] NODE_ENV is required. Use ${task}:${availableEnvironments.join(
+      "/"
+    )} scripts instead.`
+  );
+  process.exit(1);
 }
 
 if (!availableEnvironments.includes(env)) {
-  console.error(`[ Error ] ${env} is not valid NODE_ENV. Use ${task}:${availableEnvironments.join('/')} scripts instead.`)
-  process.exit(1)
+  console.error(
+    `[ Error ] ${env} is not valid NODE_ENV. Use ${task}:${availableEnvironments.join(
+      "/"
+    )} scripts instead.`
+  );
+  process.exit(1);
 }
 
-process.exit(0)
+process.exit(0);
 ```
 
 Now, whenever a developer types `npm run build` directly, this prompt will show up:
@@ -245,7 +255,9 @@ One drawback of the code above is that it won't understand `pre` script, which s
 To fix this, we'll have to update the `task` variable, as `process.env.npm_lifecycle_event` won't return a `build` name, but rather `prebuild`.
 
 ```js
-const task = process.env.npm_lifecycle_event.startsWith('pre') ? process.env.npm_lifecycle_event.slice(3) : process.env.npm_lifecycle_event
+const task = process.env.npm_lifecycle_event.startsWith("pre")
+  ? process.env.npm_lifecycle_event.slice(3)
+  : process.env.npm_lifecycle_event;
 ```
 
 Now, we can place `node ./scripts/env-check.js` in any `pre` script, and it will perform all of those initial checks for us.

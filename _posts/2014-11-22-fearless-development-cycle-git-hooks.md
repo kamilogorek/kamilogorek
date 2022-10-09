@@ -54,29 +54,30 @@ As an example here, I will use `gulp` as this is the tool I use on a daily basis
  Basic `gulpfile` for our tasks could look like this:
 
 ```js
-var gulp = require('gulp');
-var jshint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
-var browserify = require('browserify');
-var tapeRun = require('tape-run');
-var tapSpec = require('tap-spec');
+var gulp = require("gulp");
+var jshint = require("gulp-jshint");
+var jscs = require("gulp-jscs");
+var browserify = require("browserify");
+var tapeRun = require("tape-run");
+var tapSpec = require("tap-spec");
 
-gulp.task('lint', function () {
-    return gulp.src('app.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(jscs());
+gulp.task("lint", function () {
+  return gulp
+    .src("app.js")
+    .pipe(jshint())
+    .pipe(jshint.reporter("jshint-stylish"))
+    .pipe(jscs());
 });
 
-gulp.task('test', function () {
-    return browserify('./test.js')
-        .bundle()
-        .pipe(tapeRun())
-        .pipe(tapSpec())
-        .pipe(process.stdout);
+gulp.task("test", function () {
+  return browserify("./test.js")
+    .bundle()
+    .pipe(tapeRun())
+    .pipe(tapSpec())
+    .pipe(process.stdout);
 });
 
-gulp.task('validate', ['lint', 'test']);
+gulp.task("validate", ["lint", "test"]);
 ```
 
 To make it work with `precommit-hook`, we have to modify what scripts should get run before our commit command will proceed, and since I already mentioned that it is able to work with any command we'd normally use in CLI, it is as easy as it sounds.

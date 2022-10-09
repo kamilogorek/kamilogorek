@@ -1,6 +1,6 @@
 ---
 title: "Teaching is Hard, But Worth It"
-excerpt: "Some may say that it is not possible to teach a person how to do \"web development\" in such a short period of time and I totally agree with it. But where does that magical point beyond which one knows how to do \"web development\" lay? I don't know an answer to this question, but I think that those 28 days are enough to plant a small seed in a brain of a person who came there willing to learn — and that it will grow enormously if done correctly."
+excerpt: 'Some may say that it is not possible to teach a person how to do "web development" in such a short period of time and I totally agree with it. But where does that magical point beyond which one knows how to do "web development" lay? I don''t know an answer to this question, but I think that those 28 days are enough to plant a small seed in a brain of a person who came there willing to learn — and that it will grow enormously if done correctly.'
 ---
 
 _Originally posted on [medium.com](https://medium.com/age-of-awareness/teaching-is-hard-e467bc2c766b)_
