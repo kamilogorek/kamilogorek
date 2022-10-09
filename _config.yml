@@ -6,7 +6,7 @@ email: kamil.ogorek@gmail.com
 theme: jekyll-whiteglass
 permalink: /blog/:title
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-redirect-from
 
