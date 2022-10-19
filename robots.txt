@@ -1,3 +1,1 @@
 User-agent: *
-Disallow: /nutrition-database/
-Disallow: /weightlifting-stats/

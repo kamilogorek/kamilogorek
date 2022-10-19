@@ -3,7 +3,7 @@ title: Curriculum Vitae
 permalink: /cv/
 ---
 
-<!-- <a href="/cv.pdf" class="cv-pdf-download">Download PDF version</a> -->
+<a href="/cv.pdf" class="cv-pdf-download">Download PDF version</a>
 
 <div class="cv-header">
   <h1>Kamil Ogórek</h1>

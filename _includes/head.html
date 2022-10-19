@@ -1,6 +1,5 @@
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   {% if page.title %} {% capture title %}{{ page.title | escape }} | {{
@@ -9,12 +8,11 @@
   page.url | replace:'index.html','' | absolute_url %} {% assign description =
   page.description | default: page.excerpt | default: site.description |
   strip_html | normalize_whitespace | escape %}
+
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}" />
-  {% if page.keywords %}
-  <meta name="keywords" content="{{ page.keywords }}" />
-  {% endif %} <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url
-  }}">
+
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
   <link rel="canonical" href="{{ canonical }}" />
   {% assign feed_path = "/feed.xml" %} {% if site.feed and site.feed.path %} {%
   assign feed_path = site.feed.path %} {% endif %}
@@ -25,6 +23,6 @@
     href="{{ feed_path | absolute_url }}"
   />
 
-  {% include head_custom.html %} {% include twitter_head.html %} {% include
-  fonts.html %} {% include google_analytics.html %}
+  {% include twitter_head.html %} {% include fonts.html %} {% include
+  google_analytics.html %}
 </head>

@@ -1,14 +1,14 @@
 title: Kamil Ogórek
-description: Software development passionate mainly focused on client-side technologies. Currently working as Software Engineer at Sentry. Weightlifter, powerlifter, training and nutrition geek.
+description: Software development passionate mainly focused on web technologies. Currently working as Software Engineer at Sentry. Climber, weightlifter, powerlifter, training and nutrition geek. Love to cook and admire great food.
 author: Kamil Ogórek
 url: https://kamilogorek.com
 email: kamil.ogorek@gmail.com
-theme: jekyll-whiteglass
-permalink: /blog/:title
 
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+
+permalink: /blog/:title
 
 include: ["_pages"]
 exclude:
