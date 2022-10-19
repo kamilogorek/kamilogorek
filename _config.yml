@@ -12,7 +12,6 @@ plugins:
 
 include: ["_pages"]
 exclude:
-  - deploy.js
   - Gemfile
   - Gemfile.lock
   - package.json
@@ -33,6 +32,7 @@ defaults:
       layout: post
 
 twitter_username: kamilogorek
+twitter_image: assets/images/photo.jpg
 github_username: kamilogorek
 linkedin_username: kamilogorek
 google_analytics: UA-29832978-1
