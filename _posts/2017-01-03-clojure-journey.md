@@ -1,5 +1,5 @@
 ---
-title: "Starting a Journey with Clojure and ClojureScript"
+title: "Starting a Journey With Clojure and ClojureScript"
 excerpt: "If you've never tried functional programming development, I assure you that this is one of the best time investments you can make. You will not only learn a new programming language, but also a completely new way of thinking. A completely different paradigm."
 ---
 

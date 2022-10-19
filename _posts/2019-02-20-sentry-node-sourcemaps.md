@@ -1,5 +1,5 @@
 ---
-title: "Debug Your Node.js Projects with Source Maps"
+title: "Debug Your Node.js Projects With Source Maps"
 excerpt: "As you probably know, source maps allow you to view source code context obtained from stack traces in their original, untransformed form. This view is particularly useful when attempting to debug minified code (like UglifyJS) or transpiled code (like TypeScript or ES6). We’ve made the analogy before, but source maps act as the decoder ring to your secret (minified or transpiled) code.
 
 As of recently, we support source maps for Node.js projects. Here’s what you need to know to generate and make those source maps available for Sentry."

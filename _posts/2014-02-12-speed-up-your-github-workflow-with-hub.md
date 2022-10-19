@@ -1,5 +1,5 @@
 ---
-title: "Speed up your GitHub workflow with Hub"
+title: "Speed Up Your GitHub Workflow With Hub"
 excerpt: "As awesome as Github's web interface is, trying to use it alongside your terminal can be rather time consuming and may slow down your workflow.
 
 Why couldn't you just perform all your common actions straight from the CLI? Well, you can. And it's not just another homemade application. It comes straight from GitHub itself."

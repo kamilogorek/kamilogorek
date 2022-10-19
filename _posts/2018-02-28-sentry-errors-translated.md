@@ -1,5 +1,5 @@
 ---
-title: "Sentry Now Translates Errors from Edge and IE"
+title: "Sentry Now Translates Errors From Edge and IE"
 excerpt: "Internet Explorer and Edge throw errors in the end user’s language. If your end user speaks Polish, they throw a Polish language error. If your end user speaks French, they throw a French language error. If your end user speaks German they throw a Spanish language error, but only if that end user accidentally set their Windows language to Spanish and they aren’t sure how to fix it; otherwise the error is in German."
 ---
 

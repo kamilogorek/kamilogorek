@@ -1,5 +1,5 @@
 ---
-title: "Teaching is Hard, But Worth It"
+title: "Teaching Is Hard, but Worth It"
 excerpt: 'Some may say that it is not possible to teach a person how to do "web development" in such a short period of time and I totally agree with it. But where does that magical point beyond which one knows how to do "web development" lay? I don''t know an answer to this question, but I think that those 28 days are enough to plant a small seed in a brain of a person who came there willing to learn — and that it will grow enormously if done correctly.'
 ---
 
