@@ -9,10 +9,16 @@ permalink: /blog/
 
 ## [{{ post.title }}]({{ post.url }})
 
-_{{ post.date | date: "%B %e, %Y" }}_
+<p class="post-meta">
+  <time>{{ post.date | date: "%B %e, %Y" }}</time>
+</p>
 
 {{ post.excerpt }}
 
+{% if forloop.last == false %}
+
 ---
+
+{% endif %}
 
 {% endfor %}

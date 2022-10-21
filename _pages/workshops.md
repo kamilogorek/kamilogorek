@@ -1,7 +1,6 @@
 ---
 title: Workshops
 permalink: /workshops/
-layout: page
 ---
 
 ---
@@ -23,5 +22,3 @@ layout: page
 #### HTML & CSS Courses
 
 - _September 30, 2016, Katowice, Poland_
-
----

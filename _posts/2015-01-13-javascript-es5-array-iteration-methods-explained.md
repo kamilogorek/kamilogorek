@@ -281,5 +281,3 @@ _.reduce(myArray, function (acc, value, i) { ... });
 ## More informations
 
 If you want to read in depth about all available methods, their quirks, browser incompatibilities etc., go to [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), where you can find every piece of information you'll need.
-
----

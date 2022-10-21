@@ -3,32 +3,36 @@ permalink: /
 layout: home
 ---
 
+<pre class="bio">
+# Ogórek
+
+## Etymology
+
+From Proto-Slavic \*ogurъkъ
+
+## Pronunciation
+
+IPA(key): /ɔˈɡurɛk/
+
+## Noun
+
+ogórek m anim (diminutive ogóreczek, augmentative ogór)
+
+1. cucumber
+2. gherkin
+
+_— https://en.wiktionary.org/wiki/ogórek_
+</pre>
+
 <hr />
 
-<blockquote class="bio">
-  <p>
-    Passionate about software development, Kamil has a special affinity for web
-    technologies. Drawing on his experience as a speaker, workshop leader and
-    countless hours experimenting with various languages, frameworks and tools,
-    Kamil always sets the bar high and aims for the best possible solutions. As
-    a strong believer in Software Craftsmanship, he is constantly learning,
-    improving his skills, and generously sharing with the community by
-    frequently contributing to open-source projects.
-  </p>
-  <p>
-    After hours, Kamil is a training and nutrition geek, a weightlifter, a
-    climber, a recreational cyclist, a drummer and a music lover. Kamil also
-    loves to cook and admires great food."
-  </p>
-</blockquote>
-
-<hr />
-
-<h2>Recent post</h2>
+<h1>Recent Post</h1>
 
 {% for post in site.posts limit:1 %}
-<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-<p><em>{{ post.date | date: "%B %e, %Y" }}</em></p>
+<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+<p class="post-meta">
+  <time>{{ post.date | date: "%B %e, %Y" }}</time>
+</p>
 <p>{{ post.excerpt }}</p>
 {% endfor %}
 
@@ -54,5 +58,3 @@ layout: home
     >
   </li>
 </ul>
-
-<hr />

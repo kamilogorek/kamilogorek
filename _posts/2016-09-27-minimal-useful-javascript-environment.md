@@ -153,5 +153,3 @@ It works! In just a few minutes, we got everything up and running.
 We, as developers, are often charmed by shiny new tools. We seem to forget that those things should make our work easier, faster and less error prone. The simplest solutions are more than enough, more often than we think. Instead of spending an enormous amount of time on the setup, we should spend it on writing the software itself. And following these steps will allow you to do just that.
 
 Once your project starts to grow, you may find yourself in need of something more complex. In most cases, however, it just won't happen. And those tools will suit your needs quite well for a long, long time.
-
----

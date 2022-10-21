@@ -1,7 +1,6 @@
 ---
 title: Talks
 permalink: /talks/
-layout: page
 ---
 
 ---
@@ -28,5 +27,3 @@ _September 27, 2014, Poznań, Poland_
 #### Meet.js
 
 _November 19, 2013, Kraków, Poland_
-
----

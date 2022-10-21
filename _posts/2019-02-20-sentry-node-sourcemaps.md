@@ -136,5 +136,3 @@ If you’re not doing this, because perhaps you’re using TypeScript and upload
 That’s it! Use it. Break things. Repair them. Break them some more. Repair them again. Break them one more time. Repair — you get the idea.
 
 Post feedback in our [forum](https://forum.sentry.io/) or [issue tracker](https://github.com/getsentry/sentry-javascript/issues), or [shout out](https://sentry.io/contact/support/) to our support engineers for help. And, of course, don’t forget to check out the [source maps for Node.js](https://docs.sentry.io/platforms/node/sourcemaps/) documentation.
-
----

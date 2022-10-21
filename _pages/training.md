@@ -5,8 +5,6 @@ permalink: /training/
 
 ---
 
-{% include search.html %}
-
 ### General
 
 - [The WeighTrainer - Your Maximum Muscular Bodyweight and Measurements](http://www.weightrainer.net/potential.html)
@@ -217,5 +215,3 @@ permalink: /training/
 - [T Nation - Strength Training, Bodybuilding](http://www.t-nation.com/)
 - [Fiteligent](http://www.fiteligent.pl/)
 - [Rekompozycja](http://rekompozycja.pl/)
-
----

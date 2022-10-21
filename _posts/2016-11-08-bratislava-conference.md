@@ -76,5 +76,3 @@ He talked about [Exponent](https://getexponent.com/), which is a "framework" on 
 That's it for now.
 
 See you next year, folks!
-
----

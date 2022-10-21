@@ -263,5 +263,3 @@ const task = process.env.npm_lifecycle_event.startsWith("pre")
 Now, we can place `node ./scripts/env-check.js` in any `pre` script, and it will perform all of those initial checks for us.
 
 I personally use it for build, server and deploy scripts, but it can certainly be effectively used in many more places.
-
----

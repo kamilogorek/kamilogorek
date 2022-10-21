@@ -408,5 +408,3 @@ $ git push upstream master
 ```
 
 I hope that this will bring you closer to the idea of working with a git environment, help you decide to use it in your future projects and make your life much easier.
-
----

@@ -37,5 +37,3 @@ _A translated error_
 And that’s pretty much that. Now most errors thrown in Edge or IE across ten languages will appear to you as one error in one language, making the problem easier to tackle.
 
 Have questions? Don’t hesitate to reach out to our [support engineers](https://sentry.io/contact/support/). They’re here to help. And also to code. But mostly to help.
-
----

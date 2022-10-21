@@ -11,18 +11,68 @@
 
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}" />
-
-  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
   <link rel="canonical" href="{{ canonical }}" />
-  {% assign feed_path = "/feed.xml" %} {% if site.feed and site.feed.path %} {%
-  assign feed_path = site.feed.path %} {% endif %}
   <link
     rel="alternate"
     type="application/rss+xml"
     title="{{ site.title | escape }}"
-    href="{{ feed_path | absolute_url }}"
+    href="{{ '/feed.xml' | absolute_url }}"
   />
 
-  {% include twitter_head.html %} {% include fonts.html %} {% include
-  google_analytics.html %}
+  <!-- Fonts -->
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&amp;display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/syntax.css' | relative_url }}" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="{{ site.twitter_username }}" />
+  <meta name="twitter:creator" content="{{ site.twitter_username }}" />
+  <meta name="twitter:title" content="{{ title | truncate: 70 }}" />
+  <meta
+    name="twitter:description"
+    content="{{ description | truncate: 200 }}"
+  />
+  <meta
+    name="twitter:image"
+    content="{{ '/assets/images/photo.jpg' | absolute_url }}"
+  />
+
+  <!-- Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "{{ site.google_analytics }}");
+  </script>
+
+  <!-- Theme Toggler -->
+  <script>
+    // dat complexity.
+    const html = document.querySelector("html");
+    let currentTheme = localStorage.getItem("theme") || "dark";
+    html.classList.add(currentTheme);
+    window.addEventListener("DOMContentLoaded", (event) => {
+      document.querySelector("#toggle-theme").addEventListener("click", () => {
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+        html.classList.remove(currentTheme);
+        html.classList.add(nextTheme);
+        localStorage.setItem("theme", nextTheme);
+        currentTheme = nextTheme;
+      });
+    });
+  </script>
 </head>

@@ -263,5 +263,3 @@ I've shown you less than 10% of what Cypress can actually do. Give it a spin, it
 Because, why not? They are the best way to tell if your application is working correctly. They allow you to iterate quickly, refactor large chunks of your application without fear of breaking it, and they are really easy (and fun!) to write. It's a great feeling to see your application being tested in real-time, seeing all the things being clicked, manipulated, forms filled and tests passing and changing color to green.
 
 Don't be frightened, they won't bite you. They can only help you to be a productive and happy person. Your stress level will go down, your cortisol will drop, and you'll be able to get better sleep, build more muscles and lose fat more quickly, which will result in you being healthier. Because health comes first. It's basic logic. Write your integration tests. You'll be healthier and live longer. Don't thank me, just trust me. Been there, done that.
-
----

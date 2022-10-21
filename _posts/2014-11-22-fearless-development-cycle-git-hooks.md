@@ -96,5 +96,3 @@ That is all. Now it will behave in the same way as we set it up without any buil
 This was just a few minutes of work that can save you plenty of time in the long run, and for me it should be treated as **must-have** for any projects you are working on.
 
 If you'd like to see whole repository used here, you can visit this [article's github repository](https://github.com/kamilogorek/githooks-article "article's github repository").
-
----

@@ -5,8 +5,6 @@ permalink: /nutrition/
 
 ---
 
-{% include search.html %}
-
 ### Ketogenic Diet
 
 - [The Emerging Science on Fat Adaptation](http://www.ultrarunning.com/features/health-and-nutrition/the-emerging-science-on-fat-adaptation/)
@@ -152,5 +150,3 @@ permalink: /nutrition/
 - [Intermittent fasting diet for fat loss, muscle gain and health](http://www.leangains.com/)
 - [Fiteligent](http://www.fiteligent.pl/)
 - [Rekompozycja](http://rekompozycja.pl/)
-
----

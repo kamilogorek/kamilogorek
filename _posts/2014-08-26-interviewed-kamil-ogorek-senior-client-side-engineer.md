@@ -56,5 +56,3 @@ _If you are interested in glancing at our backstage and having a deeper understa
 - **JD: _Thanks! /five!_**
 
 - **KO:** /five!
-
----

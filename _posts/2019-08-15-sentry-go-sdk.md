@@ -326,5 +326,3 @@ Note the `AttachStacktrace` client option that ensures, despite `panic` throwing
 Right now `sentry-go` is in it’s “pre-v1” stage. The SDK has a stable API that we test in the wild, but we look for ways to make it better (including listening to feedback). We already have some ideas that you can track in our GitHub issues page.
 
 If you’d like to request a feature, help with implementing a feature, or have a better way of solving problems, feel free to [let us know](https://github.com/getsentry/sentry-go/issues), and we’ll make sure that your voice is heard!
-
----

@@ -138,5 +138,3 @@ Additional shortcuts like opening your GitHub project on a specific page like `g
 There are many more commands which Hub provides. If you want to wrap your head around it, you can find the documentation in the official project manual [http://hub.github.com/hub.1.html](http://hub.github.com/hub.1.html "http://hub.github.com/hub.1.html").
 
 /Fives!
-
----

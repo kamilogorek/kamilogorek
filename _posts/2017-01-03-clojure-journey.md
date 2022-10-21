@@ -112,5 +112,3 @@ Although I'll openly admit that I haven't read them yet, these are books that we
 - [Structure and Interpretation of Computer Programs](http://www.goodreads.com/book/show/43713.Structure_and_Interpretation_of_Computer_Programs) by Harold Abelson, Gerald Jay Sussman and Julie Sussman
 - [Purely Functional Data Structures](http://www.goodreads.com/book/show/594288.Purely_Functional_Data_Structures) by Chris Okasaki
 - [An Introduction to Functional Programming Through Lambda Calculus](http://www.goodreads.com/book/show/12169041-an-introduction-to-functional-programming-through-lambda-calculus) by Greg Michaelson
-
----
