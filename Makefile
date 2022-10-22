@@ -8,3 +8,7 @@ build:
 watch:
 	bundle exec jekyll build --watch
 .PHONY: watch
+
+server:
+	npx serve _site
+.PHONY: server

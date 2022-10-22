@@ -8,8 +8,6 @@
   --base-line-height: 1.5;
   --spacing-unit: 30px;
   --content-width: 800px;
-  --on-palm: 600px;
-  --on-laptop: 800px;
 }
 
 :root {
@@ -183,14 +181,6 @@ pre > code {
   clear: both;
 }
 
-@media screen and (max-width: var(--on-laptop)) {
-  .wrapper {
-    max-width: calc(var(--content-width) - (var(--spacing-unit)));
-    padding-right: calc(var(--spacing-unit) / 2);
-    padding-left: calc(var(--spacing-unit) / 2);
-  }
-}
-
 .site-header {
   min-height: 56px;
   position: relative;
@@ -215,7 +205,24 @@ pre > code {
 
 .site-nav {
   float: right;
-  margin-top: 16px;
+}
+
+.site-nav ul {
+  margin: 16px 0 0 0;
+  list-style: none;
+  display: inline-block;
+}
+
+.site-nav ul:not(:last-child) {
+  margin-right: 15px;
+}
+
+.site-nav li {
+  display: inline-block;
+}
+
+.site-nav li:not(:last-child) {
+  margin-right: 15px;
 }
 
 .site-nav .page-link {
@@ -227,18 +234,28 @@ pre > code {
   color: var(--brand-color);
 }
 
-.site-nav .page-link:not(:last-child) {
-  margin-right: 15px;
+.icon-link:hover {
+  text-decoration: none;
 }
 
-@media screen and (max-width: var(--on-palm)) {
-  .site-nav .page-link {
-    padding: 20px 0;
-    margin-left: 20px;
+.icon-link:hover svg {
+  opacity: 0.7;
+}
+
+.icon-link svg {
+  width: 19px;
+  vertical-align: -4px;
+}
+
+/* Prevent sticky color on mobile devices */
+/* https://stackoverflow.com/questions/17233804/how-to-prevent-sticky-hover-effects-for-buttons-on-touch-devices */
+@media (hover: none) {
+  .site-nav .page-link:hover {
+    color: var(--text-color);
   }
 
-  .site-nav .page-link:not(:last-child) {
-    margin-right: 0;
+  .icon-link:hover svg {
+    opacity: 1;
   }
 }
 
@@ -248,6 +265,14 @@ pre > code {
   text-align: center;
 }
 
+.site-footer-rss:before {
+  content: " - ";
+}
+
+.site-footer-repository:before {
+  content: " - ";
+}
+
 .bio {
   font-family: var(--monospace-font-family);
   font-size: 13px;
@@ -255,6 +280,7 @@ pre > code {
   padding: 0;
   overflow: initial;
   word-wrap: initial;
+  white-space: pre-wrap;
   color: var(--meta-color);
 }
 
@@ -265,7 +291,6 @@ pre > code {
 .post-meta {
   font-size: calc(var(--base-font-size) * 0.875);
   color: var(--meta-color);
-  /* margin-top: -16px; */
 }
 
 .post-header {
@@ -278,12 +303,6 @@ pre > code {
   line-height: 1;
 }
 
-@media screen and (max-width: var(--on-laptop)) {
-  .post-title {
-    font-size: 36px;
-  }
-}
-
 .post-content {
   margin-bottom: var(--spacing-unit);
 }
@@ -292,45 +311,19 @@ pre > code {
   font-size: 38px;
 }
 
-@media screen and (max-width: var(--on-laptop)) {
-  .post-content h1 {
-    font-size: 34px;
-  }
-}
-
 .post-content h2 {
   font-size: 32px;
-}
-
-@media screen and (max-width: var(--on-laptop)) {
-  .post-content h2 {
-    font-size: 28px;
-  }
 }
 
 .post-content h3 {
   font-size: 26px;
 }
 
-@media screen and (max-width: var(--on-laptop)) {
-  .post-content h3 {
-    font-size: 22px;
-  }
-}
-
 .post-content h4 {
   font-size: 20px;
 }
 
-@media screen and (max-width: var(--on-laptop)) {
-  .post-content h4 {
-    font-size: 18px;
-  }
-}
-
-/* Custom */
-
-#toggle-theme {
+.theme-toggle {
   padding: 0;
   margin: 0;
   border: none;
@@ -366,32 +359,62 @@ pre > code {
   display: none;
 }
 
-.icon-link:hover {
-  text-decoration: none;
-}
-
-.icon-link:hover svg {
-  opacity: 0.7;
-}
-
-.icon-link svg {
-  width: 19px;
-  vertical-align: -4px;
-}
-
 .hidden-pdf-bump {
   display: none;
 }
 
-#search {
-  box-sizing: border-box;
-  font-size: 14px;
-  border: 2px solid #e8e8e8;
-  width: 100%;
-  padding: 6px;
+@media screen and (max-width: 800px) {
+  .wrapper {
+    max-width: calc(var(--content-width) - (var(--spacing-unit)));
+    padding-right: calc(var(--spacing-unit) / 2);
+    padding-left: calc(var(--spacing-unit) / 2);
+  }
+
+  .post-title {
+    font-size: 36px;
+  }
+
+  .post-content h1 {
+    font-size: 34px;
+  }
+
+  .post-content h2 {
+    font-size: 28px;
+  }
+
+  .post-content h3 {
+    font-size: 22px;
+  }
+
+  .post-content h4 {
+    font-size: 18px;
+  }
 }
 
-/* print */
+@media screen and (max-width: 600px) {
+  .site-title {
+    display: inline-block;
+    float: none;
+  }
+
+  .site-nav {
+    float: none;
+  }
+
+  .site-nav ul {
+    display: block;
+  }
+
+  .site-footer-repository {
+    display: block;
+  }
+
+  .site-footer-repository:before {
+    content: none;
+  }
+}
+
+/* CV print for saving to PDF */
 @media print {
   @page {
     margin: 0.5in 0.25in;

@@ -66,7 +66,7 @@
     let currentTheme = localStorage.getItem("theme") || "dark";
     html.classList.add(currentTheme);
     window.addEventListener("DOMContentLoaded", (event) => {
-      document.querySelector("#toggle-theme").addEventListener("click", () => {
+      document.querySelector("#theme-toggle").addEventListener("click", () => {
         const nextTheme = currentTheme === "dark" ? "light" : "dark";
         html.classList.remove(currentTheme);
         html.classList.add(nextTheme);
