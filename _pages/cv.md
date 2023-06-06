@@ -58,6 +58,7 @@ permalink: /cv/
 ##### 2005'ish – March 2012
 
 <hr/>
+<br class="hidden-pdf-bump" />
 
 ## Skills
 
@@ -74,10 +75,11 @@ permalink: /cv/
 
 ## Notable open-source projects
 
-- <a href="https://github.com/getsentry/sentry-javascript">sentry-javascript</a> - TypeScript - creator
+- <a href="https://github.com/getsentry/sentry-javascript">sentry-javascript</a> - TypeScript/Node.js - creator
+- <a href="https://github.com/getsentry/symbolicator">symbolicator</a> - Rust - maintainer
+- <a href="https://github.com/getsentry/sentry-cli">sentry-cli</a> - Rust - maintainer
 - <a href="https://github.com/getsentry/sentry-webpack-plugin">sentry-webpack-plugin</a> - JavaScript - creator
 - <a href="https://github.com/getsentry/sentry-go">sentry-go</a> - Go - creator
-- <a href="https://github.com/getsentry/sentry-cli">sentry-cli</a> - Rust - maintainer
 
 ## Notable cooperations
 
@@ -90,6 +92,11 @@ permalink: /cv/
 <hr/>
 
 ## Talks and workshops
+
+#### JavaScript Source Maps, Can We Do Better?
+
+- @ jsnation remote, june 5, 2023
+- <a href="https://youtu.be/JEy3irYuRjg?t=5055">@ meet.js krakow, may 25, 2023</a>
 
 #### Become a Front-end Developer – React.js Workshops
 
@@ -105,6 +112,8 @@ permalink: /cv/
 
 - <a href="https://www.youtube.com/watch?v=2Rzxn-xaFkg">@ reject.js berlin, september 11, 2014</a>
 - <a href="https://www.youtube.com/watch?v=RaegaTWgHXU">@ meet.js summit poznan, september 27, 2014</a>
+
+<br class="hidden-pdf-bump" />
 
 #### Keep your projects tight
 
@@ -141,10 +150,6 @@ Available at <a href="https://kamilogorek.com/blog/">https://kamilogorek.com/blo
 
 <blockquote>"Kamil is a professional that is super sharp in his knowledge always on the latest trends, I learnt a lot from him about JavaScript among other things, we share the same views on software craftsmanship and he is truly one of a kind when it comes to get a project done. He is a very valuable member of any team; he makes the team great, he writes high quality software without cutting any corners, fast!. I would get him in my team anytime I could"</blockquote>
 <cite><strong>Juan Manuel Combetto</strong>, Technical Lead and Senior Web Developer, 20th Century Fox</cite>
-
-<br class="hidden-pdf-bump" />
-<br class="hidden-pdf-bump" />
-<br class="hidden-pdf-bump" />
 
 <blockquote>"Do you need to build some Rich Internet Application? Make use of some fancy new JavaScript framework? Or maybe you wish to use Responsive Web Design approach for your site? In all those (and many other) cases, Kamil has already been there, done that and has al the skills that are needed. Given that and the fact that he is also skilled in other fields (like PHP programming, including MVC frameworks, templating systems etc.) as well as being a cheerful, reliable and communicative person, he should be considered highly valuable asset in any development team. I had a pleasure of working with Kamil and I definetly will be looking forward to cooperating with him again."</blockquote>
 <cite><strong>Mariusz Bak</strong>, Senior Software Developer, XSolve</cite>

@@ -479,4 +479,8 @@ pre > code {
   .hidden-pdf-bump {
     display: block;
   }
+
+  .cv-pdf-download {
+    display: none;
+  }
 }
