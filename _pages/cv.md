@@ -17,7 +17,7 @@ permalink: /cv/
 
 <blockquote>
   <p>"Passionate about software development, Kamil has a special affinity for web technologies. Drawing on his experience as a speaker, workshop leader and countless hours experimenting with various languages, frameworks and tools, Kamil always sets the bar high and aims for the best possible solutions.</p>
-  <p>As a strong believer in Software Craftsmanship, he is constantly learning, improving his skills, and generously sharing with the community by frequently contributing to open-source projects.</p>
+  <p>As a strong believer in Software Craftsmanship, he is constantly learning, improving his skills, and generously sharing with the community by frequently contributing to open-source projects.<br/>Current <a href="https://tc39.es/">TC39</a> Invited Expert under Tooling Group, core member of <a href="https://trpc.io/">tRPC</a> and often contributor to <a href="https://deno.com/runtime">Deno</a>.</p>
   <p>After hours, Kamil is a training and nutrition geek, a weightlifter, a climber, a recreational cyclist, a drummer and a music lover. Kamil also loves to cook and admires great food."</p>
 </blockquote>
 
@@ -95,7 +95,7 @@ permalink: /cv/
 
 #### JavaScript Source Maps, Can We Do Better?
 
-- @ jsnation remote, june 5, 2023
+- <a href="https://portal.gitnation.org/contents/javascript-source-maps-can-we-do-better">@ jsnation remote, june 5, 2023</a>
 - <a href="https://youtu.be/JEy3irYuRjg?t=5055">@ meet.js krakow, may 25, 2023</a>
 
 #### Become a Front-end Developer – React.js Workshops
