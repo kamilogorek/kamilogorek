@@ -7,18 +7,32 @@ permalink: /talks/
 
 ### JavaScript Source Maps, Can We Do Better?
 
+#### Armada.js
+
+_October 6, 2023, Novi Sad, Serbia_
+
+- [slides](https://pitch.com/v/Source-Maps---Armadajs-23u5s8)
+- _no video available_
+
+#### Node.js Conference
+
+_September 30, 2023, Brescia, Italy_
+
+- [slides](https://pitch.com/v/Source-Maps---Nodejsconf-miig3v)
+- _no video available_
+
 #### JSNation
 
 _June 5, 2023, Remote_
 
-- [slides](https://pitch.com/public/4ec11f67-16c8-46e6-8a0f-3135e04b677a)
+- [slides](https://pitch.com/v/Source-Maps-77d7xp)
 - [video](https://portal.gitnation.org/contents/javascript-source-maps-can-we-do-better)
 
 #### Meet.js KRK
 
 _May 25, 2023, Kraków, Poland_
 
-- [slides](https://pitch.com/public/611234bb-b20e-4886-bf0a-a2efe4a20622)
+- [slides](https://pitch.com/v/Source-Maps---Meetjs-KRK-mqy57m)
 - [video](https://youtu.be/JEy3irYuRjg?t=5056)
 
 ---
@@ -31,7 +45,6 @@ _September 11, 2014, Berlin, Germany_
 
 - [slides](https://speakerdeck.com/kamilogorek/ampersand-dot-js-minimalistic-approach-to-not-so-minimalistic-problems)
 - [video](https://youtu.be/2Rzxn-xaFkg)
-
 
 #### Meet.js Summit
 

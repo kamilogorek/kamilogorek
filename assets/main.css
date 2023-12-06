@@ -1,13 +1,12 @@
 :root {
-  --base-font-family: Bitter, "Apple SD Gothic Neo", AppleGothic,
-    NanumBarunGothic, "Malgun Gothic", Dotum, sans-serif;
+  --base-font-family: "Sen", sans-serif;
   --monospace-font-family: Monaco, Menlo, Consolas, "Courier New", DotumChe,
     monospace;
   --base-font-weight: 400;
   --base-font-size: 16px;
   --base-line-height: 1.5;
   --spacing-unit: 30px;
-  --content-width: 800px;
+  --content-width: 1000px;
 }
 
 :root {
@@ -357,6 +356,22 @@ pre > code {
 
 .cv-header {
   display: none;
+}
+
+.cv > div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 32px;
+}
+
+.cv > div:first-child {
+  margin-bottom: 32px;
+}
+
+.cv > div > div {
+  flex-direction: column;
+  width: 50%;
 }
 
 .hidden-pdf-bump {
