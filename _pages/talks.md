@@ -12,7 +12,7 @@ permalink: /talks/
 _October 6, 2023, Novi Sad, Serbia_
 
 - [slides](https://pitch.com/v/Source-Maps---Armadajs-23u5s8)
-- _no video available_
+- [video](https://www.youtube.com/watch?v=Qo3na4-VPsg)
 
 #### Node.js Conference
 
