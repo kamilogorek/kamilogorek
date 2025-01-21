@@ -1,0 +1,36 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{ title }}{{ title_suffix }}</title>
+  <meta name="description" content="Trying to make people's lives easier. API and Integrations Lead at @supabase. Previously @getsentry." />
+  <link rel="alternate" type="application/rss+xml" title="{{ title }}{{ title_suffix }}" href="{{ '/feed.xml' |> url(true) }}" />
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/main.css" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="kamilogorek" />
+  <meta name="twitter:creator" content="kamilogorek" />
+  <meta name="twitter:title" content="{{ title }}{{ title_suffix }}" />
+  <meta name="twitter:description" content="Trying to make people's lives easier. API and Integrations Lead at @supabase. Previously @getsentry." />
+  <meta name="twitter:image" content="{{ '/assets/images/photo.jpg' |> url(true) }}" />
+
+  <script>
+    const html = document.querySelector("html");
+    let currentTheme = localStorage.getItem("theme") || "dark";
+    html.classList.add(currentTheme);
+    window.addEventListener("DOMContentLoaded", (event) => {
+      document.querySelector("#theme-toggle").addEventListener("click", () => {
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+        html.classList.remove(currentTheme);
+        html.classList.add(nextTheme);
+        localStorage.setItem("theme", nextTheme);
+        currentTheme = nextTheme;
+      });
+    });
+  </script>
+</head>

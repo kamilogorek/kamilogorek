@@ -2,13 +2,9 @@ all: build
 .PHONY: all
 
 build:
-	bundle exec jekyll build
+	deno task build
 .PHONY: build
 
-watch:
-	bundle exec jekyll build --watch
-.PHONY: watch
-
 server:
-	npx serve _site
+	deno task serve
 .PHONY: server
