@@ -54,5 +54,6 @@ site.use(feed({
 
 site.process([".html"], addSyntaxHighlighting);
 site.copy("assets");
+site.copy("cv.pdf");
 
 export default site;
