@@ -4,7 +4,7 @@
 
   <title>{{ title }}{{ title_suffix }}</title>
   <meta name="description" content="Trying to make people's lives easier. API and Integrations Lead at @supabase. Previously @getsentry." />
-  <link rel="alternate" type="application/rss+xml" title="{{ title }}{{ title_suffix }}" href="{{ '/feed.xml' |> url(true) }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ title |> escape }}{{ title_suffix |> escape }}" href="{{ '/feed.xml' |> url(true) }}" />
 
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,8 +15,8 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="kamilogorek" />
   <meta name="twitter:creator" content="kamilogorek" />
-  <meta name="twitter:title" content="{{ title }}{{ title_suffix }}" />
-  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:title" content="{{ title |> escape }}{{ title_suffix |> escape }}" />
+  <meta name="twitter:description" content="{{ description |> escape }}" />
   <meta name="twitter:image" content="{{ '/assets/images/photo.jpg' |> url(true) }}" />
 
   <script>
