@@ -49,20 +49,21 @@
     .cols {
       flex: 1;
       display: flex;
-      gap: 8mm;
+      gap: 4mm;
       min-height: 0;
     }
 
     .col {
-      flex: 1 1 50%;
+      flex: 1 1 58%;
       min-width: 0;
       display: flex;
       flex-direction: column;
     }
 
     .col.rule {
+      flex: 1 1 42%;
       border-left: 1px solid var(--rule);
-      padding-left: 8mm;
+      padding-left: 4mm;
     }
 
     .page-two {
@@ -70,7 +71,12 @@
         gap: 4mm;
       }
 
+      .col {
+        flex: 1 1 50%;
+      }
+
       .col.rule {
+        flex: 1 1 50%;
         padding-left: 4mm;
       }
     }
@@ -85,7 +91,11 @@
     }
 
     section {
-      margin-bottom: 16px;
+      margin-bottom: 24px;
+
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
     }
 
     section h3 {
@@ -110,9 +120,19 @@
     }
 
     ul {
-      list-style: none;
       margin: 0;
       padding: 0;
+      font-size: 9.5pt;
+      line-height: 1.42;
+      list-style: none;
+
+      li {
+        margin-bottom: 4pt;
+
+        &:before {
+          content: "· "
+        }
+      }
     }
 
     .name {
@@ -144,7 +164,7 @@
     }
 
     .contact-group p {
-      margin-bottom: 4px;
+      margin-bottom: 0px;
       font-size: 9.5pt;
     }
 
@@ -170,6 +190,10 @@
       font-size: 9pt;
       color: var(--muted);
       font-weight: 400;
+
+      &:before {
+        content: "· "
+      }
     }
 
     .talk {
@@ -190,6 +214,10 @@
       font-size: 9pt;
       color: var(--muted);
       line-height: 1.28;
+
+      &:before {
+        content: "· "
+      }
     }
 
     .project {
@@ -216,7 +244,7 @@
     }
 
     .extra h4 {
-      font-size: 10pt;
+      font-size: 11pt;
       font-weight: 700;
       margin-bottom: 10px;
     }
@@ -293,12 +321,12 @@
             constantly raising the bar and striving for the most optimal solutions.
           </p>
           <p>
-            Outside work I'm usually climbing, cycling, or cooking. I also spent several years
+            Outside work I'm usually climbing, cycling, or cooking.<br />I also spent several years
             competing in Olympic weightlifting, obstacle running, and playing drums.
           </p>
         </section>
 
-        <section>
+        <!--<section>
           <h3>Skills</h3>
           <p>
             Whether it's JavaScript, TypeScript, Node.js, Go, Rust, Workflow
@@ -309,9 +337,32 @@
             haven't worked with it, played with it, or heard about it, you can bet
             that I can learn it.
           </p>
+        </section>-->
+
+        <section>
+          <h3>Things I've Worked on at Supabase</h3>
+
+          <ul>
+            <li>Became API Team Lead, growing the team from 2 to 10 engineers, owning hiring, roadmap, prioritization,
+              and technical direction.</li>
+            <li>Improved and modularized the API platform, introducing reusable components, shared tooling, automation,
+              and consistent patterns across services and workers.</li>
+            <li>Led the development of Vercel and GitHub integrations, including migrations to new architectures with
+              zero downtime and no data loss.</li>
+            <li>Owned OpenFGA, our fine-grained authorization system, including its infrastructure, scaling, and
+              integration across the platform.</li>
+            <li>Contributed to our Branching feature, helping drive its product and technical direction toward a
+              best-in-class experience.</li>
+            <li>Built and supported OAuth and first-party integrations with Lovable and Bolt.</li>
+            <li>Core team member of Hibernation, designing and implementing infrastructure orchestration for pausing and
+              waking projects, including ~10s wake times on EC2.</li>
+            <li>Owned AWS infrastructure, including scaling policies, monitoring, and alerting.</li>
+            <li>Led a 2-month Zod migration and improved API and database performance, including making TypeScript
+              compilation 14× faster and optimizing critical database queries.</li>
+          </ul>
         </section>
 
-        <p class="scroll-note">Psst... Scroll down to read about my work!</p>
+        <p class="scroll-note">Psst... Scroll down to read about my open-source work!</p>
       </div>
 
       <div class="col rule">
@@ -368,8 +419,10 @@
 
           <div class="talk">
             <p class="talk-title">"JavaScript Source Maps, Can We Do Better?"</p>
-            <p class="venue">Node.js Conference, Brescia 2023<br />Armada.js, Novi Sad 2023<br />JSNation, Amsterdam
-              2023<br />Meet.js, Kraków 2023</p>
+            <p class="venue">Node.js Conference, Brescia 2023</p>
+            <p class="venue">Armada.js, Novi Sad 2023</p>
+            <p class="venue">JSNation, Amsterdam 2023</p>
+            <p class="venue">Meet.js, Kraków 2023</p>
           </div>
           <div class="talk">
             <p class="talk-title">"Become a Front-end Developer – React.js Workshops"</p>
@@ -381,7 +434,8 @@
           </div>
           <div class="talk">
             <p class="talk-title">"Ampersand.js – Minimalistic approach to not so minimalistic problems"</p>
-            <p class="venue">Reject.js, Berlin, 2014<br />Meet.js Summit, Poznań, 2014</p>
+            <p class="venue">Reject.js, Berlin, 2014</p>
+            <p class="venue">Meet.js Summit, Poznań, 2014</p>
           </div>
           <div class="talk">
             <p class="talk-title">"Keep Your Projects Tight"</p>
@@ -400,7 +454,7 @@
 
           <div class="project">
             <a class="repo-link"
-              href="https://github.com/getsentry/sentry-javascript">https://github.com/getsentry/sentry-javascript</a>
+              href="https://github.com/getsentry/sentry-javascript">github.com/getsentry/sentry-javascript</a>
             <p class="stack">JavaScript/TypeScript/Node.js - creator</p>
             <p>
               Over the four years, since I took over the old Sentry SDK, I've
@@ -427,8 +481,7 @@
           </div>
 
           <div class="project">
-            <a class="repo-link"
-              href="https://github.com/getsentry/symbolicator">https://github.com/getsentry/symbolicator</a>
+            <a class="repo-link" href="https://github.com/getsentry/symbolicator">github.com/getsentry/symbolicator</a>
             <p class="stack">Rust - maintainer</p>
             <p>
               Upon joining the "Processing Team", which is primarily
@@ -464,8 +517,7 @@
       <div class="col rule">
         <section>
           <div class="project">
-            <a class="repo-link"
-              href="https://github.com/getsentry/sentry-cli">https://github.com/getsentry/sentry-cli</a>
+            <a class="repo-link" href="https://github.com/getsentry/sentry-cli">github.com/getsentry/sentry-cli</a>
             <p class="stack">Rust - maintainer</p>
             <p>
               Sentry-cli serves as the primary gateway for all debug
@@ -490,8 +542,7 @@
           </div>
 
           <div class="project">
-            <a class="repo-link"
-              href="https://github.com/getsentry/sentry-go">https://github.com/getsentry/sentry-go</a>
+            <a class="repo-link" href="https://github.com/getsentry/sentry-go">github.com/getsentry/sentry-go</a>
             <p class="stack">Go - creator</p>
             <p>
               Taking on the challenge of learning a new language while
@@ -516,7 +567,7 @@
 
           <div class="project">
             <a class="repo-link"
-              href="https://github.com/denoland/deno">https://github.com/denoland/deno/{deno,deno_std,fresh}</a>
+              href="https://github.com/denoland/deno">github.com/denoland/deno/{deno,deno_std,fresh}</a>
             <p>
               I've also made contributions to a few other Deno repositories.
               In total, I've made over 50 contributions that span various
@@ -527,7 +578,7 @@
 
           <div class="project">
             <a class="repo-link"
-              href="https://github.com/getsentry/sentry-webpack-plugin/">https://github.com/getsentry/sentry-webpack-plugin/</a>
+              href="https://github.com/getsentry/sentry-webpack-plugin/">github.com/getsentry/sentry-webpack-plugin/</a>
             <p>
               I developed a Webpack integration for the sentry-cli, which
               currently boasts nearly 10M downloads/week.
@@ -535,7 +586,7 @@
           </div>
 
           <div class="project">
-            <a class="repo-link" href="https://github.com/getsentry/craft">https://github.com/getsentry/craft</a>
+            <a class="repo-link" href="https://github.com/getsentry/craft">github.com/getsentry/craft</a>
             <p>
               I've overseen and enhanced our CLI tool that streamlines and
               automates package releases.
@@ -543,7 +594,7 @@
           </div>
 
           <div class="project">
-            <a class="repo-link" href="https://github.com/trpc/trpc">https://github.com/trpc/trpc</a>
+            <a class="repo-link" href="https://github.com/trpc/trpc">github.com/trpc/trpc</a>
             <p>
               As part of the core team, I assist in maintaining the
               repository and tooling. I also contribute to decision-making

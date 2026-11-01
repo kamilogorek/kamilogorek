@@ -14,7 +14,8 @@
   --meta-color: #5c6773;
 }
 
-:root,  /* default */
+:root,
+/* default */
 :root.dark {
   --text-color: #c5c5c5;
   --background-color: #0f141a;
@@ -55,8 +56,7 @@ figure {
 }
 
 body {
-  font: var(--base-font-weight) var(--base-font-size) / var(--base-line-height)
-    var(--base-font-family);
+  font: var(--base-font-weight) var(--base-font-size) / var(--base-line-height) var(--base-font-family);
   color: var(--text-color);
   background-color: var(--background-color);
   word-wrap: break-word;
@@ -89,7 +89,7 @@ img {
   vertical-align: middle;
 }
 
-figure > img {
+figure>img {
   display: block;
 }
 
@@ -102,8 +102,8 @@ ol {
   margin-left: var(--spacing-unit);
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
   margin-bottom: 0;
 }
 
@@ -134,7 +134,7 @@ blockquote {
   font-style: italic;
 }
 
-blockquote > :last-child {
+blockquote> :last-child {
   margin-bottom: 0;
 }
 
@@ -169,7 +169,7 @@ pre {
   word-wrap: normal;
 }
 
-pre > code {
+pre>code {
   border: 0;
   padding-right: 0;
   padding-left: 0;
@@ -339,12 +339,14 @@ pre > code {
   cursor: pointer;
 }
 
-:root .toggle-sun, /* default */
+:root .toggle-sun,
+/* default */
 :root.dark .toggle-sun {
   display: inline-block;
 }
 
-:root .toggle-moon, /* default */
+:root .toggle-moon,
+/* default */
 :root.dark .toggle-moon {
   display: none;
 }
@@ -367,18 +369,18 @@ pre > code {
   display: none;
 }
 
-.cv > div {
+.cv>div {
   display: flex;
   flex-direction: row;
   width: 100%;
   gap: 32px;
 }
 
-.cv > div:first-child {
+.cv>div:first-child {
   margin-bottom: 32px;
 }
 
-.cv > div > div {
+.cv>div>div {
   flex-direction: column;
   width: 50%;
 }
@@ -435,6 +437,306 @@ pre > code {
 
   .site-footer-repository:before {
     content: none;
+  }
+}
+
+/* CV print for saving to PDF */
+.cv-print {
+  width: 240mm;
+  height: 297mm;
+  margin: 0 auto 40px;
+  font-family: "Sen", Arial, sans-serif;
+
+  .page {
+    background: #fff;
+    padding: 6mm;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cols {
+    flex: 1;
+    display: flex;
+    gap: 8mm;
+    min-height: 0;
+  }
+
+  .col {
+    flex: 1 1 50%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col.rule {
+    border-left: 1px solid var(--rule);
+    padding-left: 8mm;
+  }
+
+  .page-two {
+    .cols {
+      gap: 4mm;
+    }
+
+    .col.rule {
+      padding-left: 4mm;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0;
+    font-weight: 800;
+  }
+
+  section {
+    margin-bottom: 16px;
+  }
+
+  section h3 {
+    font-size: 15pt;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 0 0 8px;
+    font-size: 9.5pt;
+    line-height: 1.42;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .name {
+    font-size: 30pt;
+    line-height: 1.02;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  .title {
+    font-size: 15pt;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+
+  .subtitle {
+    font-size: 9.5pt;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .contact-group {
+    margin-bottom: 4px;
+  }
+
+  .contact-group p {
+    margin-bottom: 4px;
+    font-size: 9.5pt;
+  }
+
+  .contact-group+.contact-group {
+    margin-top: 10px;
+  }
+
+  .job {
+    margin-bottom: 8px;
+  }
+
+  .job:last-child {
+    margin-bottom: 0;
+  }
+
+  .job h4 {
+    font-size: 10pt;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .job .dates {
+    font-size: 9pt;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .talk {
+    margin-bottom: 8px;
+  }
+
+  .talk:last-child {
+    margin-bottom: 0;
+  }
+
+  .talk .talk-title {
+    font-size: 10pt;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .talk .venue {
+    font-size: 9pt;
+    color: var(--muted);
+    line-height: 1.28;
+  }
+
+  .project {
+    margin-bottom: 14px;
+  }
+
+  .project:last-child {
+    margin-bottom: 0;
+  }
+
+  .project .repo-link {
+    display: block;
+    font-size: 9.5pt;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 2px;
+    word-break: break-all;
+  }
+
+  .project .stack {
+    font-weight: 700;
+    font-size: 9.5pt;
+    margin-bottom: 6px;
+  }
+
+  .extra h4 {
+    font-size: 10pt;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .extra .project .repo-link {
+    margin-bottom: 4px;
+  }
+
+  .extra .project .stack {
+    display: none;
+  }
+
+  .scroll-note {
+    margin-top: auto;
+    padding-top: 20px;
+    font-size: 11pt;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      background: #fff;
+      padding: 0;
+    }
+
+    .page {
+      box-shadow: none;
+      margin: 0;
+      width: 210mm;
+      height: 297mm;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+  }
+
+  @page {
+    margin: 0.5in 0.25in;
+  }
+
+  html {
+    zoom: 0.825;
+  }
+
+  .site-header {
+    display: none;
+  }
+
+  .site-footer {
+    display: none;
+  }
+
+  .post-header {
+    margin-bottom: 0;
+  }
+
+  .post-title {
+    font-size: 36px;
+    margin-bottom: -1px;
+    letter-spacing: 0.95px;
+  }
+
+  .cv-header {
+    display: block;
+  }
+
+  .cv-header h1 {
+    font-size: 48px;
+    margin-bottom: -12px;
+  }
+
+  .cv-header h2 {
+    font-size: 32px;
+    letter-spacing: 1.85px;
+    margin-bottom: 4px;
+  }
+
+  .cv-header p {
+    letter-spacing: -0.32px;
+  }
+
+  .post-content h3,
+  .post-content h4 {
+    margin-bottom: 0;
+  }
+
+  .post-content h5 {
+    margin-bottom: 0.5em;
+  }
+
+  hr {
+    height: 0;
+    margin: 25px 0 15px 0;
+    border-bottom: 4px solid #e8e8e8;
+  }
+
+  .hidden-pdf-bump {
+    display: block;
+  }
+
+  .cv-pdf-download {
+    display: none;
   }
 }
 
